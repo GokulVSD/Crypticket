@@ -1,0 +1,16 @@
+{
+  "short_name": "Crypticket",
+  "name": "Crypticket",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/main.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "white",
+  "background_color": "white"
+}
