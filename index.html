@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<title>Crypticket</title>
-	    <!-- tab favicon -->
+
+    <title>Crypticket</title>
+
+    <!-- tab favicon -->
     <link rel="icon" href="assets/logo.png" />
 
     <!-- metadata -->
@@ -24,8 +27,77 @@
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+    <link href="css/structure.css" rel="stylesheet">
+    <link href="css/sidebar.css" rel="stylesheet">
+    <link href="css/pillbar.css" rel="stylesheet">
+    <link href="css/containers.css" rel="stylesheet">
+    <link href="css/media.css" rel="stylesheet">
+
 </head>
+
 <body>
 
+    <div id="wrapper">
+
+        <!-- Sidebar-wrapper -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li>
+                    <a class="first-sidebar" href="#"><img src="assets/sidebar-logo.png"><span class="align-middle">CRYPTICKET</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="align-middle sb1 fas fa-ticket-alt fa-3x"></i><span class="align-middle">TICKETS</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="align-middle sb2 far fa-calendar fa-3x"></i><span class="align-middle">CREATE</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="align-middle sb3 fas fa-key fa-3x"></i><span class="align-middle">VERIFY</span></a>
+                </li>
+                <li>
+                    <a class="last-sidebar" href="#"><i class="fab fa-github fa-3x"></i><span>GITHUB</span></a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+        	<div class="container-fluid">
+
+        		<!-- pill-bar -->
+        		<div class="pill-bar">
+        			<button type="button" id="sidebarCollapse" class="sidebar-toggle active">
+        				<span></span>
+        				<span></span>
+        				<span></span>
+        			</button>
+        			<img class="img-pill-bar" src="assets/logo.png">
+        			<button type="button" id="pillbar-settings" class="ripple"><i class="fas fa-ellipsis-v"></i></button>
+        		</div>
+        		<!-- /pill-bar -->
+
+                <div class="container fragment-container">
+                	<div class="ticket"></div>
+                	<div class="ticket"></div>
+                	<div class="ticket"></div>
+                </div>
+
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>css/
+
+    <!-- Menu Toggle Script -->
+    <script type="text/javascript" src="scripts/sidebar.js"></script>
+
 </body>
+
 </html>
