@@ -1,0 +1,27 @@
+.pill-bar{
+    z-index: 1001;
+    box-shadow: 0 0 3px rgba(0,0,0,0.08), 0 0 2px rgba(0,0,0,0.08);
+	background: white;
+	width: 96%;
+	height: 80px;
+	border-radius: 100px;
+	position: sticky;
+	top: 10px;
+	margin: 0 auto;
+	text-align: center;
+	-webkit-transition: box-shadow 0.5s, width 0.5s, height 0.5s, line-height 0.5s, transform 0.5s;
+    -moz-transition: box-shadow 0.5s, width 0.5s, height 0.5s, line-height 0.5s, transform 0.5s;
+    -o-transition: box-shadow 0.5s, width 0.5s, height 0.5s, line-height 0.5s, transform 0.5s;
+    transition: box-shadow 0.5s, width 0.5s, height 0.5s, line-height 0.5s, transform 0.5s;
+	max-width: 800px;
+	line-height: 80px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.img-pill-bar{
+	height: 100%;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: inherit;
+}
