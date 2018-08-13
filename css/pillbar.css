@@ -63,3 +63,19 @@
     -o-transition: font-size 0.5s, background 0.3s;
     transition: font-size 0.5s, background 0.3s;
 }
+
+/*Ripple effect*/
+#pillbar-settings:focus{
+    outline: 0;
+}
+#pillbar-settings.ripple{
+  background-position: center;
+}
+#pillbar-settings.ripple:hover{
+  background: #fff radial-gradient(circle, transparent 1%, #fff 1%) center/15000%;
+}
+#pillbar-settings.ripple:active{
+  background-color: #bfbfbf;
+  background-size: 100%;
+  transition: background 0s;
+}
