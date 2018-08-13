@@ -79,3 +79,32 @@
   background-size: 100%;
   transition: background 0s;
 }
+
+/*For the collapse button*/
+#sidebarCollapse span {
+    width: 75%;
+    height: 2px;
+    margin: 0 auto;
+    display: block;
+    background: #6f6f6f;
+    transition: all 0.5s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+}
+
+#sidebarCollapse span:first-of-type {
+    transform: rotate(45deg) translate(2px, 2px);
+}
+
+#sidebarCollapse span:nth-of-type(2) {
+    opacity: 0;
+}
+
+#sidebarCollapse span:last-of-type {
+    transform: rotate(-45deg) translate(1px, -1px);
+}
+
+#sidebarCollapse.active span {
+    transform: none;
+    opacity: 1;
+    margin: 8px auto;
+    transition: all 0.5s, transform 0.5s;
+}
