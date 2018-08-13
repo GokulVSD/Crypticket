@@ -25,3 +25,41 @@
 	vertical-align: middle;
 	line-height: inherit;
 }
+
+.sidebar-toggle{
+	position: absolute;
+	left: 15px;
+	top:17px;
+	border: none;
+	width: 55px;
+	height: 60%;
+	background: inherit;
+	cursor: pointer;
+}
+
+.sidebar-toggle:focus{
+	outline: 0;
+}
+
+.sidebar-logo{
+	width: 70px;
+	display: inline-block;
+}
+
+#pillbar-settings{
+    border: none;
+    background: inherit;
+    height: 92%;
+    font-size: 25px;
+    width: 55px;
+    position: absolute;
+    right: 15px;
+    top: 3px;
+    color: #7f7f7f;
+    border-radius: 100%;
+    cursor: pointer;
+    -webkit-transition: font-size 0.5s, background 0.3s;
+    -moz-transition: font-size 0.5s, background 0.3s;
+    -o-transition: font-size 0.5s, background 0.3s;
+    transition: font-size 0.5s, background 0.3s;
+}
