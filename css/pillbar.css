@@ -69,15 +69,15 @@
     outline: 0;
 }
 #pillbar-settings.ripple{
-  background-position: center;
+  	background-position: center;
 }
 #pillbar-settings.ripple:hover{
-  background: #fff radial-gradient(circle, transparent 1%, #fff 1%) center/15000%;
+  	background: #fff radial-gradient(circle, transparent 1%, #fff 1%) center/15000%;
 }
 #pillbar-settings.ripple:active{
-  background-color: #bfbfbf;
-  background-size: 100%;
-  transition: background 0s;
+ 	background-color: #bfbfbf;
+ 	background-size: 100%;
+  	transition: background 0s;
 }
 
 /*For the collapse button*/
