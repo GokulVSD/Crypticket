@@ -82,3 +82,28 @@
 .sidebar-nav li a i.sb3:before{
   margin-left: -20px;
 }
+
+.sidebar-nav li a.last-sidebar i:before{
+  position: absolute;
+  bottom: 25px;
+  width: 50px;
+  height: 50px;
+  margin-left: -38px;
+}
+
+.sidebar-nav li a span{
+  font-size: 20pt;
+  padding-left: 25px;
+}
+
+.sidebar-nav li a.first-sidebar span{
+  padding-left: 17px;
+}
+
+.sidebar-nav li a.last-sidebar span{
+  position: absolute;
+  bottom: 52px;
+  left: 70px;
+  padding-left: 0;
+  height: 50px;
+}
