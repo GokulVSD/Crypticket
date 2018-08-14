@@ -23,3 +23,33 @@
   -o-transition: color 0.5s ease;
   transition: color 0.5s ease;
 }
+
+.sidebar-nav li a.first-sidebar{
+  height: 25vh;
+}
+
+.sidebar-nav li a.last-sidebar{
+  height: 21vh;
+  position: relative;
+}
+
+.sidebar-nav li a:hover{
+  text-decoration: none;
+  color: #ff5722;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-nav li a:active, .sidebar-nav li a:focus{
+  text-decoration: none;
+}
+
+.sidebar-nav li a img{
+  width: 25%;
+  margin-left: -10px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
