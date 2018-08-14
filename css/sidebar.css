@@ -1,0 +1,25 @@
+.sidebar-nav{
+  position: absolute;
+  top: 0;
+  width: 250px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-nav li{
+  text-indent: 20px;
+  line-height: 40px;
+}
+
+.sidebar-nav li a{
+  display: block;
+  text-decoration: none;
+  color: #6f6f6f;
+  height: 18vh;
+  line-height: 6.5em;
+  -webkit-transition: color 0.5s ease;
+  -moz-transition: color 0.5s ease;
+  -o-transition: color 0.5s ease;
+  transition: color 0.5s ease;
+}
