@@ -53,3 +53,32 @@
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
 }
+
+.sidebar-nav li a:hover img{
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+
+.sidebar-nav li a i{
+  width: 20%;
+  margin-left: -5px;
+}
+
+.sidebar-nav li a i:before{
+  -webkit-transition: font-size 0.5s ease;
+  -moz-transition: font-size 0.5s ease;
+  -o-transition: font-size 0.5s ease;
+  transition: font-size 0.5s ease;
+}
+
+.sidebar-nav li a i.sb1:before{
+  margin-left: -21px;
+}
+
+.sidebar-nav li a i.sb2:before{
+  margin-left: -15px;
+}
+
+.sidebar-nav li a i.sb3:before{
+  margin-left: -20px;
+}
