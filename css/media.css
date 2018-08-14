@@ -16,4 +16,30 @@
   #wrapper.toggled .sidebar-nav:hover li a img{
     width: 25%;
   }
+
+  #sidebar-wrapper:hover .sidebar-nav li a i:before{
+    font-size: 55px;
+  }
+
+  #wrapper.toggled #sidebar-wrapper:hover .sidebar-nav li a i:before{
+    font-size: 48px;
+  }
+
+  .pill-bar:hover{
+    height: 88px;
+    line-height: 86px;
+    box-shadow: 0 10px 30px rgba(17, 17, 17, 0.07), 0 6px 12px rgba(17, 17, 17, 0.07);
+  }
+
+  .pill-bar:hover #sidebarCollapse.active span{
+    margin: 12px auto;
+  }
+
+  .pill-bar{
+    width: 80%;
+  }
+  
+  .pill-bar:hover #pillbar-settings{
+    font-size: 30px;
+  }
 }
