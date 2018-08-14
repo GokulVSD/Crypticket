@@ -10,3 +10,33 @@
 	margin-top: 30px;
 	overflow-x: hidden;
 }
+
+@media (min-width: 1200px){
+	.container.fragment-container{
+		max-width: 815px;
+	}
+}
+
+@media (max-width: 1200px){
+	.container.fragment-container{
+		max-width: 815px;
+	}
+}
+
+@media (max-width: 992px){
+	.container.fragment-container{
+		max-width: 815px;
+	}
+}
+
+@media (max-width: 768px){
+	.container.fragment-container{
+		max-width: 99%;
+	}
+}
+
+@media (max-width: 576px){
+	.container.fragment-container{
+		max-width: 99%;
+	}
+}
