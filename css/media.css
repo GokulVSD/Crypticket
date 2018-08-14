@@ -1,0 +1,19 @@
+@media(min-width:1010px) {
+
+  #sidebar-wrapper{
+    width: 80px;
+    overflow-x: hidden;
+  }
+
+  #sidebar-wrapper:hover{
+    width: 90px;
+  }
+
+  .sidebar-nav:hover li a img{
+    width: 29%;
+  }
+
+  #wrapper.toggled .sidebar-nav:hover li a img{
+    width: 25%;
+  }
+}
