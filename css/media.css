@@ -26,6 +26,7 @@
   }
 
   .pill-bar:hover{
+    border-radius: 0;
     height: 88px;
     line-height: 86px;
     box-shadow: 0 10px 30px rgba(17, 17, 17, 0.07), 0 6px 12px rgba(17, 17, 17, 0.07);
@@ -37,6 +38,7 @@
 
   .pill-bar{
     width: 80%;
+    border-radius: 100px;
   }
   
   .pill-bar:hover #pillbar-settings{
