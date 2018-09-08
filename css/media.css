@@ -9,19 +9,19 @@
     width: 90px;
   }
 
-  .sidebar-nav:hover li a img{
+  .sidebar-nav:hover li div img{
     width: 29%;
   }
 
-  #wrapper.toggled .sidebar-nav:hover li a img{
+  #wrapper.toggled .sidebar-nav:hover li div img{
     width: 25%;
   }
 
-  #sidebar-wrapper:hover .sidebar-nav li a i:before{
+  #sidebar-wrapper:hover .sidebar-nav li div i:before{
     font-size: 55px;
   }
 
-  #wrapper.toggled #sidebar-wrapper:hover .sidebar-nav li a i:before{
+  #wrapper.toggled #sidebar-wrapper:hover .sidebar-nav li div i:before{
     font-size: 48px;
   }
 

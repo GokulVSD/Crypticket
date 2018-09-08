@@ -12,7 +12,7 @@
   line-height: 40px;
 }
 
-.sidebar-nav li a{
+.sidebar-nav li div{
   display: block;
   text-decoration: none;
   color: #6f6f6f;
@@ -24,26 +24,26 @@
   transition: color 0.5s ease;
 }
 
-.sidebar-nav li a.first-sidebar{
+.sidebar-nav li div.first-sidebar{
   height: 25vh;
 }
 
-.sidebar-nav li a.last-sidebar{
+.sidebar-nav li div.last-sidebar{
   height: 21vh;
   position: relative;
 }
 
-.sidebar-nav li a:hover{
+.sidebar-nav li div:hover{
   text-decoration: none;
   color: #ff5722;
   background: rgba(255, 255, 255, 0.2);
 }
 
-.sidebar-nav li a:active, .sidebar-nav li a:focus{
+.sidebar-nav li div:active, .sidebar-nav li div:focus{
   text-decoration: none;
 }
 
-.sidebar-nav li a img{
+.sidebar-nav li div img{
   width: 25%;
   margin-left: -10px;
   -webkit-transition: all 0.5s ease;
@@ -54,36 +54,36 @@
   filter: grayscale(100%);
 }
 
-.sidebar-nav li a:hover img{
+.sidebar-nav li div:hover img{
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
 }
 
-.sidebar-nav li a i{
+.sidebar-nav li div i{
   width: 20%;
   margin-left: -5px;
 }
 
-.sidebar-nav li a i:before{
+.sidebar-nav li div i:before{
   -webkit-transition: font-size 0.5s ease;
   -moz-transition: font-size 0.5s ease;
   -o-transition: font-size 0.5s ease;
   transition: font-size 0.5s ease;
 }
 
-.sidebar-nav li a i.sb1:before{
+.sidebar-nav li div i.sb1:before{
   margin-left: -21px;
 }
 
-.sidebar-nav li a i.sb2:before{
+.sidebar-nav li div i.sb2:before{
   margin-left: -15px;
 }
 
-.sidebar-nav li a i.sb3:before{
+.sidebar-nav li div i.sb3:before{
   margin-left: -20px;
 }
 
-.sidebar-nav li a.last-sidebar i:before{
+.sidebar-nav li div.last-sidebar i:before{
   position: absolute;
   bottom: 25px;
   width: 50px;
@@ -91,16 +91,16 @@
   margin-left: -38px;
 }
 
-.sidebar-nav li a span{
+.sidebar-nav li div span{
   font-size: 20pt;
   padding-left: 25px;
 }
 
-.sidebar-nav li a.first-sidebar span{
+.sidebar-nav li div.first-sidebar span{
   padding-left: 17px;
 }
 
-.sidebar-nav li a.last-sidebar span{
+.sidebar-nav li div.last-sidebar span{
   position: absolute;
   bottom: 52px;
   left: 70px;
