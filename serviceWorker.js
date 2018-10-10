@@ -1,27 +1,27 @@
 
 var CACHE = 'cryptic-cache';
 var precacheFiles = [
-	'/',
-    '/index.html',
-	'/assets/logo.png',
-	'/assets/sidebar-logo.png',
-	'/css/containers.css',
-	'/css/structure.css',
-	'/css/media.css',
-	'/css/sidebar.css',
-	'/css/pillbar.css',
-	'/css/productreg.ttf',
-	'/css/productbold.ttf',
-	'/icons/css/all.css',
-	'/icons/webfonts/fa-brands-400.ttf',
-	'/icons/webfonts/fa-regular-400.ttf',
-	'/icons/webfonts/fa-solid-900.ttf',
-	'/registerWorker.js',
-	'/scripts/sidebar.js',
-	'/vendor/bootstrap/css/bootstrap.min.css',
-	'/vendor/bootstrap/js/bootstrap.bundle.min.js',
-	'/vendor/jquery/jquery.min.js',
-	'/manifest.json'
+	'./',
+    './index.html',
+	'./assets/logo.png',
+	'./assets/sidebar-logo.png',
+	'./css/containers.css',
+	'./css/structure.css',
+	'./css/media.css',
+	'./css/sidebar.css',
+	'./css/pillbar.css',
+	'./css/productreg.ttf',
+	'./css/productbold.ttf',
+	'./icons/css/all.css',
+	'./icons/webfonts/fa-brands-400.ttf',
+	'./icons/webfonts/fa-regular-400.ttf',
+	'./icons/webfonts/fa-solid-900.ttf',
+	'./registerWorker.js',
+	'./scripts/sidebar.js',
+	'./vendor/bootstrap/css/bootstrap.min.css',
+	'./vendor/bootstrap/js/bootstrap.bundle.min.js',
+	'./vendor/jquery/jquery.min.js',
+	'./manifest.json'
     ];
 
 //Install stage sets up the cache-array to configure pre-cache content
