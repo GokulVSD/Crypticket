@@ -13,9 +13,12 @@ body{
   font-family: 'productreg';
 }
 
+a{
+  text-decoration: none !important;
+}
+
 #wrapper{
   padding-left: 0;
-  -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
@@ -34,7 +37,6 @@ body{
   margin-left: -250px;
   overflow-y: auto;
   background: white;
-  -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;

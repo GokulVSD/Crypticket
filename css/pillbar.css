@@ -9,7 +9,6 @@
 	top: 10px;
 	margin: 0 auto;
 	text-align: center;
-	-webkit-transition: border-radius 0.4s ease-out, box-shadow 0.5s, width 0.5s, height 0.5s, line-height 0.5s, transform 0.5s;
     -moz-transition: border-radius 0.4s ease-out, box-shadow 0.5s, width 0.5s, height 0.5s, line-height 0.5s, transform 0.5s;
     -o-transition: border-radius 0.4s ease-out, box-shadow 0.5s, width 0.5s, height 0.5s, line-height 0.5s, transform 0.5s;
     transition:  border-radius 0.4s ease-out, box-shadow 0.5s, width 0.5s, height 0.5s, line-height 0.5s, transform 0.5s;
@@ -58,7 +57,6 @@
     color: #7f7f7f;
     border-radius: 100%;
     cursor: pointer;
-    -webkit-transition: font-size 0.5s, background 0.3s;
     -moz-transition: font-size 0.5s, background 0.3s;
     -o-transition: font-size 0.5s, background 0.3s;
     transition: font-size 0.5s, background 0.3s;
