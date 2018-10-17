@@ -1,4 +1,4 @@
-@media(min-width:1010px) {
+@media(min-width:980px) {
 
   #sidebar-wrapper{
     width: 80px;
@@ -37,7 +37,6 @@
   }
 
   .pill-bar{
-    width: 80%;
     border-radius: 100px;
   }
   

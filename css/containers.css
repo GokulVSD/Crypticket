@@ -17,16 +17,21 @@
 	}
 }
 
-@media (max-width: 992px){
+@media (min-width: 992px){
 	.container.fragment-container{
 		max-width: 815px;
 	}
 }
 
-@media (max-width: 768px){
+@media (min-width: 768px){
 	.container.fragment-container{
-		max-width: 99%;
-		border-radius: 0;
+		max-width: 815px;
+	}
+}
+
+@media (min-width: 576px){
+	.container.fragment-container{
+		max-width: 815px;
 	}
 }
 
