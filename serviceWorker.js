@@ -18,9 +18,12 @@ var precacheFiles = [
 	'./icons/webfonts/fa-solid-900.ttf',
 	'./registerWorker.js',
 	'./scripts/sidebar.js',
+	'./scripts/ticket.js',
 	'./vendor/bootstrap/css/bootstrap.min.css',
 	'./vendor/bootstrap/js/bootstrap.bundle.min.js',
 	'./vendor/jquery/jquery.min.js',
+	'./vendor/react/react.js',
+	'./vendor/react/react-dom.js',
 	'./manifest.json'
     ];
 
