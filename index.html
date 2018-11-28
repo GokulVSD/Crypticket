@@ -43,14 +43,14 @@
                 <li>
                     <a href="https://gokulvsd.github.io/Crypticket"><div class="first-sidebar"><img src="assets/sidebar-logo.png"><span class="align-middle">Crypticket</span></div></a>
                 </li>
-                <li>
-                    <div><i class="align-middle sb1 fas fa-ticket-alt fa-3x"></i><span class="align-middle">Tickets</span></div>
+                <li onClick="viewTicketsPg()">
+                    <div id="tickets-pg-button" class="toggle-engaged"><i class="align-middle sb1 fas fa-ticket-alt fa-3x"></i><span class="align-middle">Tickets</span></div>
                 </li>
-                <li>
-                    <div><i class="align-middle sb2 far fa-calendar fa-3x"></i><span class="align-middle">Create</span></div>
+                <li onClick="viewCreatePg()">
+                    <div id="create-pg-button"><i class="align-middle sb2 far fa-calendar fa-3x"></i><span class="align-middle">Create</span></div>
                 </li>
-                <li>
-                    <div><i class="align-middle sb3 fas fa-key fa-3x"></i><span class="align-middle">Verify</span></div>
+                <li onclick="viewVerifyPg()">
+                    <div id="verify-pg-button"><i class="align-middle sb3 fas fa-key fa-3x"></i><span class="align-middle">Verify</span></div>
                 </li>
                 <li>
                     <a href="https://github.com/GokulVSD/Crypticket"><div class="last-sidebar" ><i class="fab fa-github fa-3x"></i><span>Github</span></div></a>
@@ -76,7 +76,10 @@
         		<!-- /pill-bar -->
 
                 <div class="container fragment-container">
-                	<!-- Container for React -->
+                    <!-- Containers for React -->
+                    <div id="tickets-pg">Tickets</div>
+                    <div id="create-pg" style="display: none;">Create</div>
+                    <div id="verify-pg" style="display: none;">Verify</div>
                 </div>
 
             </div>
@@ -95,6 +98,9 @@
 
     <script src="vendor/react/react.js"></script>
     <script src="vendor/react/react-dom.js"></script>
+
+    <script src="vendor/redux/redux.js"></script>
+    <script src="vendor/redux/react-redux.js"></script>
 
     <script src="scripts/ticket.js"></script>
 

@@ -23,7 +23,9 @@ var precacheFiles = [
 	'./vendor/bootstrap/js/bootstrap.bundle.min.js',
 	'./vendor/jquery/jquery.min.js',
 	'./vendor/react/react.js',
-	'./vendor/react/react-dom.js',
+  './vendor/react/react-dom.js',
+  './vendor/redux/redux.js',
+  './vendor/redux/react-redux.js',
 	'./manifest.json'
     ];
 

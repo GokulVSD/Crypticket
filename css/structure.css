@@ -8,6 +8,14 @@
     src: url('productbold.ttf');
 }
 
+::-webkit-scrollbar { 
+  display: none; 
+}
+
+html{
+  background: rgb(247, 247, 247);
+}
+
 body{
   overflow-x: hidden;
   font-family: 'productreg';
@@ -60,5 +68,4 @@ a{
 
 .container-fluid{
 	padding: 2px;
-	background: rgb(247, 247, 247);
 }

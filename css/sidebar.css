@@ -23,6 +23,10 @@
   transition: color 0.5s ease;
 }
 
+.toggle-engaged{
+  color: #ff5722 !important;
+}
+
 .sidebar-nav li div.first-sidebar{
   height: 25vh;
 }
