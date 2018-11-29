@@ -29,6 +29,7 @@
     <link href="css/sidebar.css" rel="stylesheet">
     <link href="css/pillbar.css" rel="stylesheet">
     <link href="css/containers.css" rel="stylesheet">
+    <link href="css/tabs.css" rel="stylesheet">
     <link href="css/media.css" rel="stylesheet">
 
 </head>
@@ -77,8 +78,22 @@
 
                 <div class="container fragment-container">
                     <!-- Containers for React -->
-                    <div id="tickets-pg">Tickets</div>
-                    <div id="create-pg" style="display: none;">Create</div>
+                    <div id="tickets-pg">
+                        <div class="tabs">
+                            <span onclick="viewTicketsTab()">Tickets</span>
+                            <span onclick="viewPasswordsTab()">Passwords</span>
+                        </div>
+                        <div id="tickets-tb"></div>
+                        <div id="passwords-tb" style="display: none;"></div>
+                    </div>
+                    <div id="create-pg" style="display: none;">
+                        <div class="ticket">
+                            <div class="tabs">
+                                <span onclick="viewTicketsTab()">Events</span>
+                                <span onclick="viewPasswordsTab()">Passwords</span>
+                            </div>
+                        </div>
+                    </div>
                     <div id="verify-pg" style="display: none;">Verify</div>
                 </div>
 
@@ -95,6 +110,8 @@
 
     <!-- Menu Toggle Script -->
     <script type="text/javascript" src="scripts/sidebar.js"></script>
+
+    <script type="text/javascript" src="scripts/tabs.js"></script>
 
     <script src="vendor/react/react.js"></script>
     <script src="vendor/react/react-dom.js"></script>

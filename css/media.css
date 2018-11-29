@@ -43,4 +43,8 @@
   .pill-bar:hover #pillbar-settings{
     font-size: 30px;
   }
+
+  .tabs{
+    width: 50%;
+  }
 }

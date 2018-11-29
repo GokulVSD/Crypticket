@@ -3,7 +3,7 @@
   "name": "Crypticket",
   "icons": [
     {
-      "src": "/assets/logo.png",
+      "src": "Crypticket/assets/logo.png",
       "sizes": "512x512",
       "type": "image/png"
     }

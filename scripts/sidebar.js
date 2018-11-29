@@ -1,32 +1,92 @@
-$('#sidebarCollapse').click(function() {
+$('#sidebarCollapse').click(function () {
 
     $("#wrapper").toggleClass("toggled");
     $(this).toggleClass("active");
 });
 
-function viewTicketsPg(){
-    $("#create-pg").css("display", "none");
+function viewTicketsPg() {
+
+    if ($("#create-pg").is(":visible")) {
+        $("#create-pg").animate({ "opacity": 0 },100, function () {
+            $("#create-pg").slideUp(250);
+        });
+    }
+
+    if ($("#verify-pg").is(":visible")) {
+        $("#verify-pg").animate({ "opacity": 0 },100, function () {
+            $("#verify-pg").slideUp(250);
+        });
+    }
+
+    if (!$("#tickets-pg").is(":visible")) {
+        $("#tickets-pg").css({
+            "display": "none",
+            "opacity": 0
+        });
+        $("#tickets-pg").slideDown(250,function() {
+            $(this).animate({"opacity": 1},100);
+        });
+    }
+
     $("#create-pg-button").removeClass("toggle-engaged");
-    $("#verify-pg").css("display", "none");
     $("#verify-pg-button").removeClass("toggle-engaged");
-    $("#tickets-pg").css("display", "block");
     $("#tickets-pg-button").addClass("toggle-engaged");
 }
 
-function viewCreatePg(){
-    $("#tickets-pg").css("display", "none");
+function viewCreatePg() {
+
+    if ($("#tickets-pg").is(":visible")) {
+        $("#tickets-pg").animate({ "opacity": 0 },100, function () {
+            $("#tickets-pg").slideUp(250);
+        });
+    }
+
+    if ($("#verify-pg").is(":visible")) {
+        $("#verify-pg").animate({ "opacity": 0 },100, function () {
+            $("#verify-pg").slideUp(250);
+        });
+    }
+
+    if (!$("#create-pg").is(":visible")) {
+        $("#create-pg").css({
+            "display": "none",
+            "opacity": 0
+        });
+        $("#create-pg").slideDown(250,function() {
+            $(this).animate({"opacity": 1},100);
+        });
+    }
+
     $("#tickets-pg-button").removeClass("toggle-engaged");
-    $("#verify-pg").css("display", "none");
     $("#verify-pg-button").removeClass("toggle-engaged");
-    $("#create-pg").css("display", "block");
     $("#create-pg-button").addClass("toggle-engaged");
 }
 
-function viewVerifyPg(){
-    $("#tickets-pg").css("display", "none");
+function viewVerifyPg() {
+
+    if ($("#tickets-pg").is(":visible")) {
+        $("#tickets-pg").animate({ "opacity": 0 },100, function () {
+            $("#tickets-pg").slideUp(250);
+        });
+    }
+
+    if ($("#create-pg").is(":visible")) {
+        $("#create-pg").animate({ "opacity": 0 },100, function () {
+            $("#create-pg").slideUp(250);
+        });
+    }
+
+    if (!$("#verify-pg").is(":visible")) {
+        $("#verify-pg").css({
+            "display": "none",
+            "opacity": 0
+        });
+        $("#verify-pg").slideDown(250,function() {
+            $(this).animate({"opacity": 1},100);
+        });
+    }
+
     $("#tickets-pg-button").removeClass("toggle-engaged");
-    $("#create-pg").css("display", "none");
     $("#create-pg-button").removeClass("toggle-engaged");
-    $("#verify-pg").css("display", "block");
     $("#verify-pg-button").addClass("toggle-engaged");
 }

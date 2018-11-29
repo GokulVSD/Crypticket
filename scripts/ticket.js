@@ -25,7 +25,7 @@ class Ticket extends React.Component {
   }
 }
 
-document.querySelectorAll("#tickets-pg").forEach(fragmentContainer => {
+document.querySelectorAll("#tickets-tb").forEach(fragmentContainer => {
     ReactDOM.render(
         e(Ticket, null, null),
         fragmentContainer
