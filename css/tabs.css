@@ -41,3 +41,16 @@
 .select-last-child:after {
     margin-left: 50%;
 }
+
+/* For header titles */
+.head-title{
+    font-size: 15px;
+    font-family: productbold;
+    color: #666;
+    display: inline-block;
+    margin-top: 10px;
+    border: 2px solid #888;
+    padding-left: 7px;
+    padding-right: 7px; 
+    border-radius: 20px;
+}
