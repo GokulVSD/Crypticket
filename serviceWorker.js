@@ -11,6 +11,7 @@ var precacheFiles = [
 	'./css/sidebar.css',
   './css/pillbar.css',
   './css/tabs.css',
+  './css/components.css',
 	'./css/productreg.ttf',
 	'./css/productbold.ttf',
 	'./icons/css/all.css',
@@ -26,8 +27,6 @@ var precacheFiles = [
 	'./vendor/jquery/jquery.min.js',
 	'./vendor/react/react.js',
   './vendor/react/react-dom.js',
-  //'./vendor/redux/redux.js',
-  //'./vendor/redux/react-redux.js',
 	'./manifest.json'
     ];
 

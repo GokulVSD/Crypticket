@@ -47,4 +47,8 @@
   .tabs{
     width: 50%;
   }
+
+  #ticket-add-field{
+    width: 20%;
+  }
 }

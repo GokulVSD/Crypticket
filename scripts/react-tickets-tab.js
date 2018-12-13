@@ -3,10 +3,10 @@
 const e = React.createElement;
 
 let tickets = [
-    { value: ""},
-    { value: ""},
-    { value: ""}
-  ];
+  { value: "ticket1" },
+  { value: "ticket2" },
+  { value: "ticket3" }
+];
 
 class TicketsTab extends React.Component {
   constructor(props) {
@@ -15,19 +15,34 @@ class TicketsTab extends React.Component {
 
   render() {
 
-    return tickets.map(ticket => {
+    return e("div", null,
+
+      e("input",
+        { key: "ticket-input", type: "text", placeholder: "Add Ticket", id: "ticket-add-field" },
+        null),
+
+      e("div",
+        { key: "ticket-delete", id: "ticket-del-btn" },
+        e("i",
+          { className: "far fa-trash-alt" },
+          null)
+      ),
+
+      tickets.map(ticket => {
         return e(
-            'div',
-            { className : "ticket" },
-            ticket.value + "tickets"
+          'div',
+          { key: ticket.value, className: "ticket" },
+          ticket.value
         );
-    });
+      })
+
+    );
   }
 }
 
-$("#tickets-tb").each(function(i,ComponentContainer) {
-    ReactDOM.render(
-        e(TicketsTab, null, null),
-        ComponentContainer
-    );
+$("#tickets-tb").each(function (i, ComponentContainer) {
+  ReactDOM.render(
+    e(TicketsTab, null, null),
+    ComponentContainer
+  );
 });

@@ -1,5 +1,11 @@
 'use strict';
 
+let passwords = [
+    { value: "password1"},
+    { value: "password2"},
+    { value: "password3"}
+  ];
+
 class PasswordsTab extends React.Component {
   constructor(props) {
     super(props);
@@ -7,11 +13,11 @@ class PasswordsTab extends React.Component {
 
   render() {
 
-    return tickets.map(ticket => {
+    return passwords.map(password => {
         return e(
             'div',
-            { className : "ticket" },
-            ticket.value + "passwords"
+            { key: password.value, className : "ticket" },
+            password.value
         );
     });
   }
