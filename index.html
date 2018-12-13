@@ -4,7 +4,7 @@
 <head>
 
     <title>Crypticket</title>
-
+    <!-- Remove for browser caching -->
     <!-- <script src="registerWorker.js"></script> -->
 
     <!-- tab favicon -->
@@ -42,10 +42,13 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li>
-                    <a href="https://gokulvsd.github.io/Crypticket"><div class="first-sidebar"><img src="assets/sidebar-logo.png"><span class="align-middle">Crypticket</span></div></a>
+                    <a href="https://gokulvsd.github.io/Crypticket">
+                        <div class="first-sidebar"><img src="assets/sidebar-logo.png"><span class="align-middle">Crypticket</span></div>
+                    </a>
                 </li>
                 <li onClick="viewTicketsPg()">
-                    <div id="tickets-pg-button" class="toggle-engaged"><i class="align-middle sb1 fas fa-ticket-alt fa-3x"></i><span class="align-middle">Tickets</span></div>
+                    <div id="tickets-pg-button" class="toggle-engaged"><i class="align-middle sb1 fas fa-ticket-alt fa-3x"></i><span
+                            class="align-middle">Tickets</span></div>
                 </li>
                 <li onClick="viewCreatePg()">
                     <div id="create-pg-button"><i class="align-middle sb2 far fa-calendar fa-3x"></i><span class="align-middle">Create</span></div>
@@ -54,7 +57,9 @@
                     <div id="verify-pg-button"><i class="align-middle sb3 fas fa-key fa-3x"></i><span class="align-middle">Verify</span></div>
                 </li>
                 <li>
-                    <a href="https://github.com/GokulVSD/Crypticket"><div class="last-sidebar" ><i class="fab fa-github fa-3x"></i><span>Github</span></div></a>
+                    <a href="https://github.com/GokulVSD/Crypticket">
+                        <div class="last-sidebar"><i class="fab fa-github fa-3x"></i><span>Github</span></div>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -62,19 +67,19 @@
 
         <!-- Page Content -->
         <div id="page-content-wrapper">
-        	<div class="container-fluid">
+            <div class="container-fluid">
 
-        		<!-- pill-bar -->
-        		<div class="pill-bar">
-        			<button type="button" id="sidebarCollapse" class="sidebar-toggle active">
-        				<span></span>
-        				<span></span>
-        				<span></span>
-        			</button>
-        			<img class="img-pill-bar" src="assets/logo.png">
-        			<button type="button" id="pillbar-settings" class="ripple"><i class="fas fa-ellipsis-v"></i></button>
-        		</div>
-        		<!-- /pill-bar -->
+                <!-- pill-bar -->
+                <div class="pill-bar">
+                    <button type="button" id="sidebarCollapse" class="sidebar-toggle active">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <img class="img-pill-bar" src="assets/logo.png">
+                    <button type="button" id="pillbar-settings" class="ripple"><i class="fas fa-ellipsis-v"></i></button>
+                </div>
+                <!-- /pill-bar -->
 
                 <div class="container fragment-container">
                     <!-- Containers for React -->
@@ -83,12 +88,14 @@
                             <span onclick="viewTicketsTab()">Tickets</span>
                             <span onclick="viewPasswordsTab()">Passwords</span>
                         </div>
-                        <div id="tickets-tb"></div>
-                        <div id="passwords-tb" style="display: none;"></div>
+                        <div id="ticket-tab-slider">
+                            <div id="tickets-tb"></div>
+                            <div id="passwords-tb"></div>
+                        </div>
                     </div>
                     <div id="create-pg" style="display: none;">
                         <div class="head-title">New Generator</div>
-                        <div class="ticket"> <!--change class later, REMEMBER TO PULL-->
+                        <div class="ticket">
                             <div class="tabs">
                                 <span onclick="viewTicketsTab()">Event</span>
                                 <span onclick="viewPasswordsTab()">Password</span>
@@ -97,7 +104,8 @@
                     </div>
                     <div id="verify-pg" style="display: none;">
                         <div class="head-title">Event Verification</div>
-                        <div class="ticket"></div> <!--change class later-->
+                        <div class="ticket"></div>
+                        <!--change class later-->
                     </div>
                 </div>
 
@@ -120,10 +128,12 @@
     <script src="vendor/react/react.js"></script>
     <script src="vendor/react/react-dom.js"></script>
 
-    <script src="vendor/redux/redux.js"></script>
-    <script src="vendor/redux/react-redux.js"></script>
+    <!-- Incase we need Redux -->
+    <!-- <script src="vendor/redux/redux.js"></script> -->
+    <!-- <script src="vendor/redux/react-redux.js"></script> -->
 
-    <script src="scripts/ticket.js"></script>
+    <script src="scripts/react-tickets-tab.js"></script>
+    <script src="scripts/react-passwords-tab.js"></script>
 
 </body>
 

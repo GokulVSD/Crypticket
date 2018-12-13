@@ -68,3 +68,18 @@
 #wrapper.toggled #sidebar-wrapper{
 	border-radius: 0;
 }
+
+#ticket-tab-slider{
+	width: 200%;
+	left: -100%;
+}
+
+#tickets-tb{
+	display: inline-block;
+	width: 50%;
+}
+
+#passwords-tb{
+	float: right;
+	width: 50%;
+}

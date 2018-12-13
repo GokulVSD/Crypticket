@@ -20,14 +20,14 @@ var precacheFiles = [
 	'./registerWorker.js',
   './scripts/sidebar.js',
   './scripts/tabs.js',
-	'./scripts/ticket.js',
+	'./scripts/react-tickets-tab.js',
 	'./vendor/bootstrap/css/bootstrap.min.css',
 	'./vendor/bootstrap/js/bootstrap.bundle.min.js',
 	'./vendor/jquery/jquery.min.js',
 	'./vendor/react/react.js',
   './vendor/react/react-dom.js',
-  './vendor/redux/redux.js',
-  './vendor/redux/react-redux.js',
+  //'./vendor/redux/redux.js',
+  //'./vendor/redux/react-redux.js',
 	'./manifest.json'
     ];
 

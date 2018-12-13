@@ -1,8 +1,11 @@
+
 function viewTicketsTab(){
     if ($(".tabs span").hasClass("select-last-child")) {
         $(".tabs span").removeClass("select-last-child");
         $(".tabs span:last-child").css("color","#999");
         $(".tabs span:first-child").css("color","#555");
+
+        jQuery("#ticket-tab-slider").animate({"margin-left": "0"});
     }
 }
 
@@ -11,5 +14,7 @@ function viewPasswordsTab() {
         $(".tabs span").addClass("select-last-child");
         $(".tabs span:first-child").css("color","#999");
         $(".tabs span:last-child").css("color","#555");
+
+        jQuery("#ticket-tab-slider").animate({"margin-left": "-100%"});
     }
 }

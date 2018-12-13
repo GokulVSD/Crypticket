@@ -8,7 +8,7 @@ let tickets = [
     { value: ""}
   ];
 
-class Ticket extends React.Component {
+class TicketsTab extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -19,15 +19,15 @@ class Ticket extends React.Component {
         return e(
             'div',
             { className : "ticket" },
-            ticket.value
+            ticket.value + "tickets"
         );
     });
   }
 }
 
-document.querySelectorAll("#tickets-tb").forEach(fragmentContainer => {
+$("#tickets-tb").each(function(i,ComponentContainer) {
     ReactDOM.render(
-        e(Ticket, null, null),
-        fragmentContainer
+        e(TicketsTab, null, null),
+        ComponentContainer
     );
 });
