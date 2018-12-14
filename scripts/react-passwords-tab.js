@@ -1,5 +1,7 @@
 'use strict';
 
+const e = React.createElement;
+
 let passwords = [
     { value: "password1"},
     { value: "password2"},
