@@ -6,10 +6,10 @@ import Copier from "./react-copier.js";
 const e = React.createElement;
 
 let tickets = [
-  // { name: "Event Uno", secret: "001|Y|BNhjb45JHDsdfsfhdgF", date: "Sep 25, 2018", time: "9:30 AM UTC", link: "www.google.com", x: 45.345564, y: 112.345346 },
-  // { name: "Event Dos", secret: "002|Y|4dfgNhjb45JHfgDF", date: "Oct 25, 2018", time: "11:30 PM UTC", x: 45.345564, y: 112.345346 },
-  // { name: "Event Tres", secret: "001|Y|5Nhjb45JHDsdfsfhdgF", date: "Nov 25, 2018", time: "9:30 AM UTC", link: "www.google.com" },
-  // { name: "Event Quatro", secret: "003|Y|2Ndfghhjb45gdJHDF", date: "Dec 25, 2018", time: "5:30 AM UTC" }
+  { name: "Event Uno", secret: "001|Y|BNhjb45JHDsdfsfhdgF", date: "Sep 25, 2018", time: "9:30 AM UTC", link: "www.google.com", x: 45.345564, y: 112.345346 },
+  { name: "Event Dos", secret: "002|Y|4dfgNhjb45JHfgDF", date: "Oct 25, 2018", time: "11:30 PM UTC", x: 45.345564, y: 112.345346 },
+  { name: "Event Tres", secret: "001|Y|5Nhjb45JHDsdfsfhdgF", date: "Nov 25, 2018", time: "9:30 AM UTC", link: "www.google.com" },
+  { name: "Event Quatro", secret: "003|Y|2Ndfghhjb45gdJHDF", date: "Dec 25, 2018", time: "5:30 AM UTC" }
 ];
 
 class TicketsTab extends React.Component {

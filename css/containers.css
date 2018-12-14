@@ -5,9 +5,10 @@
 .container.fragment-container{
 	box-shadow: 0 0 30px rgba(17, 17, 17, 0.04), 0 6px 12px rgba(17, 17, 17, 0.04);
 	border-radius: 30px;
-	padding: 0;
-	padding: 10px 0;
+	padding-top: 10px;
+	padding-bottom: 40px;
 	margin-top: 30px;
+	margin-bottom: 50px;
 	overflow-x: hidden;
 	transition: all 0.7s;
 	text-align: center;
@@ -77,17 +78,15 @@
 #tickets-tb{
 	display: inline-block;
 	width: 50%;
-	transition: height 0.3s ease;
 	height: 1px;
 }
 
 #passwords-tb{
 	float: right;
 	width: 50%;
-	transition: height 0.3s ease;
 	height: 1px;
 }
 
-#tickets-tb.current-tab, #passwords-tb.current-tab{
+/* #tickets-tb.current-tab, #passwords-tb.current-tab{
 	height: fit-content;
-}
+} */
