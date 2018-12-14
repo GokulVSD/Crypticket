@@ -77,9 +77,17 @@
 #tickets-tb{
 	display: inline-block;
 	width: 50%;
+	transition: height 0.3s ease;
+	height: 1px;
 }
 
 #passwords-tb{
 	float: right;
 	width: 50%;
+	transition: height 0.3s ease;
+	height: 1px;
+}
+
+#tickets-tb.current-tab, #passwords-tb.current-tab{
+	height: fit-content;
 }
