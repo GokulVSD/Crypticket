@@ -9,7 +9,7 @@
     border-radius: 20px;
     border: none;
     outline: none;
-    box-shadow: 0 0 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.12);
+    box-shadow: 0 0 3px rgba(0,0,0,0.32), 0 1px 2px rgba(0,0,0,0.32);
     width: 40%;
     cursor: pointer;
     height: 36px;
@@ -47,4 +47,16 @@
 #ticket-del-btn:hover{
     background: #ff3122;
     color: white;
+}
+
+#ticket-del-btn{
+    background-position: center;
+}
+#ticket-del-btn:hover{
+    background: #ff3122 radial-gradient(circle, transparent 1%, #ff3122 1%) center/15000%;
+}
+#ticket-del-btn:active{
+   background-color: white;
+   background-size: 100%;
+    transition: background 0s;
 }

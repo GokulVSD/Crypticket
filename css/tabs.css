@@ -20,6 +20,7 @@
     color: #999;
 }
 .tabs span:after {
+    cursor: default;
     display: block;
     content: '';
     height: 5px;
@@ -53,4 +54,5 @@
     padding-left: 7px;
     padding-right: 7px; 
     border-radius: 20px;
+    cursor: default;
 }

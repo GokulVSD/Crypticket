@@ -3,9 +3,9 @@
 const e = React.createElement;
 
 let tickets = [
-  { value: "ticket1" },
-  { value: "ticket2" },
-  { value: "ticket3" }
+  { name: "Event Uno", secret: "001|Y|BNhjb45JHDsdfsfhdgF", date: ""},
+  { name: "Event Dos", secret: "002|Y|4dfgNhjb45JHfgDF" },
+  { name: "Event Tres", secret: "003|Y|2Ndfghhjb45gdJHDF" }
 ];
 
 class TicketsTab extends React.Component {
@@ -18,11 +18,11 @@ class TicketsTab extends React.Component {
     return e("div", null,
 
       e("input",
-        { key: "ticket-input", type: "text", placeholder: "Add Ticket", id: "ticket-add-field" },
+        { type: "text", placeholder: "Add Ticket", id: "ticket-add-field" },
         null),
 
       e("div",
-        { key: "ticket-delete", id: "ticket-del-btn" },
+        { id: "ticket-del-btn" },
         e("i",
           { className: "far fa-trash-alt" },
           null)
@@ -31,8 +31,23 @@ class TicketsTab extends React.Component {
       tickets.map(ticket => {
         return e(
           'div',
-          { key: ticket.value, className: "ticket" },
-          ticket.value
+          { key: ticket.secret, className: "ticket" },
+
+          e("h1",
+            null,
+            ticket.name),
+
+          e("SecretCopier",
+          { secret: ticket.secret },
+          null),
+
+          e("span",
+          { className: "date"},
+          ticket.date),
+
+          e("span",
+          { className: "time"},
+          ticket.time),
         );
       })
 
