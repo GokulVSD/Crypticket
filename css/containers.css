@@ -75,18 +75,12 @@
 	left: -100%;
 }
 
-#tickets-tb{
+#tickets-tb-container{
 	display: inline-block;
 	width: 50%;
-	height: 1px;
 }
 
-#passwords-tb{
+#passwords-tb-container{
 	float: right;
 	width: 50%;
-	height: 1px;
 }
-
-/* #tickets-tb.current-tab, #passwords-tb.current-tab{
-	height: fit-content;
-} */

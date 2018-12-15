@@ -30,7 +30,7 @@
     <link href="css/pillbar.css" rel="stylesheet">
     <link href="css/containers.css" rel="stylesheet">
     <link href="css/tabs.css" rel="stylesheet">
-    <link href="css/components.css" rel="stylesheet" >
+    <link href="css/components.css" rel="stylesheet">
     <link href="css/media.css" rel="stylesheet">
 
 </head>
@@ -90,8 +90,14 @@
                             <span onclick="viewPasswordsTab()">Passwords</span>
                         </div>
                         <div id="ticket-tab-slider">
-                            <div id="tickets-tb" class="current-tab"></div>
-                            <div id="passwords-tb"></div>
+                            <div id="tickets-tb-container">
+                                <div style="height: 1px;"></div>
+                                <div id="tickets-tb"></div>
+                            </div>
+                            <div id="passwords-tb-container">
+                                <div style="height: 1px;"></div>
+                                <div id="passwords-tb"></div>
+                            </div>
                         </div>
                     </div>
                     <div id="create-pg" style="display: none;">
