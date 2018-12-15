@@ -1,19 +1,17 @@
 .pill-bar{
     z-index: 1001;
-    box-shadow: 0 0 3px rgba(0,0,0,0.08), 0 0 2px rgba(0,0,0,0.08);
+    box-shadow: 0 0 2px rgba(0,0,0,0.16);
 	background: white;
 	width: 99%;
-	height: 80px;
-	border-radius: 20px;
+	height: 70px;
+	border-radius: 25px;
 	position: sticky;
-	top: 10px;
+	top: 0;
 	margin: 0 auto;
 	text-align: center;
-    -moz-transition: border-radius 0.4s ease-out, box-shadow 0.5s, width 0.5s, height 0.5s, line-height 0.5s, transform 0.5s;
-    -o-transition: border-radius 0.4s ease-out, box-shadow 0.5s, width 0.5s, height 0.5s, line-height 0.5s, transform 0.5s;
     transition:  border-radius 0.4s ease-out, box-shadow 0.5s, width 0.5s, height 0.5s, line-height 0.5s, transform 0.5s;
 	max-width: 800px;
-	line-height: 80px;
+	line-height: 70px;
     overflow-x: hidden;
     overflow-y: hidden;
 }
@@ -28,7 +26,7 @@
 .sidebar-toggle{
 	position: absolute;
 	left: 15px;
-	top:17px;
+	top: 15px;
 	border: none;
 	width: 55px;
 	height: 60%;

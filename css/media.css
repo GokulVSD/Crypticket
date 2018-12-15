@@ -38,8 +38,19 @@
 
   .pill-bar{
     border-radius: 100px;
+    height: 80px;
+    line-height: 80px;
+  }
+
+  .sidebar-toggle{
+    top: 17px;
   }
   
+  .container.fragment-container{
+    padding-top: 10px;
+    margin-top: 20px;
+  }
+
   .pill-bar:hover #pillbar-settings{
     font-size: 30px;
   }

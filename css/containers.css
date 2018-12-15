@@ -2,12 +2,16 @@
 	background: white;
 }
 
+.container-fluid{
+	padding: 0;
+}
+
 .container.fragment-container{
 	box-shadow: 0 0 30px rgba(17, 17, 17, 0.04), 0 6px 12px rgba(17, 17, 17, 0.04);
 	border-radius: 30px;
-	padding-top: 10px;
+	padding-top: 85px;
 	padding-bottom: 40px;
-	margin-top: 30px;
+	margin-top: -80px;
 	margin-bottom: 50px;
 	overflow-x: hidden;
 	transition: all 0.7s;
@@ -40,7 +44,7 @@
 
 @media (max-width: 576px){
 	.container.fragment-container{
-		max-width: 99%;
+		max-width: 100%;
 		border-radius: 0;
 	}
 }
