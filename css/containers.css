@@ -42,6 +42,12 @@
 	}
 }
 
+@media (max-width: 980px){
+	.pill-bar{
+		max-width: 815px;
+	}
+}
+
 @media (max-width: 576px){
 	.container.fragment-container{
 		max-width: 100%;
