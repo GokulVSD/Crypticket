@@ -6,6 +6,7 @@ import Copier from "./react-copier.js";
 const e = React.createElement;
 
 class TicketsTab extends React.Component {
+
   constructor(props) {
     super(props);
 
@@ -22,14 +23,27 @@ class TicketsTab extends React.Component {
     };
   }
 
+  //Optimization
+  shouldComponentUpdate(nextProps, nextState) {
+
+    if (this.state.buffer != nextState.buffer && nextState.buffer != "") {
+      console.log("test");
+      return false;
+    }
+
+    return true;
+  }
+
   addTicket(key) {
 
     if (key.keyCode === 13) {
 
       var newCrypticket = this.state.buffer;
-      
+
       $("#ticket-add-field").val("").blur();
+
       //Do secret validation and evaluation here
+      if(newCrypticket == '') return;
 
       var newTicket = {
         name: "Temp Name",
@@ -38,7 +52,7 @@ class TicketsTab extends React.Component {
         time: "9:30 AM UTC",
         link: "www.google.com",
         x: 12.934634,
-        y: 77.611284 
+        y: 77.611284
       };
 
       var newTickets = this.state.tickets;

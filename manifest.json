@@ -11,6 +11,6 @@
   "start_url": "/Crypticket",
   "display": "standalone",
   "orientation": "portrait",
-  "theme_color": "white",
+  "theme_color": "#FFFFFF",
   "background_color": "white"
 }
