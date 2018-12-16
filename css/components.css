@@ -1,6 +1,3 @@
-#tickets-tb{
-    position: relative;
-}
 
 #ticket-add-field{
     margin-top: 5px;
@@ -9,7 +6,7 @@
     border-radius: 20px;
     border: none;
     outline: none;
-    box-shadow: 0 0 3px rgba(0,0,0,0.32), 0 1px 2px rgba(0,0,0,0.32);
+    box-shadow: 0 0 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.32);
     width: 40%;
     cursor: pointer;
     height: 36px;
@@ -30,7 +27,7 @@
     width: 60%;
 }
 
-#ticket-del-btn{
+.ticket-del-btn{
     margin-top: 5px;
     display: inline-block;
     position: absolute;
@@ -42,21 +39,16 @@
     font-size: 20px;
     padding: 4px 11px;
     border-radius: 50%;
+    background-position: center;
 }
 
-#ticket-del-btn:hover{
-    background: #ff3122;
+.ticket-del-btn:hover{
+    background: #ff3122 radial-gradient(circle, transparent 1%, #ff3122 1%) center/15000%;
     color: white;
 }
 
-#ticket-del-btn{
-    background-position: center;
-}
-#ticket-del-btn:hover{
-    background: #ff3122 radial-gradient(circle, transparent 1%, #ff3122 1%) center/15000%;
-}
-#ticket-del-btn:active{
+.ticket-del-btn:active{
    background-color: white;
    background-size: 100%;
-    transition: background 0s;
+   transition: background 0s;
 }

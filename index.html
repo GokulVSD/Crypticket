@@ -31,6 +31,7 @@
     <link href="css/containers.css" rel="stylesheet">
     <link href="css/tabs.css" rel="stylesheet">
     <link href="css/components.css" rel="stylesheet">
+    <link href="css/forms.css" rel="stylesheet">
     <link href="css/media.css" rel="stylesheet">
 
 </head>
@@ -107,7 +108,37 @@
                                 <span onclick="viewTicketsTab()">Event</span>
                                 <span onclick="viewPasswordsTab()">Password</span>
                             </div>
+                            <div id="create-tab-slider">
+                                <div id="event-creater-tb-container">
+                                    <div style="height: 1px;"></div>
+                                    <div id="event-creater-tb">
+                                        <input type="text" id="event-name" placeholder="Name">
+                                        <input type="password" id="event-password" placeholder="Password">
+                                        <span><input type="text" id="date" placeholder="Date"></span>
+                                        <span><input type="text" id="time" placeholder="Time"></span>
+                                        <div></div>
+                                        <div class="creator-btn">Optional</div>
+                                        <input type="text" id="url" placeholder="Website">
+                                        <div class="head-title">Coordinates</div>
+                                        <div></div>
+                                        <span><input type="text" id="x-coord" placeholder="X"></span>
+                                        <span><input type="text" id="y-coord" placeholder="Y"></span>
+                                        <div></div>
+                                        <div class="creator-btn">Create Ticket Generator</div>
+                                    </div>
+                                </div>
+                                <div id="password-creater-tb-container">
+                                    <div style="height: 1px;"></div>
+                                    <div id="password-creater-tb">
+                                        <input type="text" id="username" placeholder="Username">
+                                        <input type="password" id="global-password" placeholder="Global Password">
+                                        <div></div>
+                                        <div class="creator-btn">Create Password Generator</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        <div id="generators"></div>
                     </div>
                     <div id="verify-pg" style="display: none;">
                         <div class="head-title">Event Verification</div>
@@ -135,8 +166,9 @@
     <script src="vendor/react/react.js"></script>
     <script src="vendor/react/react-dom.js"></script>
 
-    <script type="module" src="scripts/react-tickets-tab.js"></script>
-    <script type="module" src="scripts/react-passwords-tab.js"></script>
+    <script type="module" src="react/tickets-tab.js"></script>
+    <script type="module" src="react/passwords-tab.js"></script>
+    <script type="module" src="react/generators.js"></script>
 
 </body>
 

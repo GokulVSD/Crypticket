@@ -1,0 +1,27 @@
+#event-name, #event-password, #url, #username, #global-password{
+    margin: 10px auto;
+    display: block;
+}
+
+.creator-btn{
+    margin-top: 5px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.32), 0 0 2px rgba(0,0,0,0.32);
+    color: #7f7f7f;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 15px;
+    background-position: center;
+}
+
+.creator-btn:hover{
+    background: #ff3122 radial-gradient(circle, transparent 1%, #ff3122 1%) center/15000%;
+    color: white;
+}
+
+.creator-btn:active{
+   background-color: white;
+   background-size: 100%;
+   transition: background 0s;
+}

@@ -1,7 +1,7 @@
 'use strict';
 
-import SecretCopier from "./react-secret-copier.js";
-import Copier from "./react-copier.js";
+import SecretCopier from "./secret-copier.js";
+import Copier from "./copier.js";
 
 const e = React.createElement;
 
@@ -10,11 +10,12 @@ class TicketsTab extends React.Component {
   constructor(props) {
     super(props);
 
+    //Do ticket processing here, retrieve from local storage and parse into the following format:
     let tickets = [
-      { name: "Event Uno", secret: "001|Y|BNhjb45JHDsdfsfhdgF", date: "Sep 25, 2018", time: "9:30 AM UTC", link: "www.google.com", x: 12.934634, y: 77.611284 },
-      { name: "Event Dos", secret: "002|Y|4dfgNhjb45JHfgDF", date: "Oct 25, 2018", time: "11:30 PM UTC", x: 45.345564, y: 112.345346 },
-      { name: "Event Tres", secret: "001|Y|5Nhjb45JHDsdfsfhdgF", date: "Nov 25, 2018", time: "9:30 AM UTC", link: "www.google.com" },
-      { name: "Event Quatro", secret: "003|Y|2Ndfghhjb45gdJHDF", date: "Dec 25, 2018", time: "5:30 AM UTC" }
+      { name: "Event Uno", secret: "001|Y|BNhjb45JHDsdfsfhdgF", date: "Sep 25, 2018", time: "9:30 AM", link: "www.google.com", x: 12.934634, y: 77.611284 },
+      { name: "Event Dos", secret: "002|Y|4dfgNhjb45JHfgDF", date: "Oct 25, 2018", time: "11:30 PM", x: 45.345564, y: 112.345346 },
+      { name: "Event Tres", secret: "001|Y|5Nhjb45JHDsdfsfhdgF", date: "Nov 25, 2018", time: "9:30 AM", link: "www.google.com" },
+      { name: "Event Quatro", secret: "003|Y|2Ndfghhjb45gdJHDF", date: "Dec 25, 2018", time: "5:30 AM" }
     ];
 
     this.state = {
@@ -27,7 +28,6 @@ class TicketsTab extends React.Component {
   shouldComponentUpdate(nextProps, nextState) {
 
     if (this.state.buffer != nextState.buffer && nextState.buffer != "") {
-      console.log("test");
       return false;
     }
 
@@ -90,7 +90,7 @@ class TicketsTab extends React.Component {
         e(React.Fragment, null,
 
           e("div",
-            { id: "ticket-del-btn" },
+            { className: "ticket-del-btn" },
             e("i",
               { className: "far fa-trash-alt" },
               null)

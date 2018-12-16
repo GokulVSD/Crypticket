@@ -35,6 +35,7 @@ function viewTicketsPg() {
 
 function viewCreatePg() {
 
+
     if ($("#tickets-pg").is(":visible")) {
         $("#tickets-pg").animate({ "opacity": 0 },100, function () {
             $("#tickets-pg").slideUp(250);
@@ -48,6 +49,7 @@ function viewCreatePg() {
     }
 
     if (!$("#create-pg").is(":visible")) {
+
         $("#create-pg").css({
             "display": "none",
             "opacity": 0

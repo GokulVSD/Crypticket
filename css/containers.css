@@ -84,17 +84,23 @@
 	border-radius: 0;
 }
 
-#ticket-tab-slider{
+#ticket-tab-slider,#create-tab-slider{
+	overflow: auto;
 	width: 200%;
 	left: -100%;
 }
 
-#tickets-tb-container{
+#tickets-tb-container,#event-creater-tb-container{
 	display: inline-block;
 	width: 50%;
 }
 
-#passwords-tb-container{
+#passwords-tb-container,#password-creater-tb-container{
+	position: relative;
 	float: right;
 	width: 50%;
+}
+
+#tickets-tb, #event-creater-tb{
+    position: relative;
 }
