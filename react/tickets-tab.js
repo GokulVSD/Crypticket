@@ -38,7 +38,7 @@ class TicketsTab extends React.Component {
 
     if (key.keyCode === 13) {
 
-      var newCrypticket = this.state.buffer;
+      var newCrypticket = this.state.buffer.trim();
 
       $("#ticket-add-field").val("").blur();
 

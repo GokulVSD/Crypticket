@@ -114,17 +114,22 @@
                                     <div id="event-creater-tb">
                                         <input type="text" id="event-name" placeholder="Name">
                                         <input type="password" id="event-password" placeholder="Password">
+                                        <input type="text" id="no-of-tickets" placeholder="Number of Tickets">
+                                        <div></div>
                                         <span><input type="text" id="date" placeholder="Date"></span>
                                         <span><input type="text" id="time" placeholder="Time"></span>
                                         <div></div>
-                                        <div class="creator-btn">Optional</div>
-                                        <input type="text" id="url" placeholder="Website">
-                                        <div class="head-title">Coordinates</div>
+                                        <div class="creator-btn" onclick="optionalTicketGenerator()">Optional</div>
+                                        <div id="optional-ticket-generator">
+                                            <input type="text" id="url" placeholder="Website">
+                                            <div class="head-title">Coordinates</div>
+                                            <div></div>
+                                            <span><input type="text" id="x-coord" placeholder="X"></span>
+                                            <span><input type="text" id="y-coord" placeholder="Y"></span>
+                                            <div></div>
+                                        </div>
                                         <div></div>
-                                        <span><input type="text" id="x-coord" placeholder="X"></span>
-                                        <span><input type="text" id="y-coord" placeholder="Y"></span>
-                                        <div></div>
-                                        <div class="creator-btn">Create Ticket Generator</div>
+                                        <div class="creator-btn" onclick="newGenerator()">Create Ticket Generator</div>
                                     </div>
                                 </div>
                                 <div id="password-creater-tb-container">
