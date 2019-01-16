@@ -10,7 +10,7 @@ class Generators extends React.Component {
         super(props);
 
         let generators = [
-            { type: 1, name: "TestGenEvent 1", password: "123", ticketAppend: ";sometext1;", curr: 0, max: 100 },
+            { type: 1, name: "TestGenEvent 1", password: "123", ticketAppend: ";sometext1;", curr: 1, max: 100 },
             { type: 2, name: "TestGenPass 1", password: "789" },
             { type: 1, name: "TestGenEvent 2", password: "456", ticketAppend: ";sometext2;", curr: 3, max: 60 }
         ]
@@ -43,7 +43,7 @@ class Generators extends React.Component {
 
         var ticketAppend = ";" + btoa(name) + ":" + btoa(date) + ":" + btoa(time) + ":;" + btoa(url) + ";" + btoa(x) + ":" + btoa(y) + ":;";
 
-        var newgenerator = { type: 1, name: name, password: password, ticketAppend: ticketAppend, curr: 0, max: parseInt(max) };
+        var newgenerator = { type: 1, name: name, password: password, ticketAppend: ticketAppend, curr: 1, max: parseInt(max) };
 
         var newgenerators = this.state.generators;
         newgenerators.unshift(newgenerator);

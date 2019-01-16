@@ -32,6 +32,12 @@ class Generator extends React.Component {
                 e(SecretCopier,
                     { secret: this.props.password }, //replace this with the secret generated for curr with password
                     null)
+            ),
+
+            (this.props.type == 2 &&
+                e("input",
+                    { type: "text", placeholder: "Website or App" }, //replace this with the secret generated for curr with password
+                    null)
             )
 
         );
