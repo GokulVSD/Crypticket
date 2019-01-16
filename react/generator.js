@@ -12,17 +12,17 @@ class Generator extends React.Component {
 
             (this.props.type == 1 &&
 
-                e("span",
-                    null,
+                e("div",
+                    { className: "gen-counter" },
                     this.props.curr + "/" + this.props.max)
             ),
 
-            e("span",
+            e("div",
                 null,
                 this.props.name),
 
             e("div",
-                { className: "ticket-del-btn" },
+                { className: "ticket-del-btn gen" },
                 e("i",
                     { className: "far fa-trash-alt" },
                     null)
