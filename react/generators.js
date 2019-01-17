@@ -11,7 +11,7 @@ class Generators extends React.Component {
 
         let generators = [
             { type: 1, name: "TestGenEvent 1", password: "123", ticketAppend: ";sometext1;", curr: 1, max: 100 },
-            { type: 2, name: "TestGenPass 1", password: "789" },
+            { type: 2, name: "TestGenPass 1", password: "789", curr: 1 },
             { type: 1, name: "TestGenEvent 2", password: "456", ticketAppend: ";sometext2;", curr: 3, max: 60 }
         ]
         this.state = {
@@ -51,14 +51,6 @@ class Generators extends React.Component {
         this.setState({
             generators: newgenerators
         })
-    }
-
-    //remove these when the time comes
-    btoa(str) {
-        return str;
-    }
-    atob(str) {
-        return str;
     }
 
     render() {

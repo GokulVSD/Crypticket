@@ -69,5 +69,5 @@
     display: inline-block;
     position: absolute;
     left: 15px;
-    cursor: none;
+    cursor: default;
 }

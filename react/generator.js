@@ -5,6 +5,19 @@ const e = React.createElement;
 class Generator extends React.Component {
     constructor(props) {
         super(props);
+
+        var key = getECDSAKey(this.props.password);
+
+        var curr = this.props.curr;
+
+        var sign = key.sign( curr.toString(16).toUpperCase() ).toHex();
+        sign = hexToBase64(sign);
+
+        this.state = {
+            key: key,
+            curr: curr,
+            sign: sign
+        };
     }
 
     render() {
@@ -14,7 +27,7 @@ class Generator extends React.Component {
 
                 e("div",
                     { className: "gen-counter" },
-                    this.props.curr + "/" + this.props.max)
+                    this.state.curr + "/" + this.props.max)
             ),
 
             e("div",
@@ -30,7 +43,7 @@ class Generator extends React.Component {
 
             (this.props.type == 1 &&
                 e(SecretCopier,
-                    { secret: this.props.password }, //replace this with the secret generated for curr with password
+                    { secret: this.state.sign }, //replace this with the secret generated for curr with password
                     null)
             ),
 
