@@ -12,10 +12,10 @@ class TicketsTab extends React.Component {
 
     //Do ticket processing here, retrieve from local storage and parse into the following format:
     let tickets = [
-      { name: "Event Uno", secret: "001|Y|BNhjb45JHDsdfsfhdgF", date: "Sep 25, 2018", time: "9:30 AM", link: "www.google.com", x: 12.934634, y: 77.611284 },
-      { name: "Event Dos", secret: "002|Y|4dfgNhjb45JHfgDF", date: "Oct 25, 2018", time: "11:30 PM", x: 45.345564, y: 112.345346 },
-      { name: "Event Tres", secret: "001|Y|5Nhjb45JHDsdfsfhdgF", date: "Nov 25, 2018", time: "9:30 AM", link: "www.google.com" },
-      { name: "Event Quatro", secret: "003|Y|2Ndfghhjb45gdJHDF", date: "Dec 25, 2018", time: "5:30 AM" }
+      { name: "Event Uno", secret: "001|Y|BNhjb45JHDsdfsfhdgF;sometext;", date: "Sep 25, 2018", time: "9:30 AM", link: "www.google.com", x: 12.934634, y: 77.611284 },
+      { name: "Event Dos", secret: "002|Y|4dfgNhjb45JHfgDF;sometext;", date: "Oct 25, 2018", time: "11:30 PM", x: 45.345564, y: 112.345346 },
+      { name: "Event Tres", secret: "001|Y|5Nhjb45JHDsdfsfhdgF;sometext;", date: "Nov 25, 2018", time: "9:30 AM", link: "www.google.com" },
+      { name: "Event Quatro", secret: "003|Y|2Ndfghhjb45gdJHDF;sometext;", date: "Dec 25, 2018", time: "5:30 AM" }
     ];
 
     this.state = {
@@ -43,7 +43,7 @@ class TicketsTab extends React.Component {
       $("#ticket-add-field").val("").blur();
 
       //Do secret validation and evaluation here
-      if(newCrypticket == '') return;
+      if (newCrypticket == '') return;
 
       var newTicket = {
         name: "Temp Name",
@@ -106,7 +106,11 @@ class TicketsTab extends React.Component {
                 ticket.name),
 
               e(SecretCopier,
-                { secret: ticket.secret },
+                {
+                  curr: ticket.secret.slice(0, ticket.secret.indexOf('|')),
+                  sign: ticket.secret.slice(ticket.secret.lastIndexOf('|') + 1, ticket.secret.indexOf(';')),
+                  ticketAppend: ticket.secret.slice(ticket.secret.indexOf(';'))
+                },
                 null),
 
               e("div",

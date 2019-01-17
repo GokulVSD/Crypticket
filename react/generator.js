@@ -10,7 +10,7 @@ class Generator extends React.Component {
 
         var curr = this.props.curr;
 
-        var sign = key.sign( curr.toString(16).toUpperCase() ).toHex();
+        var sign = key.sign(curr.toString(16).toUpperCase()).toHex();
         sign = hexToBase64(sign);
 
         this.state = {
@@ -18,6 +18,25 @@ class Generator extends React.Component {
             curr: curr,
             sign: sign
         };
+    }
+
+    incAndUpdate() {
+        
+        var newCurr = this.state.curr + 1;
+
+        if( newCurr > this.props.max){
+            return;
+        }
+
+        var newSign = this.state.key.sign(newCurr.toString(16).toUpperCase()).toHex();
+
+        newSign = hexToBase64(newSign);
+
+        this.setState({
+            key: this.state.key,
+            curr: newCurr,
+            sign: newSign
+        });
     }
 
     render() {
@@ -43,13 +62,18 @@ class Generator extends React.Component {
 
             (this.props.type == 1 &&
                 e(SecretCopier,
-                    { secret: this.state.sign }, //replace this with the secret generated for curr with password
+                    {
+                        curr: this.state.curr,
+                        sign: this.state.sign,
+                        ticketAppend: this.props.ticketAppend,
+                        incAndUpdate: this.incAndUpdate.bind(this)
+                    },
                     null)
             ),
 
             (this.props.type == 2 &&
                 e("input",
-                    { type: "text", placeholder: "Website or App" }, //replace this with the secret generated for curr with password
+                    { type: "text", placeholder: "Website or App" }, //replace this when you want to implement password generator
                     null)
             )
 
