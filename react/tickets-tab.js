@@ -45,15 +45,26 @@ class TicketsTab extends React.Component {
       //Do secret validation and evaluation here
       if (newCrypticket == '') return;
 
+      var ticketAppend = newCrypticket.split(";");
+      ticketAppend.shift();
+
+      var details = ticketAppend[0].split(":");
+      var url = ticketAppend[1];
+      var coords = ticketAppend[2].split(":"); console.log(details);console.log(url);console.log(coords);
+
       var newTicket = {
-        name: "Temp Name",
+        name: atob(details[0]),
         secret: newCrypticket,
-        date: "Sep 25, 2018",
-        time: "9:30 AM UTC",
-        link: "www.google.com",
-        x: 12.934634,
-        y: 77.611284
+        date: atob(details[1]),
+        time: atob(details[2])
       };
+
+      if(url != undefined) newTicket.link = atob(url);
+
+      if(coords[0] != "") {
+        newTicket.x = atob(coords[0]);
+        newTicket.y = atob(coords[1]);
+      }
 
       var newTickets = this.state.tickets;
       newTickets.unshift(newTicket);
