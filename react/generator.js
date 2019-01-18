@@ -57,7 +57,7 @@ class Generator extends React.Component {
         if (key.keyCode === 13) {
 
             var appName = this.state.buffer.trim();
-            $("#app-name-inputs").val("").blur();
+            $(".app-name-inputs").val("").blur();
 
             var pass = this.state.key.sign(appName.toUpperCase()).toHex();
 
