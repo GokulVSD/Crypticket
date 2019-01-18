@@ -8,23 +8,34 @@ class Generator extends React.Component {
 
         var key = getECDSAKey(this.props.password);
 
-        var curr = this.props.curr;
+        if (this.props.type == 1) {
 
-        var sign = key.sign(curr.toString(16).toUpperCase()).toHex();
-        sign = hexToBase64(sign);
+            var curr = this.props.curr;
 
-        this.state = {
-            key: key,
-            curr: curr,
-            sign: sign
-        };
+            var sign = key.sign(curr.toString(16).toUpperCase()).toHex();
+            sign = hexToBase64(sign);
+
+            this.state = {
+                key: key,
+                curr: curr,
+                sign: sign
+            };
+        } else {
+
+            this.state = {
+                key: key,
+                buffer: ""
+            };
+        }
     }
 
+    //for event generator
+
     incAndUpdate() {
-        
+
         var newCurr = this.state.curr + 1;
 
-        if( newCurr > this.props.max){
+        if (newCurr > this.props.max) {
             return;
         }
 
@@ -36,6 +47,42 @@ class Generator extends React.Component {
             key: this.state.key,
             curr: newCurr,
             sign: newSign
+        });
+    }
+
+    //these two functions are for password generator
+
+    addPassword(key) {
+
+        if (key.keyCode === 13) {
+
+            var appName = this.state.buffer.trim();
+            $("#app-name-inputs").val("").blur();
+
+            var pass = this.state.key.sign(appName.toUpperCase()).toHex();
+
+            pass = hexToBase64(pass);
+
+            // clipboard API
+            navigator.clipboard.writeText(pass);
+
+            /*
+            Inform the user "copied to clipboard, you can find the password in the passwords tab in tickets".
+            Backup appName to localstorage for this.props.name and call a force update to passwords-tab.
+            */
+
+            this.setState({
+                key: this.state.key,
+                buffer: ""
+            });
+        }
+    }
+
+    keyboardBuffer(event) {
+
+        this.setState({
+            key: this.state.key,
+            buffer: event.target.value
         });
     }
 
@@ -73,7 +120,11 @@ class Generator extends React.Component {
 
             (this.props.type == 2 &&
                 e("input",
-                    { type: "text", placeholder: "Website or App" }, //replace this when you want to implement password generator
+                    {
+                        type: "text", placeholder: "Website or App Name", className: "app-name-inputs",
+                        onKeyDown: key => this.addPassword(key),
+                        onChange: event => this.keyboardBuffer(event)
+                    },
                     null)
             )
 

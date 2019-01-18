@@ -10,9 +10,9 @@ class Generators extends React.Component {
         super(props);
 
         let generators = [
-            { type: 1, name: "TestGenEvent 1", password: "123", ticketAppend: ";sometext1;", curr: 1, max: 100 },
-            { type: 2, name: "TestGenPass 1", password: "789", curr: 1 },
-            { type: 1, name: "TestGenEvent 2", password: "456", ticketAppend: ";sometext2;", curr: 3, max: 60 }
+            { type: 1, name: "TestGenEvent 1", password: "123", ticketAppend: ";dGVzdA==:NDU2:MzU0NjozNDYz:;Z2hq;MzQ1:NDU2Nw==:;", curr: 1, max: 100 },
+            { type: 2, name: "TestGenPass 1", password: "789" },
+            { type: 1, name: "TestGenEvent 2", password: "456", ticketAppend: ";dGVzdA==:NDU2:MzU0NjozNDYz:;Z2hq;MzQ1:NDU2Nw==:;", curr: 3, max: 60 }
         ]
         this.state = {
             generators: generators
@@ -21,9 +21,12 @@ class Generators extends React.Component {
 
     componentDidMount() {
         window.newGenerator = this.newGenerator.bind(this);
+        window.newPassGenerator = this.newPassGenerator.bind(this);
     }
 
+    // for new event generator
     newGenerator() {
+
         var name = $("#event-name")[0].value.trim();
         var password = $("#event-password")[0].value.trim();
         var max = $("#no-of-tickets")[0].value.trim();
@@ -35,8 +38,20 @@ class Generators extends React.Component {
 
         //do validation here
 
+        if (name == "" || password == "" || max == "" || date == "" || time == "") {
+            console.log("all required data not provided");
+            return;
+        }
+
         if ($("#optional-ticket-generator").hasClass("xup")) {
             //optional is off
+            url = x = y = "";
+        } else {
+
+            if ((x != "" && y == "") || (x == "" && y != "")) {
+                console.log("partial coordinates given, can't create generator");
+                return;
+            }
         }
 
         //use btoa to encode, atob to decode
@@ -50,7 +65,30 @@ class Generators extends React.Component {
 
         this.setState({
             generators: newgenerators
-        })
+        });
+    }
+
+    //for new password generator
+    newPassGenerator() {
+
+        var name = $("#username")[0].value.trim();
+        var password = $("#global-password")[0].value.trim();
+
+        //do validation here
+
+        if (name == "" || password == "") {
+            console.log("all required data not provided");
+            return;
+        }
+
+        var newgenerator = { type: 2, name: name, password: password };
+
+        var newgenerators = this.state.generators;
+        newgenerators.unshift(newgenerator);
+
+        this.setState({
+            generators: newgenerators
+        });
     }
 
     render() {

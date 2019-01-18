@@ -42,7 +42,6 @@ class TicketsTab extends React.Component {
 
       $("#ticket-add-field").val("").blur();
 
-      //Do secret validation and evaluation here
       if (newCrypticket == '') return;
 
       var ticketAppend = newCrypticket.split(";");
@@ -50,7 +49,7 @@ class TicketsTab extends React.Component {
 
       var details = ticketAppend[0].split(":");
       var url = ticketAppend[1];
-      var coords = ticketAppend[2].split(":"); console.log(details);console.log(url);console.log(coords);
+      var coords = ticketAppend[2].split(":");
 
       var newTicket = {
         name: atob(details[0]),
