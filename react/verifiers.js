@@ -1,5 +1,7 @@
 'use strict';
 
+import Verifier from "./verifier.js";
+
 const e = React.createElement;
 
 class Verifiers extends React.Component {
@@ -30,16 +32,15 @@ class Verifiers extends React.Component {
             this.state.verifiers.map(verifier => {
                 return e("div",
                     { key: verifier.name + verifier.password, className: "ticket" },
-                    e("span",
+                    e(Verifier,
                         {
-                            // name: generator.name,
-                            // type: generator.type,
-                            // password: generator.password,
-                            // curr: generator.curr,
-                            // max: generator.max,
-                            // ticketAppend: generator.ticketAppend
+                            name: verifier.name,
+                            password: verifier.password,
+                            curr: verifier.curr,
+                            max: verifier.max,
+                            verified: verifier.verified
                         },
-                        "null")
+                        null)
                 )
             })
         );

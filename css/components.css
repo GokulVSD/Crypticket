@@ -28,16 +28,12 @@
 }
 
 .ticket-del-btn{
-    margin-top: 5px;
     display: inline-block;
     position: absolute;
-    right: 6%;
     box-shadow: 0 0 2px rgba(0,0,0,0.42);
     color: #7f7f7f;
     transition: all 0.4s ease;
     cursor: pointer;
-    font-size: 20px;
-    padding: 4px 11px;
     border-radius: 50%;
     background-position: center;
 }
@@ -58,6 +54,10 @@
     margin-top: -25px;
     font-size: 16px;
     padding: 4px 9px;
+}
+
+.ticket-del-btn.gen.tick{
+    margin-top: -1px;
 }
 
 .gen-counter{

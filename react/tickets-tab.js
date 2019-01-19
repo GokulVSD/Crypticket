@@ -58,9 +58,9 @@ class TicketsTab extends React.Component {
         time: atob(details[2])
       };
 
-      if(url != undefined) newTicket.link = atob(url);
+      if (url != undefined) newTicket.link = atob(url);
 
-      if(coords[0] != "") {
+      if (coords[0] != "") {
         newTicket.x = atob(coords[0]);
         newTicket.y = atob(coords[1]);
       }
@@ -99,17 +99,17 @@ class TicketsTab extends React.Component {
       (this.state.tickets.length != 0 &&
         e(React.Fragment, null,
 
-          e("div",
-            { className: "ticket-del-btn" },
-            e("i",
-              { className: "far fa-trash-alt" },
-              null)
-          ),
-
           this.state.tickets.map(ticket => {
             return e(
               'div',
               { key: ticket.secret, className: "ticket" },
+
+              e("div",
+                { className: "ticket-del-btn gen tick" },
+                e("i",
+                  { className: "far fa-trash-alt" },
+                  null)
+              ),
 
               e("h1",
                 null,

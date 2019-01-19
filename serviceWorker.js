@@ -27,6 +27,7 @@ var precacheFiles = [
   './react/generators.js',
   './react/generator.js',
   './react/verifiers.js',
+  './react/verifier.js',
   './react/secret-copier.js',
   './react/copier.js',
   './vendor/bootstrap/css/bootstrap.min.css',

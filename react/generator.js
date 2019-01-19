@@ -12,7 +12,7 @@ class Generator extends React.Component {
 
             var curr = this.props.curr;
 
-            var sign = key.sign(curr.toString(16).toUpperCase()).toHex();
+            var sign = key.sign(curr.toString()).toHex();
             sign = hexToBase64(sign);
 
             this.state = {
@@ -110,7 +110,7 @@ class Generator extends React.Component {
             (this.props.type == 1 &&
                 e(SecretCopier,
                     {
-                        curr: this.state.curr,
+                        curr: this.state.curr.toString(),
                         sign: this.state.sign,
                         ticketAppend: this.props.ticketAppend,
                         incAndUpdate: this.incAndUpdate.bind(this)
@@ -118,6 +118,7 @@ class Generator extends React.Component {
                     null)
             ),
 
+            //might have to replace this in the future if you want the copy button for the input
             (this.props.type == 2 &&
                 e("input",
                     {
