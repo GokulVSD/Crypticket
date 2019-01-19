@@ -1,44 +1,46 @@
 
 var CACHE = 'cryptic-cache';
 var precacheFiles = [
-	'./',
-    './index.html',
-	'./assets/logo.png',
-	'./assets/sidebar-logo.png',
-	'./css/containers.css',
-	'./css/structure.css',
-	'./css/media.css',
-	'./css/sidebar.css',
+  './',
+  './index.html',
+  './assets/logo.png',
+  './assets/sidebar-logo.png',
+  './css/containers.css',
+  './css/structure.css',
+  './css/media.css',
+  './css/sidebar.css',
   './css/pillbar.css',
   './css/tabs.css',
   './css/forms.css',
   './css/components.css',
-	'./css/productreg.ttf',
-	'./css/productbold.ttf',
-	'./icons/css/all.css',
-	'./icons/webfonts/fa-brands-400.ttf',
-	'./icons/webfonts/fa-regular-400.ttf',
-	'./icons/webfonts/fa-solid-900.ttf',
-	'./registerWorker.js',
+  './css/productreg.ttf',
+  './css/productbold.ttf',
+  './icons/css/all.css',
+  './icons/webfonts/fa-brands-400.ttf',
+  './icons/webfonts/fa-regular-400.ttf',
+  './icons/webfonts/fa-solid-900.ttf',
+  './registerWorker.js',
   './scripts/sidebar.js',
   './scripts/tabs.js',
   './react/tickets-tab.js',
   './react/passwords-tab.js',
   './react/generators.js',
+  './react/generator.js',
+  './react/verifiers.js',
   './react/secret-copier.js',
   './react/copier.js',
-	'./vendor/bootstrap/css/bootstrap.min.css',
-	'./vendor/bootstrap/js/bootstrap.bundle.min.js',
-	'./vendor/jquery/jquery.min.js',
-	'./vendor/react/react.js',
+  './vendor/bootstrap/css/bootstrap.min.css',
+  './vendor/bootstrap/js/bootstrap.bundle.min.js',
+  './vendor/jquery/jquery.min.js',
+  './vendor/react/react.js',
   './vendor/react/react-dom.js',
-	'./manifest.json'
-    ];
+  './manifest.json'
+];
 
 //Install stage sets up the cache-array to configure pre-cache content
-self.addEventListener('install', function(evt) {
+self.addEventListener('install', function (evt) {
   console.log('Service worker is being installed.');
-  evt.waitUntil(precache().then(function() {
+  evt.waitUntil(precache().then(function () {
     console.log('Skip waiting on install');
     return self.skipWaiting();
   }));
@@ -46,13 +48,13 @@ self.addEventListener('install', function(evt) {
 
 
 //allow sw to control the current page
-self.addEventListener('activate', function(event) {
+self.addEventListener('activate', function (event) {
   console.log('Claiming clients for current page');
   return self.clients.claim();
 });
 
-self.addEventListener('fetch', function(evt) {
-  console.log('Service worker is serving the asset.'+ evt.request.url);
+self.addEventListener('fetch', function (evt) {
+  console.log('Service worker is serving the asset.' + evt.request.url);
   evt.respondWith(fromCache(evt.request).catch(fromServer(evt.request)));
   evt.waitUntil(update(evt.request));
 });
@@ -83,7 +85,7 @@ function update(request) {
   });
 }
 
-function fromServer(request){
+function fromServer(request) {
   //this is the fallback if it is not in the cache to go to the server and get it
-  return fetch(request).then(function(response){ return response});
+  return fetch(request).then(function (response) { return response });
 }
