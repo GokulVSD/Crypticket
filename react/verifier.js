@@ -29,7 +29,7 @@ class Verifier extends React.Component {
 
             var sign = ticket.slice(ticket.lastIndexOf('|') + 1, ticket.indexOf(';'));
 
-            if(msg == "" || sign == ""){
+            if (msg == "" || sign == "") {
                 console.log("invalid format");
                 return;
             }
@@ -37,23 +37,46 @@ class Verifier extends React.Component {
             try {
 
                 if (this.state.key.verify(msg, base64ToHex(sign))) {
-                    console.log("ticket verified");
 
-                    //incomplete, also check if already verified
-                    var verified = this.state.verified
+                    console.log("ticket was generated using the correct password");
 
-                    this.setState({
-                        key: this.state.key,
-                        curr: this.state.curr + 1,
-                        verified: 
-                    });
+                    var verified = this.state.verified;
 
+                    if (verified.indexOf(msg) > -1) {
+
+                        console.log("ticket has already been verified");
+                        return;
+
+                    } else {
+
+                        if (parseInt(msg) > this.props.max) {
+                            //ticket is out of range
+                            console.log("Ticket is out of range, must be malicious");
+                            return;
+                        }
+
+                        if (this.state.curr == this.props.max) {
+                            //all tickets have been verified, decide what you wanna do here later.
+                            console.log("all tickets verified, can't verify anymore");
+                            return;
+                        }
+
+                        verified.push(msg);
+
+                        this.setState({
+                            key: this.state.key,
+                            curr: this.state.curr + 1,
+                            verified: verified
+                        });
+                    }
                 } else {
-                    console.log("ticket verification failed");
+
+                    console.log("ticket was not generated using the correct password");
 
                 }
-            } catch(e) {
-                console.log("Failed: The key contains invalid characters");
+            } catch (e) {
+
+                console.log("Failed: The ticket contains invalid characters");
 
             }
         }
@@ -91,7 +114,7 @@ class Verifier extends React.Component {
             e("div", null, null),
 
             e("div",
-                { className: "creator-btn" },
+                { className: "creator-btn", onClick: () => this.verifyTicket({ keyCode: 13}) },
                 "Verify")
         );
     }
