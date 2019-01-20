@@ -92,7 +92,7 @@ class Generators extends React.Component {
     }
 
     removeChild(name,password,type){
-        console.log(this.state); //incomplete
+        
         var generators = this.state.generators;
 
         var newgenerators = generators.filter( g => {
@@ -127,7 +127,7 @@ class Generators extends React.Component {
                             curr: generator.curr,
                             max: generator.max,
                             ticketAppend: generator.ticketAppend,
-                            removeChild: this.removeChild
+                            removeChild: this.removeChild.bind(this)
                         },
                         null)
                 )
