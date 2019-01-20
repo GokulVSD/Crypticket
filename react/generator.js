@@ -101,7 +101,7 @@ class Generator extends React.Component {
                 this.props.name),
 
             e("div",
-                { className: "ticket-del-btn gen" },
+                { className: "ticket-del-btn gen", onClick: () => this.props.removeChild(this.props.name, this.props.password, this.props.type) }, 
                 e("i",
                     { className: "far fa-trash-alt" },
                     null)

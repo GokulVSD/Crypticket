@@ -103,5 +103,6 @@
 }
 
 #tickets-tb, #event-creater-tb{
-    position: relative;
+	position: relative;
+	padding-bottom: 5px;
 }

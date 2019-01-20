@@ -44,19 +44,29 @@ class TicketsTab extends React.Component {
 
       if (newCrypticket == '') return;
 
-      var ticketAppend = newCrypticket.split(";");
-      ticketAppend.shift();
+      var ticketAppend, details, url, coords, newTicket;
 
-      var details = ticketAppend[0].split(":");
-      var url = ticketAppend[1];
-      var coords = ticketAppend[2].split(":");
+      try {
 
-      var newTicket = {
-        name: atob(details[0]),
-        secret: newCrypticket,
-        date: atob(details[1]),
-        time: atob(details[2])
-      };
+        ticketAppend = newCrypticket.split(";");
+        ticketAppend.shift();
+
+        details = ticketAppend[0].split(":");
+        url = ticketAppend[1];
+        coords = ticketAppend[2].split(":");
+
+        newTicket = {
+          name: atob(details[0]),
+          secret: newCrypticket,
+          date: atob(details[1]),
+          time: atob(details[2])
+        };
+
+      } catch(e) {
+        console.log("invalid ticket");
+        return;
+      }
+
 
       if (url != undefined) newTicket.link = atob(url);
 
@@ -83,6 +93,17 @@ class TicketsTab extends React.Component {
     });
   }
 
+  deleteTicket(ticket) {
+
+    var tickets = this.state.tickets;
+    tickets.splice(tickets.indexOf(ticket), 1);
+
+    this.setState({
+      tickets: tickets,
+      buffer: this.state.buffer
+    });
+  }
+
   render() {
 
     return e(React.Fragment, null,
@@ -105,7 +126,7 @@ class TicketsTab extends React.Component {
               { key: ticket.secret, className: "ticket" },
 
               e("div",
-                { className: "ticket-del-btn gen tick" },
+                { className: "ticket-del-btn gen tick", onClick: () => this.deleteTicket(ticket) },
                 e("i",
                   { className: "far fa-trash-alt" },
                   null)

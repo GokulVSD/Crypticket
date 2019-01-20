@@ -91,6 +91,23 @@ class Generators extends React.Component {
         });
     }
 
+    removeChild(name,password,type){
+        console.log(this.state); //incomplete
+        var generators = this.state.generators;
+
+        var newgenerators = generators.filter( g => {
+            if( g.name == name && g.password == password && g.type == type){
+                return false;
+            } else {
+                return true;
+            }
+        });
+
+        this.setState({
+            generators: newgenerators
+        });
+    }
+
     render() {
 
         return e(React.Fragment, null,
@@ -109,7 +126,8 @@ class Generators extends React.Component {
                             password: generator.password,
                             curr: generator.curr,
                             max: generator.max,
-                            ticketAppend: generator.ticketAppend
+                            ticketAppend: generator.ticketAppend,
+                            removeChild: this.removeChild
                         },
                         null)
                 )
