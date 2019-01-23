@@ -7,7 +7,7 @@
 	top: 0;
 	margin: 0 auto;
 	text-align: center;
-    transition:  border-radius 0.4s ease-out, box-shadow 0.5s, width 0.5s, height 0.5s, line-height 0.5s, transform 0.5s;
+    transition:  border-radius 0.2s ease-out, box-shadow 0.3s, width 0.5s, height 0.3s, line-height 0.3s, transform 0.3s;
     max-width: 800px;
 	line-height: 70px;
     overflow-x: hidden;
@@ -78,7 +78,7 @@
     margin: 0 auto;
     display: block;
     background: #7f7f7f;
-    transition: all 0.5s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+    transition: all 0.4s cubic-bezier(0.810, -0.330, 0.345, 1.375);
 }
 
 #sidebarCollapse span:first-of-type {

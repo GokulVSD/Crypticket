@@ -29,8 +29,17 @@ class Generator extends React.Component {
         }
     }
 
-    //for event generator
+    //for delete animation
+    animateAndDelete() {
 
+        $(ReactDOM.findDOMNode(this)).addClass("hiding");
+
+        setTimeout(function () {
+            this.props.removeChild(this.props.name, this.props.password, this.props.type);
+        }.bind(this), 230);
+    }
+
+    //for event generator
     incAndUpdate() {
 
         var newCurr = this.state.curr + 1;
@@ -87,7 +96,7 @@ class Generator extends React.Component {
     }
 
     render() {
-        return e(React.Fragment, null,
+        return e("div", { className: "ticket" },
 
             (this.props.type == 1 &&
 
@@ -101,7 +110,7 @@ class Generator extends React.Component {
                 this.props.name),
 
             e("div",
-                { className: "ticket-del-btn gen", onClick: () => this.props.removeChild(this.props.name, this.props.password, this.props.type) }, 
+                { className: "ticket-del-btn gen", onClick: () => this.animateAndDelete() },
                 e("i",
                     { className: "far fa-trash-alt" },
                     null)

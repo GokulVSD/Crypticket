@@ -19,7 +19,7 @@
   color: #6f6f6f;
   height: 18vh;
   line-height: 6.5em;
-  transition: color 0.5s ease;
+  transition: color 0.3s ease;
 }
 
 .toggle-engaged{
@@ -48,7 +48,7 @@
 .sidebar-nav li div img{
   width: 25%;
   margin-left: -10px;
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
   filter: grayscale(100%);
 }
 
@@ -62,7 +62,7 @@
 }
 
 .sidebar-nav li div i:before{
-  transition: font-size 0.5s ease;
+  transition: font-size 0.3s ease;
 }
 
 .sidebar-nav li div i.sb1:before{

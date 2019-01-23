@@ -91,12 +91,12 @@ class Generators extends React.Component {
         });
     }
 
-    removeChild(name,password,type){
-        
+    removeChild(name, password, type) {
+
         var generators = this.state.generators;
 
-        var newgenerators = generators.filter( g => {
-            if( g.name == name && g.password == password && g.type == type){
+        var newgenerators = generators.filter(g => {
+            if (g.name == name && g.password == password && g.type == type) {
                 return false;
             } else {
                 return true;
@@ -117,20 +117,18 @@ class Generators extends React.Component {
                 "Generators"),
 
             this.state.generators.map(generator => {
-                return e("div",
-                    { key: generator.name + generator.type + generator.password, className: "ticket" },
-                    e(Generator,
-                        {
-                            name: generator.name,
-                            type: generator.type,
-                            password: generator.password,
-                            curr: generator.curr,
-                            max: generator.max,
-                            ticketAppend: generator.ticketAppend,
-                            removeChild: this.removeChild.bind(this)
-                        },
-                        null)
-                )
+                return e(Generator,
+                    {
+                        key: generator.name + generator.type + generator.password,
+                        name: generator.name,
+                        type: generator.type,
+                        password: generator.password,
+                        curr: generator.curr,
+                        max: generator.max,
+                        ticketAppend: generator.ticketAppend,
+                        removeChild: this.removeChild.bind(this)
+                    },
+                    null);
             })
         );
     }

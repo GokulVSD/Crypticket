@@ -8,12 +8,22 @@ class Ticket extends React.Component {
         super(props);
     }
 
+    //for delete animation
+    animateAndDelete() {
+
+        $(ReactDOM.findDOMNode(this)).addClass("hiding");
+
+        setTimeout(function () {
+            this.props.deleteTicket(this.props.ticket);
+        }.bind(this), 220);
+    }
+
     render() {
         return e('div',
             { className: "ticket" },
 
             e("div",
-                { className: "ticket-del-btn gen tick", onClick: () => this.props.deleteTicket(this.props.ticket) },
+                { className: "ticket-del-btn gen tick", onClick: () => this.animateAndDelete() },
                 e("i",
                     { className: "far fa-trash-alt" },
                     null)
