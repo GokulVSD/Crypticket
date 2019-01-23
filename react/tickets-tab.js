@@ -62,7 +62,7 @@ class TicketsTab extends React.Component {
           time: atob(details[2])
         };
 
-      } catch(e) {
+      } catch (e) {
         console.log("invalid ticket");
         return;
       }

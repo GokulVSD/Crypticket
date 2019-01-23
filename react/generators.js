@@ -16,7 +16,7 @@ class Generators extends React.Component {
         ]
         this.state = {
             generators: generators
-        }
+        };
     }
 
     componentDidMount() {
