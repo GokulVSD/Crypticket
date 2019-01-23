@@ -70,7 +70,7 @@ class Generator extends React.Component {
 
             var pass = this.state.key.sign(appName.toUpperCase()).toHex();
 
-            pass = hexToBase64(pass).slice(0, 16);
+            pass = hexToBase64(pass).slice(0, 12).replace(/\//g, "x") + "+0Pw";
 
             // clipboard API
             navigator.clipboard.writeText(pass);
