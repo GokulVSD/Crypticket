@@ -70,7 +70,7 @@ class Generator extends React.Component {
 
             var pass = this.state.key.sign(appName.toUpperCase()).toHex();
 
-            pass = hexToBase64(pass);
+            pass = hexToBase64(pass).slice(0, 16);
 
             // clipboard API
             navigator.clipboard.writeText(pass);
@@ -105,7 +105,7 @@ class Generator extends React.Component {
                     this.state.curr + "/" + this.props.max)
             ),
 
-            e("div",
+            e("h2",
                 null,
                 this.props.name),
 

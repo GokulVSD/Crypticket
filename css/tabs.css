@@ -30,7 +30,7 @@
     left: 0;
     position: absolute;
     margin-top: 10px;
-    transition: 0.3s ease-in-out;
+    transition: 0.4s ease-in-out;
 }
 .tabs span:hover:first-child:after {
     margin-left: 0;

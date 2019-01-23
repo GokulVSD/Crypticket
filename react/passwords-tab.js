@@ -40,7 +40,7 @@ class PasswordsTab extends React.Component {
           return e(React.Fragment, { key: appName + password.password },
 
             e(Copier,
-              { title: appName, content: hexToBase64(getECDSAKey(password.password).sign(appName.toUpperCase()).toHex()) },
+              { title: appName, content: hexToBase64(getECDSAKey(password.password).sign(appName.toUpperCase()).toHex()).slice(0, 16) },
               null),
 
             e('div', null, null)
