@@ -23,6 +23,7 @@ var precacheFiles = [
   './scripts/sidebar.js',
   './scripts/tabs.js',
   './react/tickets-tab.js',
+  './react/ticket.js',
   './react/passwords-tab.js',
   './react/generators.js',
   './react/generator.js',

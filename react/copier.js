@@ -5,15 +5,20 @@ class Copier extends React.Component {
         super(props);
     }
 
+    copyContent(){
+        // clipboard API
+        navigator.clipboard.writeText(this.props.content);
+    }
+
     render() {
         return e(React.Fragment, null,
 
             e("span",
-            null,
+            { onClick: () => this.copyContent() },
             this.props.title),
 
             e("span",
-            null,
+            { onClick: () => this.copyContent() },
             this.props.content)
         );
     }

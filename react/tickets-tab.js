@@ -1,7 +1,6 @@
 'use strict';
 
-import SecretCopier from "./secret-copier.js";
-import Copier from "./copier.js";
+import Ticket from "./ticket.js";
 
 const e = React.createElement;
 
@@ -121,78 +120,14 @@ class TicketsTab extends React.Component {
         e(React.Fragment, null,
 
           this.state.tickets.map(ticket => {
-            return e(
-              'div',
-              { key: ticket.secret, className: "ticket" },
 
-              e("div",
-                { className: "ticket-del-btn gen tick", onClick: () => this.deleteTicket(ticket) },
-                e("i",
-                  { className: "far fa-trash-alt" },
-                  null)
-              ),
-
-              e("h1",
-                null,
-                ticket.name),
-
-              e(SecretCopier,
-                {
-                  curr: ticket.secret.slice(0, ticket.secret.indexOf('|')),
-                  sign: ticket.secret.slice(ticket.secret.lastIndexOf('|') + 1, ticket.secret.indexOf(';')),
-                  ticketAppend: ticket.secret.slice(ticket.secret.indexOf(';'))
-                },
-                null),
-
-              e("div",
-                null,
-
-                e("span",
-                  null,
-                  ticket.date),
-
-                e("span",
-                  null,
-                  ticket.time)
-              ),
-
-              //Optional ticket parameters
-
-              //Links
-              (ticket.link != undefined &&
-                e("div",
-                  { className: "opt-link", onClick: () => window.open("http://" + ticket.link) },
-                  ticket.link)
-              ),
-
-              //Location + Navigation
-              (ticket.x != undefined &&
-                e(React.Fragment, null,
-
-                  e("h6",
-                    null,
-                    "LOCATION"),
-
-                  e("span",
-                    null,
-                    e(Copier,
-                      { title: "X", content: ticket.x },
-                      null)
-                  ),
-
-                  e("span",
-                    null,
-                    e(Copier,
-                      { title: "Y", content: ticket.y },
-                      null)
-                  ),
-
-                  e("div",
-                    { className: "nav-btn", onClick: () => window.open("https://www.google.com/maps/dir/my+location/" + ticket.x + "," + ticket.y) },
-                    "START NAVIGATION")
-                )
-              )
-            );
+            return e(Ticket,
+              {
+                key: ticket.secret,
+                ticket: ticket,
+                deleteTicket: this.deleteTicket.bind(this)
+              },
+              null);
           })
         )
       )
