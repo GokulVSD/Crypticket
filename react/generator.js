@@ -104,7 +104,7 @@ class Generator extends React.Component {
             navigator.clipboard.writeText(pass);
 
             /*
-            Inform the user "copied to clipboard, you can find the password in the passwords tab in tickets".
+            Inform the user "copied to clipboard, you can find the password in the passwords tab in view".
             Backup appName to localstorage for this.props.name and call a force update to passwords-tab.
             */
 

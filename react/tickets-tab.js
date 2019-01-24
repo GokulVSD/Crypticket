@@ -9,16 +9,8 @@ class TicketsTab extends React.Component {
   constructor(props) {
     super(props);
 
-    //Do ticket processing here, retrieve from local storage and parse into the following format:
-    let tickets = [
-      { name: "Event Uno", secret: "001|Y|BNhjb45JHDsdfsfhdgF;sometext;", date: "Sep 25, 2018", time: "9:30 AM", link: "www.google.com", x: 12.934634, y: 77.611284 },
-      { name: "Event Dos", secret: "002|Y|4dfgNhjb45JHfgDF;sometext;", date: "Oct 25, 2018", time: "11:30 PM", x: 45.345564, y: 112.345346 },
-      { name: "Event Tres", secret: "001|Y|5Nhjb45JHDsdfsfhdgF;sometext;", date: "Nov 25, 2018", time: "9:30 AM", link: "www.google.com" },
-      { name: "Event Quatro", secret: "003|Y|2Ndfghhjb45gdJHDF;sometext;", date: "Dec 25, 2018", time: "5:30 AM" }
-    ];
-
     this.state = {
-      tickets: tickets,
+      tickets: retrieveObject("tickets"),
       buffer: ""
     };
   }
@@ -29,7 +21,6 @@ class TicketsTab extends React.Component {
     if (this.state.buffer != nextState.buffer && nextState.buffer != "") {
       return false;
     }
-
     return true;
   }
 
@@ -77,6 +68,8 @@ class TicketsTab extends React.Component {
       var newTickets = this.state.tickets;
       newTickets.unshift(newTicket);
 
+      storeObject("tickets", newTickets);
+
       this.setState({
         tickets: newTickets,
         buffer: ""
@@ -96,6 +89,8 @@ class TicketsTab extends React.Component {
 
     var tickets = this.state.tickets;
     tickets.splice(tickets.indexOf(ticket), 1);
+
+    storeObject("tickets", tickets);
 
     this.setState({
       tickets: tickets,

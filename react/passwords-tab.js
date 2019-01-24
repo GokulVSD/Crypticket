@@ -33,7 +33,7 @@ class PasswordsTab extends React.Component {
         (password.appNames.length == 0 &&
           e('div',
             null,
-            "Generate new passwords using the Create page")
+            "Generate new passwords for this Username from the Create page")
         ),
 
         password.appNames.map(appName => {
