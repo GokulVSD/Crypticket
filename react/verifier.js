@@ -18,6 +18,20 @@ class Verifier extends React.Component {
         };
     }
 
+    //for when parent passes props with an incremented curr
+    componentWillReceiveProps(nextProps) {
+
+        if (nextProps.curr != this.state.curr) {
+
+            this.setState({
+                key: this.state.key,
+                curr: nextProps.curr,
+                verified: nextProps.verified,
+                buffer: ""
+            });
+        }
+    }
+
     verifyTicket(key) {
 
         if (key.keyCode === 13) {
@@ -53,7 +67,7 @@ class Verifier extends React.Component {
                             //ticket is out of range
                             console.log("Ticket is out of range, must be malicious");
                             return;
-                        }
+                        } 
 
                         if (this.state.curr == this.props.max) {
                             //all tickets have been verified, decide what you wanna do here later.
@@ -61,13 +75,9 @@ class Verifier extends React.Component {
                             return;
                         }
 
-                        verified.push(msg);
+                        this.props.updateChild(this.props.name, this.props.password, msg);
 
-                        this.setState({
-                            key: this.state.key,
-                            curr: this.state.curr + 1,
-                            verified: verified
-                        });
+                        return;
                     }
                 } else {
 
@@ -76,9 +86,16 @@ class Verifier extends React.Component {
                 }
             } catch (e) {
 
-                console.log("Failed: The ticket contains invalid characters");
+                console.log("Failed: The ticket contains invalid characters |" + e);
 
             }
+
+            this.setState({
+                key: this.state.key,
+                curr: this.state.curr,
+                verified: this.state.verified,
+                buffer: ""
+            });
         }
     }
 
@@ -114,7 +131,7 @@ class Verifier extends React.Component {
             e("div", null, null),
 
             e("div",
-                { className: "creator-btn", onClick: () => this.verifyTicket({ keyCode: 13}) },
+                { className: "creator-btn", onClick: () => this.verifyTicket({ keyCode: 13 }) },
                 "Verify")
         );
     }
