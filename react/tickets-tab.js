@@ -109,7 +109,7 @@ class TicketsTab extends React.Component {
 
       e("input",
         {
-          type: "text", placeholder: "Add Ticket", id: "ticket-add-field",
+          type: "text", placeholder: "Add Crypticket", id: "ticket-add-field",
           onKeyDown: key => this.addTicket(key),
           onChange: event => this.keyboardBuffer(event)
         },

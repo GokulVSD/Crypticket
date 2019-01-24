@@ -29,6 +29,19 @@ class Generator extends React.Component {
         }
     }
 
+    //Optimization
+    shouldComponentUpdate(nextProps, nextState) {
+
+        if (this.props.type == 2) {
+
+            if (this.state.buffer != nextState.buffer && nextState.buffer != "") {
+                return false;
+            }
+            return true;
+        }
+        return true;
+    }
+
     //for when parent passes props with an incremented curr
     componentWillReceiveProps(nextProps) {
 
@@ -45,6 +58,14 @@ class Generator extends React.Component {
         }
     }
 
+    //for adding generator animation
+    componentDidMount() {
+
+        setTimeout(function () {
+            $(ReactDOM.findDOMNode(this)).removeClass("hiding");
+        }.bind(this), 1);
+    }
+
     //for delete animation
     animateAndDelete() {
 
@@ -52,7 +73,7 @@ class Generator extends React.Component {
 
         setTimeout(function () {
             this.props.removeChild(this.props.name, this.props.password, this.props.type);
-        }.bind(this), 230);
+        }.bind(this), 300);
     }
 
     //for event generator
@@ -103,7 +124,7 @@ class Generator extends React.Component {
     }
 
     render() {
-        return e("div", { className: "ticket" },
+        return e("div", { className: "ticket hiding" },
 
             (this.props.type == 1 &&
 

@@ -18,6 +18,15 @@ class Verifier extends React.Component {
         };
     }
 
+    //Optimization
+    shouldComponentUpdate(nextProps, nextState) {
+
+        if (this.state.buffer != nextState.buffer && nextState.buffer != "") {
+            return false;
+        }
+        return true;
+    }
+
     //for when parent passes props with an incremented curr
     componentWillReceiveProps(nextProps) {
 
@@ -67,7 +76,7 @@ class Verifier extends React.Component {
                             //ticket is out of range
                             console.log("Ticket is out of range, must be malicious");
                             return;
-                        } 
+                        }
 
                         if (this.state.curr == this.props.max) {
                             //all tickets have been verified

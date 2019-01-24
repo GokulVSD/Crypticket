@@ -133,6 +133,10 @@ class Generators extends React.Component {
 
     render() {
 
+        if(this.state.generators.length == 0){
+            return null;
+        }
+
         return e(React.Fragment, null,
 
             e("div",

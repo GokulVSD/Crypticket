@@ -8,6 +8,14 @@ class Ticket extends React.Component {
         super(props);
     }
 
+    //for adding crypticket animation
+    componentDidMount() {
+
+        setTimeout(function () {
+            $(ReactDOM.findDOMNode(this)).removeClass("hiding");
+        }.bind(this), 1);
+    }
+
     //for delete animation
     animateAndDelete() {
 
@@ -15,12 +23,12 @@ class Ticket extends React.Component {
 
         setTimeout(function () {
             this.props.deleteTicket(this.props.ticket);
-        }.bind(this), 220);
+        }.bind(this), 300);
     }
 
     render() {
         return e('div',
-            { className: "ticket" },
+            { className: "ticket hiding" },
 
             e("div",
                 { className: "ticket-del-btn gen tick", onClick: () => this.animateAndDelete() },

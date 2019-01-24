@@ -9,7 +9,7 @@ function retrieveObject(key) {
 
     var obj = JSON.parse(storage.getItem(key));
 
-    if(obj === null)
+    if (obj === null)
         return [];
 
     return obj;
@@ -19,19 +19,23 @@ function storeObject(key, obj) {
 
     var storage = window.localStorage;
 
-    try{
+    try {
 
         storage.setItem(key, JSON.stringify(obj));
 
-    } catch(e) {
+    } catch (e) {
         storageFull();
     }
 }
 
-function getBackupString(){
+function getBackupString() {
     //generate a string to backup the state
 }
 
-function restoreStateFromString(){
+function restoreStateFromString() {
     //parse string and restore state (reload the page after updating localStorage)
+}
+
+function resetState() {
+
 }
