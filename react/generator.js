@@ -29,6 +29,22 @@ class Generator extends React.Component {
         }
     }
 
+    //for when parent passes props with an incremented curr
+    componentWillReceiveProps(nextProps) {
+
+        if (nextProps.curr != this.state.curr) {
+
+            var sign = this.state.key.sign(nextProps.curr.toString()).toHex();
+            sign = hexToBase64(sign);
+
+            this.setState({
+                key: this.state.key,
+                curr: nextProps.curr,
+                sign: sign
+            });
+        }
+    }
+
     //for delete animation
     animateAndDelete() {
 
@@ -48,19 +64,10 @@ class Generator extends React.Component {
             return;
         }
 
-        var newSign = this.state.key.sign(newCurr.toString(16).toUpperCase()).toHex();
-
-        newSign = hexToBase64(newSign);
-
-        this.setState({
-            key: this.state.key,
-            curr: newCurr,
-            sign: newSign
-        });
+        this.props.updateChild(this.props.name, this.props.password);
     }
 
     //these two functions are for password generator
-
     addPassword(key) {
 
         if (key.keyCode === 13) {

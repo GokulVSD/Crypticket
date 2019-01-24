@@ -63,6 +63,8 @@ class Generators extends React.Component {
         var newgenerators = this.state.generators;
         newgenerators.unshift(newgenerator);
 
+        storeObject("generators", newgenerators);
+
         this.setState({
             generators: newgenerators
         });
@@ -108,6 +110,19 @@ class Generators extends React.Component {
         });
     }
 
+    updateChild(name, password) {
+
+        var generators = this.state.generators;
+
+        var index = generators.findIndex(g => g.name == name && g.password == password );
+
+        generators[index].curr += 1;
+
+        this.setState({
+            generators: generators
+        });
+    }
+
     render() {
 
         return e(React.Fragment, null,
@@ -126,7 +141,8 @@ class Generators extends React.Component {
                         curr: generator.curr,
                         max: generator.max,
                         ticketAppend: generator.ticketAppend,
-                        removeChild: this.removeChild.bind(this)
+                        removeChild: this.removeChild.bind(this),
+                        updateChild: this.updateChild.bind(this)
                     },
                     null);
             })
