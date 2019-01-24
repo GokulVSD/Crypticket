@@ -70,8 +70,8 @@ class Verifier extends React.Component {
                         } 
 
                         if (this.state.curr == this.props.max) {
-                            //all tickets have been verified, decide what you wanna do here later.
-                            console.log("all tickets verified, can't verify anymore");
+                            //all tickets have been verified
+                            console.log("all tickets verified, can't verify anymore, delete the verifier from the Create page");
                             return;
                         }
 

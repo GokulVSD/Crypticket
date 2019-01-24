@@ -9,13 +9,8 @@ class Generators extends React.Component {
     constructor(props) {
         super(props);
 
-        let generators = [
-            { type: 1, name: "TestGenEvent 1", password: "123", ticketAppend: ";dGVzdA==:NDU2:MzU0NjozNDYz:;Z2hq;MzQ1:NDU2Nw==:;", curr: 1, max: 100 },
-            { type: 2, name: "TestGenPass 1", password: "789" },
-            { type: 1, name: "TestGenEvent 2", password: "456", ticketAppend: ";dGVzdA==:NDU2:MzU0NjozNDYz:;Z2hq;MzQ1:NDU2Nw==:;", curr: 3, max: 60 }
-        ]
         this.state = {
-            generators: generators
+            generators: retrieveObject("generators")
         };
     }
 
@@ -65,6 +60,8 @@ class Generators extends React.Component {
 
         storeObject("generators", newgenerators);
 
+        newVerifier(newgenerator);
+
         this.setState({
             generators: newgenerators
         });
@@ -88,11 +85,14 @@ class Generators extends React.Component {
         var newgenerators = this.state.generators;
         newgenerators.unshift(newgenerator);
 
+        storeObject("generators", newgenerators);
+
         this.setState({
             generators: newgenerators
         });
     }
 
+    //called by child to update itself (in order to facilitate browser storage)
     removeChild(name, password, type) {
 
         var generators = this.state.generators;
@@ -105,18 +105,26 @@ class Generators extends React.Component {
             }
         });
 
+        storeObject("generators", newgenerators);
+
+        if (type === 1)
+            deleteVerifier(name, password);
+
         this.setState({
             generators: newgenerators
         });
     }
 
+    //called by child to update itself (in order to facilitate browser storage)
     updateChild(name, password) {
 
         var generators = this.state.generators;
 
-        var index = generators.findIndex(g => g.name == name && g.password == password );
+        var index = generators.findIndex(g => g.name == name && g.password == password);
 
         generators[index].curr += 1;
+
+        storeObject("generators", generators);
 
         this.setState({
             generators: generators

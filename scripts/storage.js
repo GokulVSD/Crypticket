@@ -3,7 +3,7 @@ function storageFull() {
     console.log("localStorage is full");
 }
 
-function retrieveObject(key) { return; //testing
+function retrieveObject(key) {
 
     var storage = window.localStorage;
 
@@ -15,7 +15,7 @@ function retrieveObject(key) { return; //testing
     return obj;
 }
 
-function storeObject(key, obj) { return; //testing
+function storeObject(key, obj) {
 
     var storage = window.localStorage;
 
@@ -26,4 +26,12 @@ function storeObject(key, obj) { return; //testing
     } catch(e) {
         storageFull();
     }
+}
+
+function getBackupString(){
+    //generate a string to backup the state
+}
+
+function restoreStateFromString(){
+    //parse string and restore state (reload the page after updating localStorage)
 }

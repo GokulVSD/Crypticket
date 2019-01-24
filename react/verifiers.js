@@ -9,22 +9,53 @@ class Verifiers extends React.Component {
     constructor(props) {
         super(props);
 
-        let verifiers = [
-            { name: "Test1", password: "123", curr: 2, max: 5, verified: ["1", "2"] },
-            { name: "Test2", password: "456", curr: 1, max: 3, verified: ["2"] },
-            { name: "Test3", password: "789", curr: 3, max: 4, verified: ["1", "2", "3"] }
-        ];
-
         this.state = {
-            verifiers: verifiers
+            verifiers: retrieveObject("verifiers")
         };
     }
 
-    //use this later to add a function for updates from generators
+    //used to add functions to the window for updates from Generators
     componentDidMount() {
 
+        window.newVerifier = this.newVerifier.bind(this);
+        window.deleteVerifier = this.deleteVerifier.bind(this);
     }
 
+    newVerifier(g) {
+
+        var newverifier = { name: g.name, password: g.password, curr: 0, max: g.max, verified: [] };
+
+        var verifiers = this.state.verifiers;
+
+        verifiers.unshift(newverifier);
+
+        storeObject("verifiers", verifiers);
+
+        this.setState({
+            verifiers: verifiers
+        });
+    }
+
+    deleteVerifier(name, password) {
+
+        var verifiers = this.state.verifiers;
+
+        var newverifiers = verifiers.filter(v => {
+            if (v.name == name && v.password == password) {
+                return false;
+            } else {
+                return true;
+            }
+        });
+
+        storeObject("verifiers", newverifiers);
+
+        this.setState({
+            verifiers: newverifiers
+        });
+    }
+
+    //called by child to update itself (in order to facilitate browser storage)
     updateChild(name, password, msg) {
 
         var verifiers = this.state.verifiers;
@@ -35,12 +66,20 @@ class Verifiers extends React.Component {
 
         verifiers[index].verified.push(msg);
 
+        storeObject("verifiers", verifiers);
+
         this.setState({
             verifiers: verifiers
         });
     }
 
     render() {
+
+        if (this.state.verifiers.length == 0) {
+            return e('div',
+                null,
+                "Create Crypticket Generators from the Create page and verify them here");
+        }
 
         return e(React.Fragment, null,
 
