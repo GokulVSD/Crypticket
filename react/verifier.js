@@ -135,14 +135,16 @@ class Verifier extends React.Component {
 
             e(LabelledInput,
                 {
-                    placeholder: "Paste or Enter Here", classes: "verifier-inputs", label: "Crypticket"
+                    placeholder: "Paste or Enter Here", classes: "verifier-inputs", label: "Crypticket",
+                    newInput: this.newInput.bind(this),
+                    keyboardBuffer: this.keyboardBuffer.bind(this)
                 },
                 null),
 
             e("div", null, null),
 
             e("div",
-                { className: "creator-btn", onClick: () => this.verifyTicket({ keyCode: 13 }) },
+                { className: "creator-btn", onClick: () => this.newInput({ keyCode: 13 }) },
                 "Verify")
         );
     }

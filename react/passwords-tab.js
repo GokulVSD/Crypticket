@@ -61,6 +61,8 @@ class PasswordsTab extends React.Component {
 
     var index = passwords.findIndex(p => p.name == name && p.password == password);
 
+    if(passwords[index].appNames.findIndex(a => a == appName) > -1) return;
+
     passwords[index].appNames.push(appName);
 
     storeObject("passwords", passwords);

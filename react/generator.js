@@ -95,7 +95,7 @@ class Generator extends React.Component {
         if (key.keyCode === 13) {
 
             var appName = this.state.buffer.trim();
-            $(".app-name-inputs").val("").blur();
+            $(".app-inputs").val("").blur();
 
             var pass = this.state.key.sign(appName.toUpperCase()).toHex();
 
@@ -165,7 +165,9 @@ class Generator extends React.Component {
             (this.props.type == 2 &&
                 e(LabelledInput,
                     {
-                        placeholder: "Type the name of a Website or App, eg: Google", classes: "app-inputs", label: "App"
+                        placeholder: "Type the name of a Website or App, eg: Google", classes: "app-inputs", label: "App",
+                        newInput: this.newInput.bind(this),
+                        keyboardBuffer: this.keyboardBuffer.bind(this)
                     },
                     null)
             )
