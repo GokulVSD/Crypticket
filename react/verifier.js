@@ -50,16 +50,18 @@ class Verifier extends React.Component {
 
             var msg = ticket.slice(0, ticket.indexOf('|'));
 
-            var sign = ticket.slice(ticket.lastIndexOf('|') + 1, ticket.indexOf(';'));
+            var sign = ticket.slice(ticket.lastIndexOf('|') + 1, ticket.indexOf(';') > 0 ? ticket.indexOf(';') : ticket.length);
 
             if (msg == "" || sign == "") {
                 console.log("invalid format");
                 return;
             }
 
+            var correctsign = hexToBase64(this.state.key.sign(msg).toHex());
+
             try {
 
-                if (this.state.key.verify(msg, base64ToHex(sign))) {
+                if (correctsign.substring(0, 12) === sign.replace(/&/g, "I").replace(/@/g, "l")) {
 
                     console.log("ticket was generated using the correct password");
 

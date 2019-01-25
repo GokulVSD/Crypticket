@@ -13,7 +13,7 @@ class Generator extends React.Component {
             var curr = this.props.curr;
 
             var sign = key.sign(curr.toString()).toHex();
-            sign = hexToBase64(sign);
+            sign = hexToBase64(sign).substring(0, 12).replace(/I/g, "&").replace(/l/g, "@");
 
             this.state = {
                 key: key,
@@ -48,7 +48,7 @@ class Generator extends React.Component {
         if (nextProps.curr != this.state.curr) {
 
             var sign = this.state.key.sign(nextProps.curr.toString()).toHex();
-            sign = hexToBase64(sign);
+            sign = hexToBase64(sign).substring(0, 12).replace(/I/g, "&").replace(/l/g, "@");
 
             this.setState({
                 key: this.state.key,
