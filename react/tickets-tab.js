@@ -53,7 +53,7 @@ class TicketsTab extends React.Component {
         };
 
       } catch (e) {
-        console.log("invalid ticket");
+        console.log("invalid ticket, possibly didn't use copy paste");
         return;
       }
 
@@ -79,9 +79,20 @@ class TicketsTab extends React.Component {
 
   keyboardBuffer(event) {
 
+    var l = event.target.value.length;
+    var i = 0;
+    var temp = event.target.value;
+
+    if (l > 16) {
+
+      i = event.target.value.indexOf(';');
+
+      $(ReactDOM.findDOMNode(this)).val(event.target.value.slice(0, i < 0 ? l : i));
+    }
+
     this.setState({
       tickets: this.state.tickets,
-      buffer: event.target.value
+      buffer: temp
     });
   }
 

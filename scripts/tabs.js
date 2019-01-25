@@ -57,3 +57,5 @@ function optionalTicketGenerator() {
         x.removeClass("xup");
     }
 }
+
+optionalTicketGenerator();

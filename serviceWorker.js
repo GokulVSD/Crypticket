@@ -13,7 +13,6 @@ var precacheFiles = [
   './css/tabs.css',
   './css/forms.css',
   './css/components.css',
-  './css/productreg.ttf',
   './css/productbold.ttf',
   './icons/css/all.css',
   './icons/webfonts/fa-brands-400.ttf',

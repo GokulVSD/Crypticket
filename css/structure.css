@@ -1,9 +1,4 @@
 @font-face {
-    font-family: 'productreg';
-    src: url('productreg.ttf');
-}
-
-@font-face {
     font-family: 'productbold';
     src: url('productbold.ttf');
 }
@@ -19,6 +14,7 @@ html{
 body{
   overflow-x: hidden;
   font-family: 'productbold';
+  user-select: none;
 }
 
 a{

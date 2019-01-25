@@ -8,19 +8,21 @@ class LabelledInput extends React.Component {
     render() {
         return e(React.Fragment, null,
 
-            e("span",
-                null,
-                this.props.label),
+            e("div", { className: "input-container wide" },
+                e("span",
+                    { className: "labels" },
+                    this.props.label),
 
-            e("input",
-                {
-                    type: "text",
-                    placeholder: this.props.placeholder == undefined ? "" : this.props.placeholder,
-                    onKeyDown: key => this.props.newInput(key),
-                    onChange: event => this.props.keyboardBuffer(event),
-                    className: this.props.classes
-                },
-                null)
+                e("input",
+                    {
+                        type: "text",
+                        placeholder: this.props.placeholder == undefined ? "" : this.props.placeholder,
+                        onKeyDown: key => this.props.newInput(key),
+                        onChange: event => this.props.keyboardBuffer(event),
+                        className: this.props.classes + " inputs"
+                    },
+                    null)
+            )
         );
     }
 }

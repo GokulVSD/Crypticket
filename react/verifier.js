@@ -114,11 +114,21 @@ class Verifier extends React.Component {
 
     keyboardBuffer(event) {
 
+        var l = event.target.value.length;
+        var i = 0;
+
+        if (l > 16) {
+
+            i = event.target.value.indexOf(';');
+
+            $(ReactDOM.findDOMNode(this)).next().next().children("input").val(event.target.value.slice(0, i < 0 ? l : i));
+        }
+
         this.setState({
             key: this.state.key,
             curr: this.state.curr,
             verified: this.state.verified,
-            buffer: event.target.value
+            buffer: event.target.value.slice(0, i < 0 ? l : i)
         });
     }
 

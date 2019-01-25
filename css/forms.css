@@ -1,7 +1,3 @@
-#event-name, #event-password, #url, #username, #global-password{
-    margin: 10px auto;
-}
-
 .creator-btn{
     margin-top: 5px;
     box-shadow: 0 0 3px rgba(0,0,0,0.32), 0 0 2px rgba(0,0,0,0.32);
@@ -19,12 +15,59 @@
     color: white;
 }
 
+.creator-btn:focus{
+    outline: none;
+}
+
 .creator-btn:active{
    background-color: white;
    background-size: 100%;
    transition: background 0s;
 }
 
-.grouped{
+.input-container{
+    position: relative;
+    box-shadow: 0 0 2px rgba(0,0,0,0.42);
+    border-radius: 20px;
+    width: 60%;
+    min-width: 370px;
+    height: 40px;
+    margin: 10px auto; 
+    overflow: hidden;
+}
+
+.input-container.wide{
+    margin: 20px auto;
+    width: 80%;
+}
+
+.labels{
+    position: absolute;
+    padding: 8px;
+    height: 42px;
+    min-width: 51px;
+    left: 0;
+    box-shadow: 0 0 2px rgba(0,0,0,0.26);
+    background: white;
+}
+
+.inputs{
+    margin-top: -1px;
+    margin-left: 50px;
+    text-align: center;
+    font-size: 15px;
+    width: calc(100% - 50px);
+    height: 42px;;
+    border: none;
+}
+
+.inputs:focus{
+    outline: none;
+}
+
+.input-container.half{
+    margin: 0 auto;
     display: inline-block;
+    width: 40%;
+    min-width: 183px;
 }

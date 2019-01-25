@@ -112,37 +112,59 @@
                                 <div id="event-creater-tb-container">
                                     <div style="height: 1px;"></div>
                                     <div id="event-creater-tb">
-                                        <span>Name</span><input type="text" id="event-name" placeholder="Event or Group Name">
-                                        <div></div>
-                                        <span>Password</span><input type="password" id="event-password" placeholder="Should be Long and Unique">
-                                        <div></div>
-                                        <span>Count</span><input type="text" id="no-of-tickets" placeholder="Number of Crypickets Required">
-                                        <div></div>
-                                        <span class="grouped"><span>Date</span><input type="text" id="date" placeholder="eg: 25th May, 2019"></span>
-                                        <span class="grouped"><span>Time</span><input type="text" id="time" placeholder="eg: 9:30 AM UTC"></span>
-                                        <div></div>
-                                        <div class="creator-btn" onclick="optionalTicketGenerator()">Optional</div>
-                                        <div id="optional-ticket-generator">
-                                            <span>Website</span><input type="text" id="url" placeholder="Associated URL, eg: www.reddit.com">
-                                            <div></div>
-                                            <div class="head-title">Coordinates</div>
-                                            <div></div>
-                                            <span class="grouped"><span>X</span><input type="text" id="x-coord" placeholder="eg: 12.4850932"></span>
-                                            <span class="grouped"><span>Y</span><input type="text" id="y-coord" placeholder="eg: 78.6256129"></span>
-                                            <div></div>
+                                        <div class="input-container">
+                                            <span class="labels">Name</span><input class="inputs" type="text" id="event-name"
+                                                placeholder="Event or Group Name">
+                                        </div>
+                                        <div class="input-container">
+                                            <span class="labels">Password</span><input class="inputs" type="password"
+                                                id="event-password" placeholder="Should be Long and Unique">
+                                        </div>
+                                        <div class="input-container">
+                                            <span class="labels">Count</span><input class="inputs" type="text" id="no-of-tickets"
+                                                placeholder="Number of Crypickets Required">
+                                        </div>
+                                        <div class="input-container half">
+                                            <span class="labels">Date</span><input class="inputs" type="text" id="date"
+                                                placeholder="25th May, 2019">
+                                        </div>
+                                        <div class="input-container half">
+                                            <span class="labels">Time</span><input class="inputs" type="text" id="time"
+                                                placeholder="9:30 AM UTC">
                                         </div>
                                         <div></div>
-                                        <div class="creator-btn" onclick="newGenerator()">Create Ticket Generator</div>
+                                        <div tabindex="0" class="creator-btn" onclick="optionalTicketGenerator()">Optional</div>
+                                        <div id="optional-ticket-generator">
+                                            <div class="input-container">
+                                                <span class="labels">Website</span><input class="inputs" type="text" id="url"
+                                                    placeholder="Associated Link, eg: reddit.com">
+                                            </div>
+                                            <div class="head-title">Coordinates</div>
+                                            <div></div>
+                                            <div class="input-container half">
+                                                <span class="labels">X</span><input class="inputs" type="text" id="x-coord"
+                                                    placeholder="Lattitude">
+                                            </div>
+                                            <div class="input-container half">
+                                                <span class="labels">Y</span><input class="inputs" type="text" id="y-coord"
+                                                    placeholder="Longitude">
+                                            </div>
+                                        </div>
+                                        <div></div>
+                                        <div tabindex="0" class="creator-btn" onclick="newGenerator()">Create Ticket Generator</div>
                                     </div>
                                 </div>
                                 <div id="password-creater-tb-container">
                                     <div style="height: 1px;"></div>
                                     <div id="password-creater-tb">
-                                        <span>Username</span><input type="text" id="username" placeholder="For the Global Password Group">
-                                        <div></div>
-                                        <span>Password</span><input type="password" id="global-password" placeholder="Global Password, Long and Unique">
-                                        <div></div>
-                                        <div class="creator-btn" onclick="newPassGenerator()">Create Password Generator</div>
+                                        <div class="input-container">
+                                            <span class="labels">Username</span><input tabindex="1" class="inputs" type="text" id="username" placeholder="Password Group Name">
+                                        </div>
+                                        <div class="input-container">
+                                            <span class="labels">Password</span><input tabindex="1" class="inputs" type="password" id="global-password"
+                                                placeholder="Should be Long and Unique">
+                                        </div>
+                                        <div tabindex="1" class="creator-btn" onclick="newPassGenerator()">Create Password Generator</div>
                                     </div>
                                 </div>
                             </div>
