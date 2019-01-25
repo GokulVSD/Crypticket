@@ -59,3 +59,21 @@ function optionalTicketGenerator() {
 }
 
 optionalTicketGenerator();
+
+$(".creator-btn:eq( 0 )").keypress(function (e) {
+    if (e.keyCode == 13) {
+        optionalTicketGenerator();
+    }
+});
+
+$(".creator-btn:eq( 1 )").keypress(function (e) {
+    if (e.keyCode == 13) {
+        newGenerator();
+    }
+});
+
+$(".creator-btn:eq( 2 )").keypress(function (e) {
+    if (e.keyCode == 13) {
+        newPassGenerator();
+    }
+});

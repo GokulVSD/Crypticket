@@ -17,6 +17,7 @@
 
 .creator-btn:focus{
     outline: none;
+    box-shadow: 0 0 5px rgba(0,0,0,0.52), 0 0 5px rgba(0,0,0,0.52);
 }
 
 .creator-btn:active{
