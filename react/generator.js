@@ -100,13 +100,12 @@ class Generator extends React.Component {
 
             pass = hexToBase64(pass).slice(0, 12).replace(/\//g, "x") + "+0Pw";
 
+            addApp(this.props.name, this.props.password, appName);
+
             // clipboard API
             navigator.clipboard.writeText(pass);
 
-            /*
-            Inform the user "copied to clipboard, you can find the password in the passwords tab in view".
-            Backup appName to localstorage for this.props.name and call a force update to passwords-tab.
-            */
+            //Inform the user "copied to clipboard, you can find the password in the passwords tab in view".
 
             this.setState({
                 key: this.state.key,

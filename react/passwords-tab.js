@@ -8,18 +8,75 @@ class PasswordsTab extends React.Component {
   constructor(props) {
     super(props);
 
-    let passwords = [
-      { name: "password1", password: "test1", appNames: ["Google", "Facebook"] },
-      { name: "password2", password: "test2", appNames: ["Amazon"] },
-      { name: "password3", password: "test3", appNames: [] }
-    ];
-
     this.state = {
-      passwords: passwords
+      passwords: retrieveObject("passwords")
     };
   }
 
+  //used to add functions to the window for updates from Generators
+  componentDidMount() {
+
+    window.newUsername = this.newUsername.bind(this);
+    window.deleteUsername = this.deleteUsername.bind(this);
+    window.addApp = this.addApp.bind(this);
+  }
+
+  newUsername(name, password) {
+
+    var password = { name: name, password: password, appNames: [] };
+
+    var passwords = this.state.passwords;
+
+    passwords.unshift(password);
+
+    storeObject("passwords", passwords);
+
+    this.setState({
+      passwords: passwords
+    });
+  }
+
+  deleteUsername(name, password) {
+
+    var passwords = this.state.passwords;
+
+    var newpasswords = passwords.filter(p => {
+      if (p.name == name && p.password == password) {
+        return false;
+      } else {
+        return true;
+      }
+    });
+
+    storeObject("passwords", newpasswords);
+
+    this.setState({
+      passwords: newpasswords
+    });
+  }
+
+  addApp(name, password, appName) {
+
+    var passwords = this.state.passwords;
+
+    var index = passwords.findIndex(p => p.name == name && p.password == password);
+
+    passwords[index].appNames.push(appName);
+
+    storeObject("passwords", passwords);
+
+    this.setState({
+      passwords: passwords
+    });
+  }
+
   render() {
+
+    if (this.state.passwords.length == 0) {
+      return e('div',
+        null,
+        "Create Passwords from the Create page, they'll show up here");
+    }
 
     return this.state.passwords.map(password => {
       return e(
