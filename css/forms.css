@@ -1,6 +1,5 @@
 #event-name, #event-password, #url, #username, #global-password{
     margin: 10px auto;
-    display: block;
 }
 
 .creator-btn{
@@ -24,4 +23,8 @@
    background-color: white;
    background-size: 100%;
    transition: background 0s;
+}
+
+.grouped{
+    display: inline-block;
 }

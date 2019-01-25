@@ -165,7 +165,7 @@ class Generator extends React.Component {
             (this.props.type == 2 &&
                 e(LabelledInput,
                     {
-                        placeholder: "Type the name of a Website or App, eg: Google", classes: "app-inputs", label: "App",
+                        placeholder: "Name of a Website or App, eg: Reddit", classes: "app-inputs", label: "App",
                         newInput: this.newInput.bind(this),
                         keyboardBuffer: this.keyboardBuffer.bind(this)
                     },

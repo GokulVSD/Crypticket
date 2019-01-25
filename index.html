@@ -112,20 +112,23 @@
                                 <div id="event-creater-tb-container">
                                     <div style="height: 1px;"></div>
                                     <div id="event-creater-tb">
-                                        <input type="text" id="event-name" placeholder="Name">
-                                        <input type="password" id="event-password" placeholder="Password">
-                                        <input type="text" id="no-of-tickets" placeholder="Number of Tickets">
+                                        <span>Name</span><input type="text" id="event-name" placeholder="Event or Group Name">
                                         <div></div>
-                                        <span><input type="text" id="date" placeholder="Date"></span>
-                                        <span><input type="text" id="time" placeholder="Time"></span>
+                                        <span>Password</span><input type="password" id="event-password" placeholder="Should be Long and Unique">
+                                        <div></div>
+                                        <span>Count</span><input type="text" id="no-of-tickets" placeholder="Number of Crypickets Required">
+                                        <div></div>
+                                        <span class="grouped"><span>Date</span><input type="text" id="date" placeholder="eg: 25th May, 2019"></span>
+                                        <span class="grouped"><span>Time</span><input type="text" id="time" placeholder="eg: 9:30 AM UTC"></span>
                                         <div></div>
                                         <div class="creator-btn" onclick="optionalTicketGenerator()">Optional</div>
                                         <div id="optional-ticket-generator">
-                                            <input type="text" id="url" placeholder="Website">
+                                            <span>Website</span><input type="text" id="url" placeholder="Associated URL, eg: www.reddit.com">
+                                            <div></div>
                                             <div class="head-title">Coordinates</div>
                                             <div></div>
-                                            <span><input type="text" id="x-coord" placeholder="X"></span>
-                                            <span><input type="text" id="y-coord" placeholder="Y"></span>
+                                            <span class="grouped"><span>X</span><input type="text" id="x-coord" placeholder="eg: 12.4850932"></span>
+                                            <span class="grouped"><span>Y</span><input type="text" id="y-coord" placeholder="eg: 78.6256129"></span>
                                             <div></div>
                                         </div>
                                         <div></div>
@@ -135,8 +138,9 @@
                                 <div id="password-creater-tb-container">
                                     <div style="height: 1px;"></div>
                                     <div id="password-creater-tb">
-                                        <input type="text" id="username" placeholder="Username">
-                                        <input type="password" id="global-password" placeholder="Global Password">
+                                        <span>Username</span><input type="text" id="username" placeholder="For the Global Password Group">
+                                        <div></div>
+                                        <span>Password</span><input type="password" id="global-password" placeholder="Global Password, Long and Unique">
                                         <div></div>
                                         <div class="creator-btn" onclick="newPassGenerator()">Create Password Generator</div>
                                     </div>
