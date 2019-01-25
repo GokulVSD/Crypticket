@@ -1,4 +1,5 @@
 import SecretCopier from "./secret-copier.js";
+import LabelledInput from "./labelled-input.js";
 
 const e = React.createElement;
 
@@ -89,7 +90,7 @@ class Generator extends React.Component {
     }
 
     //these two functions are for password generator
-    addPassword(key) {
+    newInput(key) {
 
         if (key.keyCode === 13) {
 
@@ -132,6 +133,13 @@ class Generator extends React.Component {
                     this.state.curr + "/" + this.props.max)
             ),
 
+            (this.props.type == 2 &&
+
+                e("div",
+                    { className: "gen-counter pass" },
+                    "Passwords")
+            ),
+
             e("h2",
                 null,
                 this.props.name),
@@ -154,13 +162,10 @@ class Generator extends React.Component {
                     null)
             ),
 
-            //might have to replace this in the future if you want the copy button for the input
             (this.props.type == 2 &&
-                e("input",
+                e(LabelledInput,
                     {
-                        type: "text", placeholder: "Website or App Name", className: "app-name-inputs",
-                        onKeyDown: key => this.addPassword(key),
-                        onChange: event => this.keyboardBuffer(event)
+                        placeholder: "Type the name of a Website or App, eg: Google", classes: "app-inputs", label: "App"
                     },
                     null)
             )

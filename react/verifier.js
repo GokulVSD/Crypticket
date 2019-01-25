@@ -1,3 +1,5 @@
+import LabelledInput from "./labelled-input.js";
+
 const e = React.createElement;
 
 class Verifier extends React.Component {
@@ -41,7 +43,7 @@ class Verifier extends React.Component {
         }
     }
 
-    verifyTicket(key) {
+    newInput(key) {
 
         if (key.keyCode === 13) {
 
@@ -131,11 +133,9 @@ class Verifier extends React.Component {
                 null,
                 this.props.name),
 
-            e("input",
+            e(LabelledInput,
                 {
-                    type: "text", placeholder: "Enter Ticket Here", className: "verifier-inputs",
-                    onKeyDown: key => this.verifyTicket(key),
-                    onChange: event => this.keyboardBuffer(event)
+                    placeholder: "Paste or Enter Here", classes: "verifier-inputs", label: "Crypticket"
                 },
                 null),
 

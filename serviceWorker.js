@@ -32,6 +32,7 @@ var precacheFiles = [
   './react/verifier.js',
   './react/secret-copier.js',
   './react/copier.js',
+  './react/labelled-input.js',
   './vendor/bootstrap/css/bootstrap.min.css',
   './vendor/bootstrap/js/bootstrap.bundle.min.js',
   './vendor/jquery/jquery.min.js',

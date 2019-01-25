@@ -71,3 +71,7 @@
     left: 15px;
     cursor: default;
 }
+
+.gen-counter.pass{
+    font-size: 13px;
+}
