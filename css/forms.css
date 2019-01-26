@@ -75,7 +75,7 @@
 }
 
 .input-container.restore{
-    min-width: 303px;
+    min-width: 280px;
     height: 50px;
 }
 
@@ -85,4 +85,5 @@
 }
 .restore .inputs{
     height: 52px;
+    margin-left: 75px;
 }

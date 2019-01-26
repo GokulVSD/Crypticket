@@ -30,12 +30,40 @@ function storeObject(key, obj) {
 
 function getBackupString() {
     //generate a string to backup the state
+
+    var storage = window.localStorage;
+    
+    var tickets = storage.getItem("tickets");
+    var passwords = storage.getItem("passwords");
+    var generators = storage.getItem("generators");
+    var verifiers = storage.getItem("verifiers");
+
+    var backup = ";" + btoa(tickets) + ";" + btoa(passwords) + ";" + btoa(generators) + ";" + btoa(verifiers) + ";";
+
+    navigator.clipboard.writeText(backup);
 }
 
-function restoreStateFromString() {
-    //parse string and restore state (reload the page after updating localStorage)
+function restoreStateFromString(str) {
+
+
+    //promt user if they wanna refresh via a modal
 }
 
 function resetState() {
+    //promt user if they are sure via a modal
 
+    window.localStorage.clear();
+    location.reload();
 }
+
+$("#restore-input").keypress(function (e) {
+
+    if (e.keyCode == 13) {
+
+        var str = $("#restore-input").val().trim();
+
+        $("#restore-input").val("").blur();
+
+        restoreStateFromString(str);
+    }
+});
