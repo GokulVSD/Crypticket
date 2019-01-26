@@ -35,6 +35,7 @@
     height: 40px;
     margin: 10px auto; 
     overflow: hidden;
+    line-height: 1.5 !important;
 }
 
 .input-container.wide{
@@ -71,4 +72,17 @@
     display: inline-block;
     width: 40%;
     min-width: 183px;
+}
+
+.input-container.restore{
+    min-width: 303px;
+    height: 50px;
+}
+
+.restore .labels{
+    height: 52px;
+    padding: 13px;
+}
+.restore .inputs{
+    height: 52px;
 }

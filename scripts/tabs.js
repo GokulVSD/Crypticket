@@ -77,3 +77,4 @@ $(".creator-btn:eq( 2 )").keypress(function (e) {
         newPassGenerator();
     }
 });
+

@@ -79,7 +79,18 @@
                         <span></span>
                     </button>
                     <img class="img-pill-bar" src="assets/logo.png">
-                    <button type="button" id="pillbar-settings" class="ripple"><i class="fas fa-ellipsis-v"></i></button>
+                    <button type="button" id="pillbar-settings" class="ripple dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <div id="dropdown-menu-container">
+                            <h3>Backup & Restore</h2>
+                            <div class="bnr-btn" id="backup-btn">Save to Clipboard</div>
+                            <div class="input-container restore">
+                                <span class="labels">Restore</span><input id="restore-input"class="inputs" type="text" placeholder="Paste Here">
+                            </div>
+                            <div class="bnr-btn" id="reset-btn">Factory Reset</div>
+                        </div>
+                    </div>
                 </div>
                 <!-- /pill-bar -->
 
@@ -151,20 +162,23 @@
                                             </div>
                                         </div>
                                         <div></div>
-                                        <div tabindex="0" class="creator-btn" onclick="newGenerator()">Create Ticket Generator</div>
+                                        <div tabindex="0" class="creator-btn" onclick="newGenerator()">Create Ticket
+                                            Generator</div>
                                     </div>
                                 </div>
                                 <div id="password-creater-tb-container">
                                     <div style="height: 1px;"></div>
                                     <div id="password-creater-tb">
                                         <div class="input-container">
-                                            <span class="labels">Username</span><input tabindex="1" class="inputs" type="text" id="username" placeholder="Password Group Name">
+                                            <span class="labels">Username</span><input tabindex="1" class="inputs" type="text"
+                                                id="username" placeholder="Password Group Name">
                                         </div>
                                         <div class="input-container">
-                                            <span class="labels">Password</span><input tabindex="1" class="inputs" type="password" id="global-password"
-                                                placeholder="Should be Long and Unique">
+                                            <span class="labels">Password</span><input tabindex="1" class="inputs" type="password"
+                                                id="global-password" placeholder="Should be Long and Unique">
                                         </div>
-                                        <div tabindex="1" class="creator-btn" onclick="newPassGenerator()">Create Password Generator</div>
+                                        <div tabindex="1" class="creator-btn" onclick="newPassGenerator()">Create
+                                            Password Generator</div>
                                     </div>
                                 </div>
                             </div>

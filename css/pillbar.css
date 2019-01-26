@@ -9,9 +9,7 @@
 	text-align: center;
     transition:  border-radius 0.2s ease-out, box-shadow 0.3s, width 0.5s, height 0.3s, line-height 0.3s, transform 0.3s;
     max-width: 800px;
-	line-height: 70px;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    line-height: 70px;
 }
 
 .img-pill-bar{
@@ -99,3 +97,79 @@
     margin: 8px auto;
     transition: all 0.5s, transform 0.5s;
 }
+
+.dropdown-toggle::after{
+    display: none;
+}
+
+.show > .dropdown-menu {
+    max-height: 300px;
+    max-width: 400px;
+    margin-left: -20px;
+    margin-top: -1px;
+    opacity: 1;
+  }
+  
+  .dropdown-menu {
+    right: 0 !important;
+    left: 0 !important;
+    top: 0 !important;
+    bottom: auto !important;
+    width: 80%;
+    margin-left: -10px;
+    margin-top: -15px;
+    display: block;
+    max-height: 0;
+    max-width: 400px;
+    transition: max-height 0.5s ease, opacity 0.3s ease, margin-left 0.3s ease, margin-top 0.3s ease !important;
+    opacity: 0;
+    overflow: hidden;
+    border-radius: 25px;
+     box-shadow: 0 0 3px rgba(0,0,0,0.22), 0 1px 2px rgba(0,0,0,0.22);
+    border: none;
+  }
+
+#dropdown-menu-container{
+    text-align: center;
+    line-height: 70px;
+}
+
+.bnr-btn{
+    display: inline-block;
+    position: relative;
+    border-radius: 22px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.42);
+    color: white;
+    background-color: #4f4f4f;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    line-height: 1.5;
+    padding: 14px;
+    background-position: center;
+}
+
+.bnr-btn:hover{
+    background: #ff5722 radial-gradient(circle, transparent 1%, #ff5722 1%) center/15000%;
+}
+
+.bnr-btn:active{
+    background-color: #ffffff;
+    background-size: 100%;
+    transition: background 0s;
+ }
+
+ h3{
+     margin-top: 10px;
+    color: #555;
+ }
+
+ h3:after{
+     content: '';
+     height: 3px;
+     background-color: #7f7f7f;
+     width: 65%;
+     display: block;
+     margin-top: 5px;
+     margin-left: auto;
+     margin-right: auto;
+ }
