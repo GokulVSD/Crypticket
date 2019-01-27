@@ -1,12 +1,18 @@
 @media(min-width:980px) {
+  
+  #wrapper.toggled #sidebar-wrapper{
+    border-radius: 0;
+  }
 
   #sidebar-wrapper{
     width: 80px;
     overflow-x: hidden;
+    border-radius: 50px;
   }
 
   #sidebar-wrapper:hover{
     width: 90px;
+    border-radius: 0;
   }
 
   .sidebar-nav:hover li div img{

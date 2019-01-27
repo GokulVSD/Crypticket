@@ -89,18 +89,6 @@
 	padding: 0;
 }
 
-#sidebar-wrapper{
-	border-radius: 50px;
-}
-
-#sidebar-wrapper:hover{
-	border-radius: 0;
-}
-
-#wrapper.toggled #sidebar-wrapper{
-	border-radius: 0;
-}
-
 #ticket-tab-slider,#create-tab-slider{
 	overflow: auto;
 	width: 200%;
