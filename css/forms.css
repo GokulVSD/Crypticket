@@ -50,7 +50,8 @@
     min-width: 51px;
     left: 0;
     box-shadow: 0 0 2px rgba(0,0,0,0.26);
-    background: white;
+    background: #4f4f4f;
+    color: #fff;
 }
 
 .inputs{
@@ -87,4 +88,19 @@
     height: 52px;
     margin-left: 102px;
     width: calc(100% - 102px);
+}
+
+.cpr .inputs, .cpr .labels{
+    cursor: pointer;
+}
+
+.cpr .inputs::placeholder{
+    color: #555;
+    font-size: 17px;
+}
+
+.input-container.half.cpr{
+    margin: 0 3%;
+    width: 30%;
+    min-width: 155px;
 }

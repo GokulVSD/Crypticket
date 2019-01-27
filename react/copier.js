@@ -14,12 +14,12 @@ class Copier extends React.Component {
         return e(React.Fragment, null,
 
             e("span",
-            { onClick: () => this.copyContent() },
+            { className: "labels", onClick: () => this.copyContent() },
             this.props.title),
 
-            e("span",
-            { onClick: () => this.copyContent() },
-            this.props.content)
+            e("input",
+            { type: "text", placeholder: this.props.content, readOnly: "readonly", className: "inputs", onClick: () => this.copyContent() },
+            null)
         );
     }
 }

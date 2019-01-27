@@ -75,26 +75,30 @@ class Ticket extends React.Component {
                 e(React.Fragment, null,
 
                     e("h6",
-                        null,
-                        "LOCATION"),
+                        { className: "head-title" },
+                        "Location"),
 
-                    e("span",
-                        null,
+                    e("div", null, null),
+
+                    e("div",
+                        { className: "input-container half cpr" },
                         e(Copier,
                             { title: "X", content: this.props.ticket.x },
                             null)
                     ),
 
-                    e("span",
-                        null,
+                    e("div",
+                        { className: "input-container half cpr" },
                         e(Copier,
                             { title: "Y", content: this.props.ticket.y },
                             null)
                     ),
 
+                    e("div", null, null),
+
                     e("div",
-                        { className: "nav-btn", onClick: () => window.open("https://www.google.com/maps/dir/my+location/" + this.props.ticket.x + "," + this.props.ticket.y) },
-                        "START NAVIGATION")
+                        { className: "bnr-btn", onClick: () => window.open("https://www.google.com/maps/dir/my+location/" + this.props.ticket.x + "," + this.props.ticket.y) },
+                        "Start Navigation")
                 )
             )
         );
