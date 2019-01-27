@@ -33,7 +33,7 @@
   }
 
   .pill-bar:hover #sidebarCollapse.active span{
-    margin: 12px auto;
+    margin: 10px auto;
   }
 
   .pill-bar{
