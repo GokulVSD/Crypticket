@@ -80,7 +80,7 @@
     border-radius: 30px;
     margin: 0 auto;
     display: block;
-    background: #898989;
+    background: #8f8f8f;
     transition: all 0.4s cubic-bezier(0.810, -0.330, 0.345, 1.375);
 }
 

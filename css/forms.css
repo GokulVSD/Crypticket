@@ -85,5 +85,6 @@
 }
 .restore .inputs{
     height: 52px;
-    margin-left: 75px;
+    margin-left: 102px;
+    width: calc(100% - 102px);
 }

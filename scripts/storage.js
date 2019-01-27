@@ -32,21 +32,46 @@ function getBackupString() {
     //generate a string to backup the state
 
     var storage = window.localStorage;
-    
+
     var tickets = storage.getItem("tickets");
     var passwords = storage.getItem("passwords");
     var generators = storage.getItem("generators");
     var verifiers = storage.getItem("verifiers");
 
-    var backup = ";" + btoa(tickets) + ";" + btoa(passwords) + ";" + btoa(generators) + ";" + btoa(verifiers) + ";";
+    var backup = btoa(tickets) + ";" + btoa(passwords) + ";" + btoa(generators) + ";" + btoa(verifiers);
 
     navigator.clipboard.writeText(backup);
 }
 
 function restoreStateFromString(str) {
 
+    var items;
+
+    try {
+
+        items = str.split(";");
+
+        if (items.length != 4) throw "Invalid length " + items.length;
+
+        var storage = window.localStorage;
+
+        storage.setItem("tickets", atob(items[0]));
+        storage.setItem("passwords", atob(items[1]));
+        storage.setItem("generators", atob(items[2]));
+        storage.setItem("verifiers", atob(items[3]));
+
+    } catch (e) {
+
+        console.log("Invalid backup string: " + e);
+        
+        //display an error modal, prompt if they want to reset
+
+        return;
+    }
 
     //promt user if they wanna refresh via a modal
+
+    location.reload();
 }
 
 function resetState() {
