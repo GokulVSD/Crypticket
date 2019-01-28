@@ -10,7 +10,7 @@
     width: 40%;
     cursor: pointer;
     height: 36px;
-    background: linear-gradient(to left, #ff6722, #f54f52);
+    background: linear-gradient(to left, #ff8722, #f54f52);
     color: white;
 }
 
@@ -19,11 +19,13 @@
 }
 
 #ticket-add-field:focus,#ticket-add-field:hover{
+    box-shadow: 0 0 3px #f54f52;
     background: #ffffff;
     color: #7f7f7f;
 }
 
 #ticket-add-field:focus{
+    box-shadow: 0 0 3px #f54f52;
     width: 60%;
 }
 
@@ -78,11 +80,12 @@
 }
 
 .bnr-btn{
+    border: 1px solid #02b875;
     display: inline-block;
     position: relative;
     border-radius: 22px;
-    box-shadow: 0 0 2px #f55f52;
-    color: #f54f52;
+    box-shadow: 0 0 2px #02b875;
+    color: #02b875;
     background-color: white;
     transition: all 0.4s;
     cursor: pointer;
@@ -93,7 +96,7 @@
 
 .bnr-btn:hover{
     color: white;
-    background: #f55f52 radial-gradient(circle, transparent 1%, #f55f52 1%) center/15000%;
+    background: #02b875 radial-gradient(circle, transparent 1%, #02b875 1%) center/15000%;
 }
 
 .bnr-btn:active{
@@ -104,5 +107,9 @@
 
  .bnr-btn.nibnr{
      height: 42px;
-     padding: 10px;
+     padding: 8px;
+ }
+
+ .bnr-btn:focus{
+     outline: none;
  }

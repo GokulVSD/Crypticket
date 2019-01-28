@@ -98,7 +98,7 @@ class PasswordsTab extends React.Component {
         password.appNames.map(appName => {
           return e(React.Fragment, { key: appName + password.password },
 
-            e("div", { className: "input-container wide" },
+            e("div", { className: "input-container wide cpr" },
               e(Copier,
                 { title: appName, content: hexToBase64(getECDSAKey(password.password).sign(appName.toUpperCase()).toHex()).slice(0, 12).replace(/\//g, "x") + "+0Pw" },
                 null),

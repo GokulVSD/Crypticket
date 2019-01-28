@@ -154,7 +154,7 @@ class Verifier extends React.Component {
             e("div", null, null),
 
             e("div",
-                { className: "creator-btn", onClick: () => this.newInput({ keyCode: 13 }) },
+                { className: "bnr-btn nibnr", onClick: () => this.newInput({ keyCode: 13 }) },
                 "Verify")
         );
     }

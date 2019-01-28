@@ -156,3 +156,18 @@
      margin-left: auto;
      margin-right: auto;
  }
+
+ #sidebarCollapse{
+     border-radius: 50px;
+     background-position: center;
+     transition: all 0.5s;
+ }
+ #sidebarCollapse:hover{
+    background: #fff radial-gradient(circle, transparent 1%, #fff 1%) center/15000%;
+ }
+
+ #sidebarCollapse:active{
+    background-color: #dfdfdf;
+ 	background-size: 100%;
+  	transition: background 0s;
+}

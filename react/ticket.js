@@ -76,7 +76,8 @@ class Ticket extends React.Component {
 
                     e("h6",
                         { className: "head-title" },
-                        "Location"),
+                        e("i", { className: "fas fa-map-marker-alt" }, null),
+                        " Location"),
 
                     e("div", null, null),
 
@@ -97,8 +98,9 @@ class Ticket extends React.Component {
                     e("div", null, null),
 
                     e("div",
-                        { className: "bnr-btn nibnr", onClick: () => window.open("https://www.google.com/maps/dir/my+location/" + this.props.ticket.x + "," + this.props.ticket.y) },
-                        "Start Navigation")
+                        { className: "bnr-btn nibnr", onClick: () => setTimeout( () => window.open("https://www.google.com/maps/dir/my+location/" + this.props.ticket.x + "," + this.props.ticket.y) , 200 ) },
+                        e("i", { className: "fas fa-location-arrow" }, null),
+                        " Start Navigation")
                 )
             )
         );
