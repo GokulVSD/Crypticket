@@ -170,8 +170,9 @@
 
  h3:after{
      content: '';
-     height: 3px;
-     background-color: #7f7f7f;
+     height: 5px;
+     border-radius: 50px;
+     background: linear-gradient(to right, #34856e, #414C6B);
      width: 80%;
      max-width: 260px;
      display: block;

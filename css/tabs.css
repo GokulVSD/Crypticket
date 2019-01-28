@@ -25,7 +25,8 @@
     content: '';
     height: 5px;
     width: 50%;
-    background-color: #ff5722;
+    background: linear-gradient(to right, #ff9822, #f54f52);
+    border-radius: 50px;
     right: 0;
     left: 0;
     position: absolute;
@@ -47,10 +48,11 @@
 .head-title{
     font-size: 15px;
     font-family: productbold;
-    color: #666;
+    color: #34656e;
     display: inline-block;
     margin-top: 10px;
-    border: 2px solid #888;
+    border: 3px solid white;
+    box-shadow: 0 0 2px rgba(0,0,0,0.42);
     padding-left: 7px;
     padding-right: 7px; 
     border-radius: 20px;

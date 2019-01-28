@@ -10,7 +10,7 @@
     width: 40%;
     cursor: pointer;
     height: 36px;
-    background: #f25f22;
+    background: linear-gradient(to left, #ff6722, #f54f52);
     color: white;
 }
 
@@ -19,7 +19,7 @@
 }
 
 #ticket-add-field:focus,#ticket-add-field:hover{
-    background: white;
+    background: #ffffff;
     color: #7f7f7f;
 }
 
