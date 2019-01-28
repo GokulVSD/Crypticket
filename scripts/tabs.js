@@ -4,7 +4,7 @@ function viewTicketsTab() {
     if ($(".tabs span").hasClass("select-last-child")) {
         $(".tabs span").removeClass("select-last-child");
         $(".tabs span:last-child").css("color", "#999");
-        $(".tabs span:first-child").css("color", "#555");
+        $(".tabs span:first-child").css("color", "#34656e");
 
         $("#passwords-tb, #password-creater-tb").animate({ "opacity": 0 }, 200);
 
@@ -27,7 +27,7 @@ function viewPasswordsTab() {
     if (!$(".tabs span").hasClass("select-last-child")) {
         $(".tabs span").addClass("select-last-child");
         $(".tabs span:first-child").css("color", "#999");
-        $(".tabs span:last-child").css("color", "#555");
+        $(".tabs span:last-child").css("color", "#34656e");
 
         $("#tickets-tb, #event-creater-tb").animate({ "opacity": 0 }, 200);
 
@@ -45,6 +45,8 @@ function viewPasswordsTab() {
         $("#ticket-tab-slider, #create-tab-slider").animate({ "margin-left": "-100%" });
     }
 }
+
+//
 
 function optionalTicketGenerator() {
     x = $("#optional-ticket-generator");

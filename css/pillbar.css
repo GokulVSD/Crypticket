@@ -139,30 +139,6 @@
     line-height: 70px;
 }
 
-.bnr-btn{
-    display: inline-block;
-    position: relative;
-    border-radius: 22px;
-    box-shadow: 0 0 2px rgba(0,0,0,0.42);
-    color: white;
-    background-color: #4f4f4f;
-    transition: all 0.4s ease;
-    cursor: pointer;
-    line-height: 1.5;
-    padding: 14px;
-    background-position: center;
-}
-
-.bnr-btn:hover{
-    background: #ff5722 radial-gradient(circle, transparent 1%, #ff5722 1%) center/15000%;
-}
-
-.bnr-btn:active{
-    background-color: #ffffff;
-    background-size: 100%;
-    transition: background 0s;
- }
-
  h3{
      margin-top: 10px;
     color: #555;
@@ -170,9 +146,9 @@
 
  h3:after{
      content: '';
-     height: 5px;
+     height: 4px;
      border-radius: 50px;
-     background: linear-gradient(to right, #34856e, #414C6B);
+     background: linear-gradient(to left, #ff9822, #f54f52);
      width: 80%;
      max-width: 260px;
      display: block;

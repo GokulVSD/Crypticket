@@ -30,7 +30,7 @@
 .ticket-del-btn{
     display: inline-block;
     position: absolute;
-    box-shadow: 0 0 2px rgba(0,0,0,0.42);
+    box-shadow: 0 0 2px #34656e;
     color: #7f7f7f;
     transition: all 0.4s ease;
     cursor: pointer;
@@ -39,7 +39,7 @@
 }
 
 .ticket-del-btn:hover{
-    background: #ff3122 radial-gradient(circle, transparent 1%, #ff3122 1%) center/15000%;
+    background: #ff4f52 radial-gradient(circle, transparent 1%, #ff4f52 1%) center/15000%;
     color: white;
 }
 
@@ -76,3 +76,33 @@
 .gen-counter.pass{
     font-size: 13px;
 }
+
+.bnr-btn{
+    display: inline-block;
+    position: relative;
+    border-radius: 22px;
+    box-shadow: 0 0 2px #f55f52;
+    color: #f54f52;
+    background-color: white;
+    transition: all 0.4s;
+    cursor: pointer;
+    line-height: 1.5;
+    padding: 14px;
+    background-position: center;
+}
+
+.bnr-btn:hover{
+    color: white;
+    background: #f55f52 radial-gradient(circle, transparent 1%, #f55f52 1%) center/15000%;
+}
+
+.bnr-btn:active{
+    background-color: white;
+    background-size: 100%;
+    transition: background 0s;
+ }
+
+ .bnr-btn.nibnr{
+     height: 42px;
+     padding: 10px;
+ }

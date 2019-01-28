@@ -97,7 +97,7 @@ class Ticket extends React.Component {
                     e("div", null, null),
 
                     e("div",
-                        { className: "bnr-btn", onClick: () => window.open("https://www.google.com/maps/dir/my+location/" + this.props.ticket.x + "," + this.props.ticket.y) },
+                        { className: "bnr-btn nibnr", onClick: () => window.open("https://www.google.com/maps/dir/my+location/" + this.props.ticket.x + "," + this.props.ticket.y) },
                         "Start Navigation")
                 )
             )
