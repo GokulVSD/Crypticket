@@ -16,6 +16,7 @@ class LabelledInput extends React.Component {
                 e("input",
                     {
                         type: "text",
+                        spellCheck: "false",
                         placeholder: this.props.placeholder == undefined ? "" : this.props.placeholder,
                         onKeyDown: key => this.props.newInput(key),
                         onChange: event => this.props.keyboardBuffer(event),

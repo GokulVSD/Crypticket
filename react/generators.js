@@ -38,6 +38,11 @@ class Generators extends React.Component {
             return;
         }
 
+        if (isNaN(max)) {
+            console.log("count is not a number");
+            return;
+        }
+
         if ($("#optional-ticket-generator").hasClass("xup")) {
             //optional is off
             url = x = y = "";
@@ -137,7 +142,7 @@ class Generators extends React.Component {
 
     render() {
 
-        if(this.state.generators.length == 0){
+        if (this.state.generators.length == 0) {
             return null;
         }
 
