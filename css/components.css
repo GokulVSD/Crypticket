@@ -84,7 +84,7 @@
     display: inline-block;
     position: relative;
     border-radius: 22px;
-    box-shadow: 0 0 2px #02b875;
+    box-shadow: 0 0 2px #34656e;
     color: #02b875;
     background-color: white;
     transition: all 0.4s;
@@ -112,4 +112,41 @@
 
  .bnr-btn:focus{
      outline: none;
+ }
+
+ .input-container.wide.secret{
+    box-shadow: 0 0 2px rgba(0,0,0,0.42);
+     min-width: 330px;
+     width: 67%;
+    letter-spacing: 4px;
+    font-size: 17px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3a586d;
+    border: double 2px transparent;
+    background-image: linear-gradient(to right, #ff8722, #f54f52);
+    background-origin: border-box;
+ }
+
+ .input-container.wide.secret:hover{
+    box-shadow: 0 1px 10px 0 rgba(0,0,0,0.32); 
+}
+
+ .input-container.wide.secret div{
+     transition: all 0.4s;
+     background-position: center;
+     background: white;
+     padding: 125px;
+ }
+
+ .secret img{
+    width: 31px;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-bottom: 3px;
+    padding: 0 1px;
+    border-left: 2px solid #34656e;
+    border-right: 2px solid #34656e;
  }

@@ -160,7 +160,7 @@
  #sidebarCollapse{
      border-radius: 50px;
      background-position: center;
-     transition: all 0.5s;
+     transition: all 0.4s;
  }
  #sidebarCollapse:hover{
     background: #fff radial-gradient(circle, transparent 1%, #fff 1%) center/15000%;

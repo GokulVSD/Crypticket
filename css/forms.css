@@ -36,7 +36,8 @@
     margin: 10px auto; 
     overflow: hidden;
     line-height: 1.5 !important;
-    transition: all 0.2s ease;
+    transition: box-shadow 0.2s ease, background 0.4s;
+    background-position: center;
 }
 
 .input-container:hover{
@@ -45,6 +46,7 @@
 
 .input-container.wide{
     margin: 20px auto;
+    min-width: 360px;
     width: 80%;
 }
 
@@ -71,11 +73,11 @@
     background-position: center;
 }
 
-.inputs:hover{
+.input-container.wide.secret div:hover, .inputs:hover{
     background: white radial-gradient(circle, transparent 1%, white 1%) center/15000%;
 }
 
-.inputs:active{
+.input-container.wide.secret div:active, .inputs:active{
     background-color: #dfdfdf;
     background-size: 100%;
     transition: background 0s;
@@ -120,4 +122,8 @@
     margin: 0 3%;
     width: 30%;
     min-width: 155px;
+}
+
+.cpr .inputs{
+    font-size: initial;
 }
