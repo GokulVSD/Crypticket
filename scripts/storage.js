@@ -1,6 +1,11 @@
 function storageFull() {
-    //convert this to a modal
-    console.log("localStorage is full");
+
+    $(".modal-body").html("Looks like your browser has either run out of storage or doesn't support local storage.\
+     You can try deleting some Generators to make space,\
+      or switch to a Chromium based browser such as Chrome or Firefox.\
+       You can transfer data to another browser or factory reset using the 3-dot menu");
+
+    $("#modal").modal("show");
 }
 
 function retrieveObject(key) {
@@ -63,19 +68,30 @@ function restoreStateFromString(str) {
     } catch (e) {
 
         console.log("Invalid backup string: " + e);
-        
-        //display an error modal, prompt if they want to reset
+
+        $(".modal-body").html("Looks like something went terribly wrong when trying to restore.\
+         It's recommended to factory reset if the string you typed had any semicolons (like ';')");
+
+        $("#modal").modal("show");
 
         return;
     }
 
-    //promt user if they wanna refresh via a modal
 
     location.reload();
 }
 
 function resetState() {
-    //promt user if they are sure via a modal
+
+    $(".modal-header h4").html('<i class="fas fa-exclamation-circle"></i> Warning!');
+    $(".modal-body").html('Are you sure you want to factory reset? All your Cryptickets, Passwords, Generators and Verifiers will be permanently deleted\
+    <div></div>\
+    <div tabindex="0" class="bnr-btn nibnr" onclick="confirmedReset()"><i class="far fa-trash-alt"></i> Factory Reset</div>');
+
+    $("#modal").modal("show");
+}
+
+function confirmedReset() {
 
     window.localStorage.clear();
     location.reload();
@@ -94,11 +110,12 @@ $("#restore-input").keypress(function (e) {
 });
 
 function afterModalTransition(e) {
-  e.setAttribute("style", "display: none !important;");
+    e.setAttribute("style", "display: none !important;");
+    $(".modal-header h4").html('<i class="fas fa-exclamation-circle"></i> Oops!');
 }
 
 $('#modal').on('hide.bs.modal', function (e) {
-	setTimeout( () => afterModalTransition(this), 200);
+    setTimeout(() => afterModalTransition(this), 200);
 });
 
 $('#modal').modal("show");
