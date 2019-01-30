@@ -50,13 +50,18 @@ function viewPasswordsTab() {
 
 function optionalTicketGenerator() {
     x = $("#optional-ticket-generator");
+    y = $("#opt-btn i");
     if (!x.hasClass("xup")) {
         x.slideUp(200);
         x.addClass("xup");
+        y.removeClass("fa-chevron-circle-up");
+        y.addClass("fa-chevron-circle-down");
     }
     else {
         x.slideDown(200);
         x.removeClass("xup");
+        y.removeClass("fa-chevron-circle-down");
+        y.addClass("fa-chevron-circle-up");
     }
 }
 

@@ -8,7 +8,7 @@
     <!-- <script src="registerWorker.js"></script> -->
 
     <!-- tab favicon -->
-    <link rel="icon" href="assets/logo.png" />
+    <link rel="icon" href="assets/sidebar-logo.png" />
 
     <!-- metadata -->
     <meta charset="utf-8">
@@ -124,27 +124,27 @@
                                     <div style="height: 1px;"></div>
                                     <div id="event-creater-tb">
                                         <div class="input-container">
-                                            <span class="labels">Name</span><input spellcheck="false" class="inputs" type="text" id="event-name"
+                                            <span class="labels"><i class="far fa-keyboard"></i> Name</span><input spellcheck="false" class="inputs" type="text" id="event-name"
                                                 placeholder="Event or Group Name">
                                         </div>
                                         <div class="input-container">
-                                            <span class="labels">Secret</span><input spellcheck="false" class="inputs" type="password"
+                                            <span class="labels"><i class="fas fa-user-secret"></i> Secret</span><input spellcheck="false" class="inputs" type="password"
                                                 id="event-password" placeholder="Should be Long and Unique">
                                         </div>
                                         <div class="input-container">
-                                            <span class="labels">Count</span><input spellcheck="false" maxlength="7" class="inputs" type="text" id="no-of-tickets"
+                                            <span class="labels"><i class="fas fa-list-ol"></i> Count</span><input spellcheck="false" maxlength="7" class="inputs" type="text" id="no-of-tickets"
                                                 placeholder="Number of Crypickets">
                                         </div>
-                                        <div class="input-container half">
-                                            <span class="labels">Date</span><input spellcheck="false" maxlength="15" class="inputs" type="text" id="date"
+                                        <div class="input-container half grr">
+                                            <span class="labels"><i class="fas fa-calendar-alt"></i> Date</span><input spellcheck="false" maxlength="15" class="inputs" type="text" id="date"
                                                 placeholder="25th May, 2019">
                                         </div>
-                                        <div class="input-container half">
-                                            <span class="labels">Time</span><input spellcheck="false" maxlength="12" class="inputs" type="text" id="time"
+                                        <div class="input-container half grr">
+                                            <span class="labels"><i class="far fa-clock"></i> Time</span><input spellcheck="false" maxlength="12" class="inputs" type="text" id="time"
                                                 placeholder="9:30 AM UTC">
                                         </div>
                                         <div></div>
-                                        <div tabindex="0" class="bnr-btn nibnr" onclick="optionalTicketGenerator()">Optional</div>
+                                        <div tabindex="0" class="bnr-btn nibnr" id="opt-btn" onclick="optionalTicketGenerator()"> Optional <i class="fas fa-chevron-circle-down"></i></div>
                                         <div id="optional-ticket-generator">
                                             <div class="input-container">
                                                 <span class="labels">Website</span><input spellcheck="false" class="inputs" type="text" id="url"
@@ -170,11 +170,11 @@
                                     <div style="height: 1px;"></div>
                                     <div id="password-creater-tb">
                                         <div class="input-container">
-                                            <span class="labels">Username</span><input spellcheck="false" tabindex="1" class="inputs" type="text"
+                                            <span class="labels"><i class="fas fa-user"></i> Username</span><input spellcheck="false" tabindex="1" class="inputs" type="text"
                                                 id="username" placeholder="Password Group Name">
                                         </div>
                                         <div class="input-container">
-                                            <span class="labels">Password</span><input spellcheck="false" tabindex="1" class="inputs" type="password"
+                                            <span class="labels"><i class="fas fa-globe-americas"></i> Password</span><input spellcheck="false" tabindex="1" class="inputs" type="password"
                                                 id="global-password" placeholder="Should be Long and Unique">
                                         </div>
                                         <div tabindex="1" class="bnr-btn nibnr weirdo" onclick="newPassGenerator()">Create

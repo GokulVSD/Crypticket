@@ -137,3 +137,21 @@
 .cpr .inputs::placeholder{
     color: #3a586d;
 }
+
+.half .labels{
+    min-width: 55px;
+}
+
+.grr .labels{
+    min-width: 80px;
+}
+
+.grr .inputs{
+    margin-left: 79px;
+    width: calc(100% - 79px);
+    font-size: 13px;
+}
+
+.grr .inputs::placeholder{
+    font-size: 12px;
+}

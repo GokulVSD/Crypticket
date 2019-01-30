@@ -146,6 +146,7 @@ class Verifier extends React.Component {
             e(LabelledInput,
                 {
                     placeholder: "Paste or Enter Here", classes: "verifier-inputs", label: "Crypticket",
+                    inlabel: e("img", { src: "assets/logo-ticket.png" }, null),
                     newInput: this.newInput.bind(this),
                     keyboardBuffer: this.keyboardBuffer.bind(this)
                 },
@@ -154,8 +155,8 @@ class Verifier extends React.Component {
             e("div", null, null),
 
             e("div",
-                { className: "bnr-btn nibnr", onClick: () => this.newInput({ keyCode: 13 }) },
-                "Verify")
+                { className: "bnr-btn nibnr what", onClick: () => this.newInput({ keyCode: 13 }) },
+                e("i", { className: "fas fa-check-circle" }, null), " Verify ")
         );
     }
 }
