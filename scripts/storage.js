@@ -92,3 +92,15 @@ $("#restore-input").keypress(function (e) {
         restoreStateFromString(str);
     }
 });
+
+function afterModalTransition(e) {
+  e.setAttribute("style", "display: none !important;");
+}
+
+$('#modal').on('hide.bs.modal', function (e) {
+	setTimeout( () => afterModalTransition(this), 200);
+});
+
+$('#modal').modal("show");
+$('#modal').modal("hide");
+

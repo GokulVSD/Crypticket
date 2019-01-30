@@ -164,3 +164,22 @@
     margin-left: 70px;
     width: calc(100% - 70px);
 }
+
+.fade2 {
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all .2s ease;
+    display: block !important;
+}
+
+.fade2.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.modal-content{
+    align-items: center;
+    border-radius: 25px;
+    border: none;
+    padding-bottom: 15px;
+}

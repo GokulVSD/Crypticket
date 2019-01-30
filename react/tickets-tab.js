@@ -53,10 +53,12 @@ class TicketsTab extends React.Component {
         };
 
       } catch (e) {
-        console.log("invalid ticket, possibly didn't use copy paste");
+
+        $(".modal-body").html("Looks like the Crypticket is invalid, did you make sure to copy paste as opposed to typing it out?");
+        $("#modal").modal("show");
+
         return;
       }
-
 
       if (url != undefined) newTicket.link = atob(url);
 
@@ -66,6 +68,19 @@ class TicketsTab extends React.Component {
       }
 
       var newTickets = this.state.tickets;
+      var bail = false;
+
+      newTickets.map((ticket) => {
+        if (ticket.secret == newTicket.secret) {
+          $(".modal-body").html("Looks like you've already added this Crypticket");
+          $("#modal").modal("show");
+
+          bail = true;
+        }
+      });
+
+      if(bail) return;
+
       newTickets.unshift(newTicket);
 
       storeObject("tickets", newTickets);
