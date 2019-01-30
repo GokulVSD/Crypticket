@@ -11,7 +11,7 @@ class LabelledInput extends React.Component {
             e("div", { className: "input-container wide" },
                 e("span",
                     { className: "labels" },
-                    this.props.label),
+                    this.props.inlabel, " " + this.props.label),
 
                 e("input",
                     {

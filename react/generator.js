@@ -166,6 +166,7 @@ class Generator extends React.Component {
                 e(LabelledInput,
                     {
                         placeholder: "Name of a Website or App, eg: Reddit", classes: "app-inputs", label: "App",
+                        inlabel: e("i", { className: "fas fa-plus-circle" }, null),
                         newInput: this.newInput.bind(this),
                         keyboardBuffer: this.keyboardBuffer.bind(this)
                     },

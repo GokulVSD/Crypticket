@@ -167,7 +167,7 @@
  }
 
  .opt-link{
-     box-shadow: 0 0 2px #1565C0;
+     box-shadow: 0 0 2px #1E88E5;
      margin: 10px auto;
      width: fit-content;
      border-radius: 20px;
@@ -176,7 +176,7 @@
      text-overflow: ellipsis;
      overflow: hidden;
      max-width: 85%;
-     background: linear-gradient(to right, #1976D2, #03A9F4);
+     background: linear-gradient(to right, #1E88E5, #29B6F6);
      background-origin: border-box;
      padding: 3px 16px;
      letter-spacing: 1.1px;
@@ -187,11 +187,11 @@
 
  .opt-link:hover{
     background: white;
-    color: #1565C0;
+    color: #1E88E5;
  }
 
  .head-title.intick{
-     margin-bottom: 18px;
+     margin-bottom: 15px;
  }
 
  .bnr-btn.nibnr{
