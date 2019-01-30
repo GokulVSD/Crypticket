@@ -76,7 +76,7 @@ class PasswordsTab extends React.Component {
 
     if (this.state.passwords.length == 0) {
       return e('div',
-        null,
+        { className: "empty-div" },
         "Create Passwords from the Create page, they'll show up here");
     }
 
@@ -91,7 +91,7 @@ class PasswordsTab extends React.Component {
 
         (password.appNames.length == 0 &&
           e('div',
-            null,
+            { className: "empty-div" },
             "Generate new passwords for this Username from the Create page")
         ),
 

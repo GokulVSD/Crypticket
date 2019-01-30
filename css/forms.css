@@ -33,7 +33,7 @@
     width: 60%;
     min-width: 370px;
     height: 40px;
-    margin: 10px auto; 
+    margin: 15px auto; 
     overflow: hidden;
     line-height: 1.5 !important;
     transition: box-shadow 0.2s ease, background 0.4s;
@@ -96,7 +96,7 @@
 .input-container.half{
     margin: 0 auto;
     display: inline-block;
-    width: 40%;
+    width: 30%;
     min-width: 183px;
 }
 

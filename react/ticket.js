@@ -31,7 +31,7 @@ class Ticket extends React.Component {
             { className: "ticket hiding" },
 
             e("div",
-                { className: "ticket-del-btn gen tick", onClick: () => this.animateAndDelete() },
+                { className: "ticket-del-btn gen tick", onClick: () => setTimeout( () => this.animateAndDelete(), 200) },
                 e("i",
                     { className: "far fa-trash-alt" },
                     null)
@@ -66,7 +66,7 @@ class Ticket extends React.Component {
             (this.props.ticket.link != undefined && this.props.ticket.link != "" &&
                 e("div",
                     { className: "opt-link", onClick: () => window.open("http://" + this.props.ticket.link) },
-                    e("div", null, this.props.ticket.link)
+                    this.props.ticket.link
                 )
             ),
 
@@ -77,7 +77,7 @@ class Ticket extends React.Component {
                 e(React.Fragment, null,
 
                     e("h6",
-                        { className: "head-title" },
+                        { className: "head-title intick" },
                         e("i", { className: "fas fa-map-marker-alt" }, null),
                         " Location"),
 

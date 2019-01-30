@@ -77,7 +77,7 @@ class Verifiers extends React.Component {
 
         if (this.state.verifiers.length == 0) {
             return e('div',
-                null,
+                { className: "empty-div" },
                 "Create Crypticket Generators from the Create page and verify them here");
         }
 

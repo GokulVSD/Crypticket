@@ -145,7 +145,7 @@ class Generator extends React.Component {
                 this.props.name),
 
             e("div",
-                { className: "ticket-del-btn gen", onClick: () => this.animateAndDelete() },
+                { className: "ticket-del-btn gen", onClick: () => setTimeout( () => this.animateAndDelete(), 200) },
                 e("i",
                     { className: "far fa-trash-alt" },
                     null)

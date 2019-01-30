@@ -167,24 +167,46 @@
  }
 
  .opt-link{
-     box-shadow: 0 0 2px #34656e;
+     box-shadow: 0 0 2px #1565C0;
      margin: 10px auto;
      width: fit-content;
      border-radius: 20px;
-     border: double 2px transparent;
-     color: #0D47A1;
+     color: white;
      font-size: 14px;
      text-overflow: ellipsis;
      overflow: hidden;
      max-width: 85%;
-     background-image: linear-gradient(to right, #0D47A1, #2196F3);
+     background: linear-gradient(to right, #1976D2, #03A9F4);
      background-origin: border-box;
+     padding: 3px 16px;
+     letter-spacing: 1.1px;
+     text-overflow: ellipsis;
+     overflow: hidden;
+     transition: all 0.4s;  
  }
 
- .opt-link div{
+ .opt-link:hover{
     background: white;
-    padding: 2px 15px;
-    letter-spacing: 1.1px;
-    text-overflow: ellipsis;
-    overflow: hidden;  
+    color: #1565C0;
+ }
+
+ .head-title.intick{
+     margin-bottom: 18px;
+ }
+
+ .bnr-btn.nibnr{
+     margin-top: 10px;
+     margin-bottom: 5px; 
+ }
+
+ .bnr-btn.nibnr.weirdo{
+     margin-top: 10px;
+     margin-bottom: 18px;
+ }
+
+ .empty-div{
+     width: 90%;
+     white-space: normal;
+     color: #aaa;
+     margin: 50px auto;
  }
