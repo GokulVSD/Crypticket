@@ -49,26 +49,28 @@ class Ticket extends React.Component {
                 },
                 null),
 
+
             e("div",
-                null,
+                { className: "input-container wide secret ns" },
+                e("div", null, this.props.ticket.date)
+            ),
 
-                e("span",
-                    null,
-                    this.props.ticket.date),
-
-                e("span",
-                    null,
-                    this.props.ticket.time)
+            e("div",
+                { className: "input-container wide secret ns" },
+                e("div", null, this.props.ticket.time)
             ),
 
             //Optional ticket parameters
 
             //Links
-            (this.props.ticket.link != undefined &&
+            (this.props.ticket.link != undefined && this.props.ticket.link != "" &&
                 e("div",
                     { className: "opt-link", onClick: () => window.open("http://" + this.props.ticket.link) },
-                    this.props.ticket.link)
+                    e("div", null, this.props.ticket.link)
+                )
             ),
+
+            e("div", null, null),
 
             //Location + Navigation
             (this.props.ticket.x != undefined &&
@@ -98,7 +100,7 @@ class Ticket extends React.Component {
                     e("div", null, null),
 
                     e("div",
-                        { className: "bnr-btn nibnr", onClick: () => setTimeout( () => window.open("https://www.google.com/maps/dir/my+location/" + this.props.ticket.x + "," + this.props.ticket.y) , 200 ) },
+                        { className: "bnr-btn nibnr", onClick: () => setTimeout(() => window.open("https://www.google.com/maps/dir/my+location/" + this.props.ticket.x + "," + this.props.ticket.y), 200) },
                         e("i", { className: "fas fa-location-arrow" }, null),
                         " Start Navigation")
                 )

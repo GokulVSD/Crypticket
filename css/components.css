@@ -151,3 +151,40 @@
     border-left: 2px solid #34656e;
     border-right: 2px solid #34656e;
  }
+
+ .input-container.wide.secret.ns{
+     margin: 0 3%;
+     display: inline-block;
+     width: 30%;
+     min-width: 155px;
+     background-image: linear-gradient(to right, #02b875, #414C6B);
+ }
+
+ .input-container.wide.secret.ns div{
+     padding: 6px;
+     letter-spacing: 1.2px;
+     font-size: 16px;
+ }
+
+ .opt-link{
+     box-shadow: 0 0 2px #34656e;
+     margin: 10px auto;
+     width: fit-content;
+     border-radius: 20px;
+     border: double 2px transparent;
+     color: #0D47A1;
+     font-size: 14px;
+     text-overflow: ellipsis;
+     overflow: hidden;
+     max-width: 85%;
+     background-image: linear-gradient(to right, #0D47A1, #2196F3);
+     background-origin: border-box;
+ }
+
+ .opt-link div{
+    background: white;
+    padding: 2px 15px;
+    letter-spacing: 1.1px;
+    text-overflow: ellipsis;
+    overflow: hidden;  
+ }
