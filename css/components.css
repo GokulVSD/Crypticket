@@ -182,7 +182,8 @@
      letter-spacing: 1.1px;
      text-overflow: ellipsis;
      overflow: hidden;
-     transition: all 0.4s;  
+     transition: all 0.4s;
+     cursor: pointer;  
  }
 
  .opt-link:hover{

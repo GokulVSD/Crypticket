@@ -121,3 +121,22 @@ $('#modal').on('hide.bs.modal', function (e) {
 $('#modal').modal("show");
 $('#modal').modal("hide");
 
+function longStringGenerator() {
+    // generates an extremely long and random string
+
+    var possible = "";
+
+    for (var i = 0; i < 1114112; i++)
+        possible += String.fromCharCode(i);
+
+    var text = "";
+
+    var len = Math.floor(Math.random() * 50000 + 10000);
+
+    for (var i = 0; i < len; i++)
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    navigator.clipboard.writeText(text);
+    $('#modal').modal("hide");
+}
+

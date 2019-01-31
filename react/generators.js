@@ -48,7 +48,9 @@ class Generators extends React.Component {
              so make sure it's something that no one else can come up with or guess.\
               If you're going to use this Generator to create Cryptickets for commercial purposes,\
                you should use EXTREMELY long secrets (10s of thousands of characters).\
-               Click the button below to generate a secure secret that can be used commercially. Make sure to store it somewhere safe\
+               Click the button below to generate a secure secret that can be used commercially. Make sure to store it somewhere safe,\
+                some websites mess with UTF-16 encoding (such as Google Docs and MS Word). Make sure to try creating another Generator with\
+                the secret copied from wherever you're storing it, and see if it generates the same Crypticket for the same number\
                <div></div>\
     <div tabindex='0' class='bnr-btn nibnr' onclick='longStringGenerator()'><i class='fas fa-copy'></i> Copy to Clipboard</div>");
 
@@ -128,7 +130,9 @@ class Generators extends React.Component {
              It's recommended, although not required, to use an EXTREMELY long (10s of thousands of characters) and unique password with alpha numerics and special characters.\
              You can regenerate passwords for apps/websites by using the same global password\
              and using the same app/website name as you did when initially generating passwords for that app/website.\
-             Click the button below to generate a secure password. Make sure to store it somewhere safe for recovery purposes\
+             Click the button below to generate a secure password. For recovery purposes, make sure to store it somewhere safe,\
+             some websites mess with UTF-16 encoding (such as Google Docs and MS Word). Make sure to try creating another Generator with\
+                the global password copied from wherever you're storing it, and see if it generates the same password for the same website/app\
                <div></div>\
     <div tabindex='0' class='bnr-btn nibnr' onclick='longStringGenerator()'><i class='fas fa-copy'></i> Copy to Clipboard</div>");
 
