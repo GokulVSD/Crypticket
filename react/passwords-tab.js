@@ -61,7 +61,7 @@ class PasswordsTab extends React.Component {
 
     var index = passwords.findIndex(p => p.name == name && p.password == password);
 
-    if (passwords[index].appNames.findIndex(a => a == appName) > -1) return;
+    if (passwords[index].appNames.findIndex(a => a == appName) > -1) return true;
 
     passwords[index].appNames.push(appName);
 
@@ -70,6 +70,8 @@ class PasswordsTab extends React.Component {
     this.setState({
       passwords: passwords
     });
+
+    return false;
   }
 
   render() {

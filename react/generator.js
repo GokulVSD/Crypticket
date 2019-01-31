@@ -107,7 +107,11 @@ class Generator extends React.Component {
 
             pass = hexToBase64(pass).slice(0, 12).replace(/\//g, "x") + "+0Pw";
 
-            addApp(this.props.name, this.props.password, appName);
+            if (addApp(this.props.name, this.props.password, appName)) {
+
+                this.doFailureAnimation();
+                return; 
+            }
 
             // clipboard API
             navigator.clipboard.writeText(pass);
@@ -195,6 +199,7 @@ class Generator extends React.Component {
                     {
                         placeholder: "Name of a Website or App, eg: Reddit", classes: "app-inputs", label: "App",
                         inlabel: e("i", { className: "fas fa-plus-circle" }, null),
+                        maxlen: "20",
                         newInput: this.newInput.bind(this),
                         keyboardBuffer: this.keyboardBuffer.bind(this)
                     },

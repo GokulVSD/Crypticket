@@ -79,7 +79,19 @@ class Generators extends React.Component {
 
         //use btoa to encode, atob to decode
 
-        var ticketAppend = ";" + btoa(name) + ":" + btoa(date) + ":" + btoa(time) + ":;" + btoa(url) + ";" + btoa(x) + ":" + btoa(y) + ":;";
+        var ticketAppend;
+
+        try{
+
+        ticketAppend = ";" + btoa(name) + ":" + btoa(date) + ":" + btoa(time) + ":;" + btoa(url) + ";" + btoa(x) + ":" + btoa(y) + ":;";
+
+        } catch(e){
+            console.log(e);
+            $(".modal-body").html("Looks like some of the inputs for this Generator have characters outside the UTF-8 range. Pick different characters");
+            $("#modal").modal("show");
+
+            return;
+        }
 
         var newgenerator = { type: 1, name: name, password: password, ticketAppend: ticketAppend, curr: 1, max: parseInt(max) };
 

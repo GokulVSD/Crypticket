@@ -17,6 +17,7 @@ class LabelledInput extends React.Component {
                     {
                         type: "text",
                         spellCheck: "false",
+                        maxLength: this.props.maxlen == undefined ? "1000000000" : this.props.maxlen,
                         placeholder: this.props.placeholder == undefined ? "" : this.props.placeholder,
                         onKeyDown: key => this.props.newInput(key),
                         onChange: event => this.props.keyboardBuffer(event),

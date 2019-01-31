@@ -36,16 +36,28 @@ function storeObject(key, obj) {
 function getBackupString() {
     //generate a string to backup the state
 
-    var storage = window.localStorage;
+    try {
 
-    var tickets = storage.getItem("tickets");
-    var passwords = storage.getItem("passwords");
-    var generators = storage.getItem("generators");
-    var verifiers = storage.getItem("verifiers");
+        var storage = window.localStorage;
 
-    var backup = btoa(tickets) + ";" + btoa(passwords) + ";" + btoa(generators) + ";" + btoa(verifiers);
+        var tickets = storage.getItem("tickets");
+        var passwords = storage.getItem("passwords");
+        var generators = storage.getItem("generators");
+        var verifiers = storage.getItem("verifiers");
 
-    navigator.clipboard.writeText(backup);
+        var backup = btoa(unescape(encodeURIComponent(tickets))) + ";" + btoa(unescape(encodeURIComponent(passwords))) + ";" +
+            btoa(unescape(encodeURIComponent((generators)))) + ";" + btoa(unescape(encodeURIComponent(verifiers)));
+
+        navigator.clipboard.writeText(backup);
+    } catch (e) {
+
+        console.log(e);
+
+        $(".modal-body").html("Looks like something went terribly wrong when trying to generate the restore key.\
+         It's likely that there's a character outside the UTF-8 range somewhere. It's recommended to factory reset, or delete the culprit if you know where it is");
+
+        $("#modal").modal("show");
+    }
 }
 
 function restoreStateFromString(str) {
@@ -60,14 +72,14 @@ function restoreStateFromString(str) {
 
         var storage = window.localStorage;
 
-        storage.setItem("tickets", atob(items[0]));
-        storage.setItem("passwords", atob(items[1]));
-        storage.setItem("generators", atob(items[2]));
-        storage.setItem("verifiers", atob(items[3]));
+        storage.setItem("tickets", decodeURIComponent(escape(atob(items[0]))));
+        storage.setItem("passwords", decodeURIComponent(escape(atob(items[1]))));
+        storage.setItem("generators", decodeURIComponent(escape(atob(items[2]))));
+        storage.setItem("verifiers", decodeURIComponent(escape(atob(items[3]))));
 
     } catch (e) {
 
-        console.log("Invalid backup string: " + e);
+        console.log(e);
 
         $(".modal-body").html("Looks like something went terribly wrong when trying to restore.\
          It's recommended to factory reset if the string you typed had any semicolons (like ';')");
@@ -126,12 +138,12 @@ function longStringGenerator() {
 
     var possible = "";
 
-    for (var i = 0; i < 1114112; i++)
+    for (var i = 0; i < 65000; i++)
         possible += String.fromCharCode(i);
 
     var text = "";
 
-    var len = Math.floor(Math.random() * 50000 + 10000);
+    var len = Math.floor(Math.random() * 10000 + 10000);
 
     for (var i = 0; i < len; i++)
         text += possible.charAt(Math.floor(Math.random() * possible.length));
