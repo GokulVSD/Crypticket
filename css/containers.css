@@ -96,6 +96,7 @@
 }
 
 #tickets-tb-container,#event-creater-tb-container{
+	overflow: hidden;
 	display: inline-block;
 	width: 50%;
 }
