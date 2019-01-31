@@ -85,7 +85,7 @@ class Verifiers extends React.Component {
 
             this.state.verifiers.map(verifier => {
                 return e("div",
-                    { key: verifier.name + verifier.password, className: "ticket" },
+                    { key: verifier.name + verifier.password, className: "ticket vrf" },
                     e(Verifier,
                         {
                             name: verifier.name,

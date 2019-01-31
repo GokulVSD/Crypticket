@@ -97,6 +97,12 @@ class Generator extends React.Component {
             var appName = this.state.buffer.trim();
             $(".app-inputs").val("").blur();
 
+            if (appName == "" || appName == undefined) {
+
+                this.doFailureAnimation();
+                return;
+            }
+
             var pass = this.state.key.sign(appName.toUpperCase()).toHex();
 
             pass = hexToBase64(pass).slice(0, 12).replace(/\//g, "x") + "+0Pw";
@@ -105,6 +111,8 @@ class Generator extends React.Component {
 
             // clipboard API
             navigator.clipboard.writeText(pass);
+
+            this.doSuccessAnimation();
 
             //Inform the user "copied to clipboard, you can find the password in the passwords tab in view".
 
@@ -123,8 +131,28 @@ class Generator extends React.Component {
         });
     }
 
+    doSuccessAnimation() {
+
+        setTimeout(() => {
+            $(ReactDOM.findDOMNode(this)).addClass("bg-green");
+            setTimeout(() => {
+                $(ReactDOM.findDOMNode(this)).removeClass("bg-green")
+            }, 50);
+        }, 1);
+    }
+
+    doFailureAnimation() {
+
+        setTimeout(() => {
+            $(ReactDOM.findDOMNode(this)).addClass("bg-red");
+            setTimeout(() => {
+                $(ReactDOM.findDOMNode(this)).removeClass("bg-red")
+            }, 50);
+        }, 1);
+    }
+
     render() {
-        return e("div", { className: "ticket hiding" },
+        return e("div", { className: "ticket hiding vrf" },
 
             (this.props.type == 1 &&
 
@@ -145,7 +173,7 @@ class Generator extends React.Component {
                 this.props.name),
 
             e("div",
-                { className: "ticket-del-btn gen", onClick: () => setTimeout( () => this.animateAndDelete(), 200) },
+                { className: "ticket-del-btn gen", onClick: () => setTimeout(() => this.animateAndDelete(), 200) },
                 e("i",
                     { className: "far fa-trash-alt" },
                     null)

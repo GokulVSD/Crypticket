@@ -216,3 +216,27 @@
      color: #aaa;
      margin: 50px auto;
  }
+
+ #verify-pg .ticket div .labels{
+     font-size: 12px;
+     padding: 12px;
+ }
+
+ /* animations for verifying and generating */
+
+ .ticket.vrf{
+    transition: all 0.4s;
+    background: white radial-gradient(circle, transparent 1%, white 1%) center/15000%;
+ }
+
+ .vrf.bg-green{
+    background-color: #02b875;
+    background-size: 100%;
+    transition: background 0s;
+ }
+
+ .vrf.bg-red{
+    background-color: #ff4f52;
+    background-size: 100%;
+    transition: background 0s;
+ }

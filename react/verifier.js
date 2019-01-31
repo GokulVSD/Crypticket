@@ -50,12 +50,21 @@ class Verifier extends React.Component {
             var ticket = this.state.buffer.trim();
             $(".verifier-inputs").val("").blur();
 
+            if (this.state.curr == this.props.max) {
+                //all tickets have been verified
+
+                $(".modal-body").html("All Cryptickets for this event have been verified, delete this Verifier from the Create page");
+                $("#modal").modal("show");
+                return;
+            }
+
             var msg = ticket.slice(0, ticket.indexOf('|'));
 
             var sign = ticket.slice(ticket.lastIndexOf('|') + 1, ticket.indexOf(';') > 0 ? ticket.indexOf(';') : ticket.length);
 
             if (msg == "" || sign == "") {
                 console.log("invalid format");
+                this.doFailureAnimation();
                 return;
             }
 
@@ -72,6 +81,7 @@ class Verifier extends React.Component {
                     if (verified.indexOf(msg) > -1) {
 
                         console.log("ticket has already been verified");
+                        this.doFailureAnimation();
                         return;
 
                     } else {
@@ -79,14 +89,11 @@ class Verifier extends React.Component {
                         if (parseInt(msg) > this.props.max) {
                             //ticket is out of range
                             console.log("Ticket is out of range, must be malicious");
+                            this.doFailureAnimation();
                             return;
                         }
 
-                        if (this.state.curr == this.props.max) {
-                            //all tickets have been verified
-                            console.log("all tickets verified, can't verify anymore, delete the verifier from the Create page");
-                            return;
-                        }
+                        this.doSuccessAnimation();
 
                         this.props.updateChild(this.props.name, this.props.password, msg);
 
@@ -95,11 +102,13 @@ class Verifier extends React.Component {
                 } else {
 
                     console.log("ticket was not generated using the correct password");
+                    this.doFailureAnimation();
 
                 }
             } catch (e) {
 
                 console.log("Failed: The ticket contains invalid characters |" + e);
+                this.doFailureAnimation();
 
             }
 
@@ -110,6 +119,26 @@ class Verifier extends React.Component {
                 buffer: ""
             });
         }
+    }
+
+    doSuccessAnimation() {
+
+        setTimeout(() => {
+            $(ReactDOM.findDOMNode(this).parentNode).addClass("bg-green");
+            setTimeout(() => {
+                $(ReactDOM.findDOMNode(this).parentNode).removeClass("bg-green")
+            }, 50);
+        }, 80);
+    }
+
+    doFailureAnimation() {
+
+        setTimeout(() => {
+            $(ReactDOM.findDOMNode(this).parentNode).addClass("bg-red");
+            setTimeout(() => {
+                $(ReactDOM.findDOMNode(this).parentNode).removeClass("bg-red")
+            }, 50);
+        }, 80);
     }
 
     keyboardBuffer(event) {

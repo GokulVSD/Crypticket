@@ -15,8 +15,20 @@ class SecretCopier extends React.Component {
         // If called within a generator
         if (this.props.incAndUpdate !== undefined) {
 
+            this.doSuccessAnimation();
+
             this.props.incAndUpdate();
         }
+    }
+
+    doSuccessAnimation() {
+
+        setTimeout(() => {
+            $(ReactDOM.findDOMNode(this).parentNode).addClass("bg-green");
+            setTimeout(() => {
+                $(ReactDOM.findDOMNode(this).parentNode).removeClass("bg-green")
+            }, 50);
+        }, 1);
     }
 
     render() {
