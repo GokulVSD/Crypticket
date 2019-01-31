@@ -34,12 +34,31 @@ class Generators extends React.Component {
         //do validation here
 
         if (name == "" || password == "" || max == "" || date == "" || time == "") {
-            console.log("all required data not provided");
+
+            $(".modal-body").html("Looks like you haven't provided all the required information");
+            $("#modal").modal("show");
+            return;
+        }
+
+        if (password.length < 32) {
+
+            $(".modal-body").html("The secret needs to be at least 32 characters long.\
+             It's recommended, although not required, to use a very long and unique secret with alpha numerics and special characters.\
+              You can regenerate the same Cryptickets by using the same secret, \
+             so make sure it's something that no one else can come up with or guess.\
+              If you're going to use this Generator to create Cryptickets for commercial purposes,\
+               you should use EXTREMELY long secrets (10s of thousands of characters).\
+               Click the button below to generate a secure secret that can be used commercially. Make sure to store it somewhere safe\
+               <div></div>\
+    <div tabindex='0' class='bnr-btn nibnr' onclick='longStringGenerator()'><i class='fas fa-copy'></i> Copy to Clipboard</div>");
+
+            $("#modal").modal("show");
             return;
         }
 
         if (isNaN(max)) {
-            console.log("count is not a number");
+            $(".modal-body").html("We can't create '" + max + "' number of Cryptickets, silly!");
+            $("#modal").modal("show");
             return;
         }
 
@@ -49,7 +68,9 @@ class Generators extends React.Component {
         } else {
 
             if ((x != "" && y == "") || (x == "" && y != "")) {
-                console.log("partial coordinates given, can't create generator");
+
+                $(".modal-body").html("Looks like you've only given partial coordinates");
+                $("#modal").modal("show");
                 return;
             }
         }
@@ -61,6 +82,20 @@ class Generators extends React.Component {
         var newgenerator = { type: 1, name: name, password: password, ticketAppend: ticketAppend, curr: 1, max: parseInt(max) };
 
         var newgenerators = this.state.generators;
+        var bail = false;
+
+        newgenerators.map((g) => {
+            if (g.name == newgenerator.name) {
+                bail = true;
+                $(".modal-body").html("Looks like you've already created a Generator with this name, try picking a new name");
+                $("#modal").modal("show");
+            }
+        });
+
+        if (bail) return;
+
+        $(".inputs").val("").blur();
+
         newgenerators.unshift(newgenerator);
 
         storeObject("generators", newgenerators);
@@ -81,13 +116,43 @@ class Generators extends React.Component {
         //do validation here
 
         if (name == "" || password == "") {
-            console.log("all required data not provided");
+
+            $(".modal-body").html("Looks like you haven't provided all the required information");
+            $("#modal").modal("show");
+            return;
+        }
+
+        if (password.length < 32) {
+
+            $(".modal-body").html("The global password needs to be at least 32 characters long.\
+             It's recommended, although not required, to use an EXTREMELY long (10s of thousands of characters) and unique password with alpha numerics and special characters.\
+             You can regenerate passwords for apps/websites by using the same global password\
+             and using the same app/website name as you did when initially generating passwords for that app/website.\
+             Click the button below to generate a secure password. Make sure to store it somewhere safe for recovery purposes\
+               <div></div>\
+    <div tabindex='0' class='bnr-btn nibnr' onclick='longStringGenerator()'><i class='fas fa-copy'></i> Copy to Clipboard</div>");
+
+            $("#modal").modal("show");
             return;
         }
 
         var newgenerator = { type: 2, name: name, password: password };
 
         var newgenerators = this.state.generators;
+        var bail = false;
+
+        newgenerators.map((g) => {
+            if (g.name == newgenerator.name) {
+                bail = true;
+                $(".modal-body").html("Looks like you've already created a Generator with this name, try picking a new name");
+                $("#modal").modal("show");
+            }
+        });
+
+        if (bail) return;
+
+        $(".inputs").val("").blur();
+
         newgenerators.unshift(newgenerator);
 
         storeObject("generators", newgenerators);
