@@ -168,7 +168,7 @@ class Verifier extends React.Component {
                 { className: "gen-counter" },
                 this.state.curr + "/" + this.props.max),
 
-            e("div",
+            e("h5",
                 null,
                 this.props.name),
 

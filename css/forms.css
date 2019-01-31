@@ -57,7 +57,7 @@
     min-width: 51px;
     left: 0;
     box-shadow: 0 0 2px rgba(0,0,0,0.42);  
-    background: linear-gradient(to right, #34656e, #414C6B);
+    background: linear-gradient(to right, #446f7e, #614C6B);
     color: #fff;
 }
 
@@ -182,4 +182,16 @@
     border-radius: 25px;
     border: none;
     padding-bottom: 15px;
+}
+
+.input-container.wide.cpr.pswdinp .labels{
+    font-size: 14px;
+    padding: 10px;
+    background: linear-gradient(to right, #ef7722, #f54f62);
+}
+
+.input-container.wide.cpr.pswdinp .inputs::placeholder{
+    letter-spacing: 2px;
+    font-size: 14px;
+    color: #3a586d;
 }

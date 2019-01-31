@@ -220,6 +220,7 @@
  #verify-pg .ticket div .labels{
      font-size: 12px;
      padding: 12px;
+     background: linear-gradient(to right, #ef7722, #f54f62);
  }
 
  /* animations for verifying and generating */
@@ -239,4 +240,36 @@
     background-color: #ff4f52;
     background-size: 100%;
     transition: background 0s;
+ }
+
+ /* for titles */
+
+ h1, h2, h5{
+     letter-spacing: -2px;
+     word-spacing: 10px;
+    font-size: 35px;
+    color: #555;
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    z-index: 0;
+ }
+
+ h1::after, h2::after, h5::after{
+    content: '';
+    height: 5px;
+    border-radius: 50px;
+    background: linear-gradient(to left, #ff9822, #f54f52);
+    position: absolute;
+    top: 37px;
+    text-align: center;
+    left: -5px;
+    right: 0;
+    bottom: 0;
+    width: calc(100% + 10px);
+    z-index: -1;
+ }
+
+ h5::after, #passwords-tb-container div h1::after{
+    background: linear-gradient(to right, #32a8a5, #814C7B);
  }

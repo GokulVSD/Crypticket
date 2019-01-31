@@ -40,19 +40,19 @@ class Generators extends React.Component {
             return;
         }
 
-        if (password.length < 32) {
+        if (password.length < 64) {
 
-            $(".modal-body").html("The secret needs to be at least 32 characters long.\
+            $(".modal-body").html("The secret needs to be at least 64 characters long.\
              It's recommended, although not required, to use a very long and unique secret with alpha numerics and special characters.\
               You can regenerate the same Cryptickets by using the same secret, \
              so make sure it's something that no one else can come up with or guess.\
               If you're going to use this Generator to create Cryptickets for commercial purposes,\
                you should use EXTREMELY long secrets (10s of thousands of characters).\
                Click the button below to generate a secure secret that can be used commercially. Make sure to store it somewhere safe,\
-                some websites mess with UTF-16 encoding (such as Google Docs and MS Word). Make sure to try creating another Generator with\
+                some websites mess with UCS-2 encoding (such as Google Docs and MS Word). Make sure to try creating another Generator with\
                 the secret copied from wherever you're storing it, and see if it generates the same Crypticket for the same number\
                <div></div>\
-    <div tabindex='0' class='bnr-btn nibnr' onclick='longStringGenerator()'><i class='fas fa-copy'></i> Copy to Clipboard</div>");
+    <div tabindex='0' class='bnr-btn nibnr' onclick='longStringGenerator()'><i class='fas fa-copy'></i> Copy Random Secret to Clipboard</div>");
 
             $("#modal").modal("show");
             return;
@@ -136,17 +136,17 @@ class Generators extends React.Component {
             return;
         }
 
-        if (password.length < 32) {
+        if (password.length < 64) {
 
-            $(".modal-body").html("The global password needs to be at least 32 characters long.\
+            $(".modal-body").html("The global password needs to be at least 64 characters long.\
              It's recommended, although not required, to use an EXTREMELY long (10s of thousands of characters) and unique password with alpha numerics and special characters.\
              You can regenerate passwords for apps/websites by using the same global password\
              and using the same app/website name as you did when initially generating passwords for that app/website.\
              Click the button below to generate a secure password. For recovery purposes, make sure to store it somewhere safe,\
-             some websites mess with UTF-16 encoding (such as Google Docs and MS Word). Make sure to try creating another Generator with\
+             some websites mess with UCS-2 encoding (such as Google Docs and MS Word). Make sure to try creating another Generator with\
                 the global password copied from wherever you're storing it, and see if it generates the same password for the same website/app\
                <div></div>\
-    <div tabindex='0' class='bnr-btn nibnr' onclick='longStringGenerator()'><i class='fas fa-copy'></i> Copy to Clipboard</div>");
+    <div tabindex='0' class='bnr-btn nibnr' onclick='longStringGenerator()'><i class='fas fa-copy'></i> Copy Random Password to Clipboard</div>");
 
             $("#modal").modal("show");
             return;

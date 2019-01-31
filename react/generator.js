@@ -110,7 +110,11 @@ class Generator extends React.Component {
             if (addApp(this.props.name, this.props.password, appName)) {
 
                 this.doFailureAnimation();
-                return; 
+
+                $(".modal-body").html("Looks like you've already created a password for this website/app. If you really need another one, change the name a bit");
+                $("#modal").modal("show");
+                
+                return;
             }
 
             // clipboard API

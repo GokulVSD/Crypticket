@@ -79,7 +79,7 @@ class TicketsTab extends React.Component {
         }
       });
 
-      if(bail) return;
+      if (bail) return;
 
       newTickets.unshift(newTicket);
 
