@@ -44,23 +44,6 @@ class Generators extends React.Component {
             return;
         }
 
-        if (password.length < 64 && nty == undefined) {
-
-            $(".modal-body").html("It's recommended, although not required, to use a very long and unique secret with special and alphanumeric characters.\
-              You can regenerate the same Cryptickets by using the same secret. \
-             If you're going to use this Generator to create Cryptickets for commercial purposes,\
-               you should use EXTREMELY long secrets (10s of thousands of characters).\
-               Click the button below to generate a secure secret that can be used commercially. Make sure to store it somewhere safe,\
-                some websites mess with UCS-2 encoding (such as Google Docs and MS Word). Make sure to try creating another Generator with\
-                the secret copied from wherever you're storing it, and see if it generates the same Crypticket for the same number\
-               <div></div>\
-    <div tabindex='0' class='bnr-btn nibnr' onclick='longStringGenerator()'><i class='fas fa-copy'></i> Copy Random Secure Secret</div>\
-    <div tabindex='1' class='bnr-btn nibnr' onclick='newGenerator(1)'><i class='fas fa-plus-circle'></i> Create Unsecure Generator</div>");
-
-            $("#modal").modal("show");
-            return;
-        }
-
         if (isNaN(max)) {
             $(".modal-body").html("We can't create '" + max + "' number of Cryptickets, silly!");
             $("#modal").modal("show");
@@ -78,6 +61,23 @@ class Generators extends React.Component {
                 $("#modal").modal("show");
                 return;
             }
+        }
+
+        if (password.length < 64 && nty == undefined) {
+
+            $(".modal-body").html("It's recommended, although not required, to use a very long and unique secret with special and alphanumeric characters.\
+              You can regenerate the same Cryptickets by using the same secret. \
+             If you're going to use this Generator to create Cryptickets for commercial purposes,\
+               you should use EXTREMELY long secrets (10s of thousands of characters).\
+               Click the button below to generate a secure secret that can be used commercially. Make sure to store it somewhere safe,\
+                some websites mess with UCS-2 encoding (such as Google Docs and MS Word). Make sure to try creating another Generator with\
+                the secret copied from wherever you're storing it, and see if it generates the same Crypticket for the same number\
+               <div></div>\
+    <div tabindex='0' class='bnr-btn nibnr' onclick='longStringGenerator()'><i class='fas fa-copy'></i> Copy Random Secure Secret</div>\
+    <div tabindex='1' class='bnr-btn nibnr' onclick='newGenerator(1)'><i class='fas fa-plus-circle'></i> Create Unsecure Generator</div>");
+
+            $("#modal").modal("show");
+            return;
         }
 
         //use btoa to encode, atob to decode
