@@ -70,11 +70,7 @@ class Generator extends React.Component {
     //for delete animation
     animateAndDelete() {
 
-        $(ReactDOM.findDOMNode(this)).addClass("hiding");
-
-        setTimeout(function () {
-            this.props.removeChild(this.props.name, this.props.password, this.props.type);
-        }.bind(this), 300);
+        this.props.removeChild(this.props.name, this.props.password, this.props.type);
     }
 
     //for event generator

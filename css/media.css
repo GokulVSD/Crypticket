@@ -77,6 +77,9 @@
   .input-container.wide{
     min-width: 300px;
   }
+  .input-container.restore{
+    min-width: 300px;
+  }
   .input-container.half{
     min-width: 150px;
   }

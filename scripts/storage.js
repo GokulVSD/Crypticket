@@ -2,7 +2,7 @@ function storageFull() {
 
     $(".modal-body").html("Looks like your browser has either run out of storage or doesn't support local storage.\
      You can try deleting some Generators to make space,\
-      or switch to a Chromium based browser such as Chrome or Firefox.\
+      or switch to a Chromium based browser such as Chrome, Firefox or Opera.\
        You can transfer data to another browser or factory reset using the 3-dot menu");
 
     $("#modal").modal("show");

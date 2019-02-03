@@ -17,10 +17,14 @@ class Generators extends React.Component {
     componentDidMount() {
         window.newGenerator = this.newGenerator.bind(this);
         window.newPassGenerator = this.newPassGenerator.bind(this);
+        window.removeChild = this.removeChild.bind(this);
     }
 
     // for new event generator
-    newGenerator() {
+    newGenerator(nty) {
+
+        if (nty != undefined)
+            $('#modal').modal("hide");
 
         var name = $("#event-name")[0].value.trim();
         var password = $("#event-password")[0].value.trim();
@@ -40,19 +44,18 @@ class Generators extends React.Component {
             return;
         }
 
-        if (password.length < 64) {
+        if (password.length < 64 && nty == undefined) {
 
-            $(".modal-body").html("The secret needs to be at least 64 characters long.\
-             It's recommended, although not required, to use a very long and unique secret with alpha numerics and special characters.\
-              You can regenerate the same Cryptickets by using the same secret, \
-             so make sure it's something that no one else can come up with or guess.\
-              If you're going to use this Generator to create Cryptickets for commercial purposes,\
+            $(".modal-body").html("It's recommended, although not required, to use a very long and unique secret with special and alphanumeric characters.\
+              You can regenerate the same Cryptickets by using the same secret. \
+             If you're going to use this Generator to create Cryptickets for commercial purposes,\
                you should use EXTREMELY long secrets (10s of thousands of characters).\
                Click the button below to generate a secure secret that can be used commercially. Make sure to store it somewhere safe,\
                 some websites mess with UCS-2 encoding (such as Google Docs and MS Word). Make sure to try creating another Generator with\
                 the secret copied from wherever you're storing it, and see if it generates the same Crypticket for the same number\
                <div></div>\
-    <div tabindex='0' class='bnr-btn nibnr' onclick='longStringGenerator()'><i class='fas fa-copy'></i> Copy Random Secret to Clipboard</div>");
+    <div tabindex='0' class='bnr-btn nibnr' onclick='longStringGenerator()'><i class='fas fa-copy'></i> Copy Random Secure Secret</div>\
+    <div tabindex='1' class='bnr-btn nibnr' onclick='newGenerator(1)'><i class='fas fa-plus-circle'></i> Create Unsecure Generator</div>");
 
             $("#modal").modal("show");
             return;
@@ -81,11 +84,11 @@ class Generators extends React.Component {
 
         var ticketAppend;
 
-        try{
+        try {
 
-        ticketAppend = ";" + btoa(name) + ":" + btoa(date) + ":" + btoa(time) + ":;" + btoa(url) + ";" + btoa(x) + ":" + btoa(y) + ":;";
+            ticketAppend = ";" + btoa(name) + ":" + btoa(date) + ":" + btoa(time) + ":;" + btoa(url) + ";" + btoa(x) + ":" + btoa(y) + ":;";
 
-        } catch(e){
+        } catch (e) {
             console.log(e);
             $(".modal-body").html("Looks like some of the inputs for this Generator have characters outside the UTF-8 range. Pick different characters");
             $("#modal").modal("show");
@@ -122,7 +125,10 @@ class Generators extends React.Component {
     }
 
     //for new password generator
-    newPassGenerator() {
+    newPassGenerator(nty) {
+
+        if (nty != undefined)
+            $('#modal').modal("hide");
 
         var name = $("#username")[0].value.trim();
         var password = $("#global-password")[0].value.trim();
@@ -136,17 +142,18 @@ class Generators extends React.Component {
             return;
         }
 
-        if (password.length < 64) {
+        if (password.length < 9999 && nty == undefined) {
 
-            $(".modal-body").html("The global password needs to be at least 64 characters long.\
-             It's recommended, although not required, to use an EXTREMELY long (10s of thousands of characters) and unique password with alpha numerics and special characters.\
+            $(".modal-body").html("It's recommended, although not required, to use an extremely long and unique global password\
+             (10s of thousands of characters long with special and alphanumerics).\
              You can regenerate passwords for apps/websites by using the same global password\
-             and using the same app/website name as you did when initially generating passwords for that app/website.\
-             Click the button below to generate a secure password. For recovery purposes, make sure to store it somewhere safe,\
-             some websites mess with UCS-2 encoding (such as Google Docs and MS Word). Make sure to try creating another Generator with\
-                the global password copied from wherever you're storing it, and see if it generates the same password for the same website/app\
+            and using the same app/website name as you did when initially generating passwords for that app/website.\
+            Click the button below to generate a secure global password. For recovery purposes, make sure to store it somewhere safe, \
+            some websites mess with UCS-2 encoding(such as Google Docs and MS Word). Make sure to try creating another Generator with\
+            the global password copied from wherever you're storing it, and see if it generates the same password for the same website/app\
                <div></div>\
-    <div tabindex='0' class='bnr-btn nibnr' onclick='longStringGenerator()'><i class='fas fa-copy'></i> Copy Random Password to Clipboard</div>");
+    <div tabindex='0' class='bnr-btn nibnr' onclick='longStringGenerator()'><i class='fas fa-copy'></i> Copy Random Secure Password</div>\
+    <div tabindex='1' class='bnr-btn nibnr' onclick='newPassGenerator(1)'><i class='fas fa-plus-circle'></i> Create Unsecure Generator</div>");
 
             $("#modal").modal("show");
             return;
@@ -181,28 +188,65 @@ class Generators extends React.Component {
     }
 
     //called by child to update itself (in order to facilitate browser storage)
-    removeChild(name, password, type) {
+    removeChild(name, password, type, nty) {
 
-        var generators = this.state.generators;
+        console.log(name);
 
-        var newgenerators = generators.filter(g => {
-            if (g.name == name && g.password == password && g.type == type) {
-                return false;
-            } else {
-                return true;
-            }
-        });
+        if (nty != undefined)
+            $("#modal").modal("hide");
 
-        storeObject("generators", newgenerators);
+        if (nty == undefined && type == 1) {
 
-        if (type === 1)
-            deleteVerifier(name, password);
-        else
-            deleteUsername(name, password);
+            var btn = 'window.removeChild(\''+ name + '\',\'' + password + '\',' + type + ',1)';
 
-        this.setState({
-            generators: newgenerators
-        });
+            $(".modal-body").html("Are you sure you want to delete this Crypticket Generator?\
+             The associated verifier will also be deleted, you won't be able to verify\
+              Cryptickets created from this Generator anymore\
+              <div></div>\
+              <div tabindex='0' class='bnr-btn nibnr' onclick="+btn+"><i class='fas fa-exclamation-circle'></i> Delete</div>");
+
+            $("#modal").modal("show");
+            return;
+        }
+
+        if (nty == undefined && type == 2) {
+
+            var btn = 'window.removeChild(\''+ name + '\',\'' + password + '\',' + type + ',1)';
+
+            $(".modal-body").html("Are you sure you want to delete this Password Generator?\
+             The associated passwords in the View tab will also be deleted, \
+              you'll need to recreate the same Password Generator and use the same app/website names to get back your passwords\
+              <div></div>\
+              <div tabindex='0' class='bnr-btn nibnr' onclick="+btn+"><i class='fas fa-exclamation-circle'></i> Delete</div>");
+
+            $("#modal").modal("show");
+            return;
+        }
+
+        $(ReactDOM.findDOMNode(this.refs[name + type + password])).addClass("hiding");
+
+        setTimeout(function () {
+            var generators = this.state.generators;
+
+            var newgenerators = generators.filter(g => {
+                if (g.name == name && g.password == password && g.type == type) {
+                    return false;
+                } else {
+                    return true;
+                }
+            });
+
+            storeObject("generators", newgenerators);
+
+            if (type === 1)
+                deleteVerifier(name, password);
+            else
+                deleteUsername(name, password);
+
+            this.setState({
+                generators: newgenerators
+            });
+        }.bind(this), 300);
     }
 
     //called by child to update itself (in order to facilitate browser storage)
@@ -237,6 +281,7 @@ class Generators extends React.Component {
                 return e(Generator,
                     {
                         key: generator.name + generator.type + generator.password,
+                        ref: generator.name + generator.type + generator.password,
                         name: generator.name,
                         type: generator.type,
                         password: generator.password,
