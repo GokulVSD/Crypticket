@@ -33,10 +33,11 @@ class SecretCopier extends React.Component {
 
     render() {
         return e("div",
-            { className: "input-container wide secret", onClick: () => this.copyContent() },
+            { className: "input-container wide secret", onClick: () => this.copyContent(), 
+            'data-tip': "Copied!", 'data-event': 'click', 'data-event-off' : 'mouseout', 'data-for': 'tt1' },
             e("div", null,
                 this.props.curr, e("img", { src: "assets/logo-ticket.png" }, null), this.props.sign
-            )
+            ),
         );
     }
 }

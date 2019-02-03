@@ -18,8 +18,9 @@ class Copier extends React.Component {
             this.props.title),
 
             e("input",
-            { type: "text", placeholder: this.props.content, readOnly: "readonly", className: "inputs", onClick: () => this.copyContent() },
-            null)
+            { type: "text", placeholder: this.props.content, readOnly: "readonly", className: "inputs", 
+            onClick: () => this.copyContent()},
+            null),
         );
     }
 }

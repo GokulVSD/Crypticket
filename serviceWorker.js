@@ -37,6 +37,7 @@ var precacheFiles = [
   './vendor/jquery/jquery.min.js',
   './vendor/react/react.js',
   './vendor/react/react-dom.js',
+  './vendor/react/react-tooltip.min.js',
   './manifest.json'
 ];
 

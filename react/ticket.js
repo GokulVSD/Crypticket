@@ -45,7 +45,7 @@ class Ticket extends React.Component {
                 {
                     curr: this.props.ticket.secret.slice(0, this.props.ticket.secret.indexOf('|')),
                     sign: this.props.ticket.secret.slice(this.props.ticket.secret.lastIndexOf('|') + 1, this.props.ticket.secret.indexOf(';')),
-                    ticketAppend: this.props.ticket.secret.slice(this.props.ticket.secret.indexOf(';'))
+                    ticketAppend: this.props.ticket.secret.slice(this.props.ticket.secret.indexOf(';')),
                 },
                 null),
 
@@ -65,7 +65,7 @@ class Ticket extends React.Component {
             //Links
             (this.props.ticket.link != undefined && this.props.ticket.link != "" &&
                 e("div",
-                    { className: "opt-link", onClick: () => window.open("http://" + this.props.ticket.link) },
+                    { className: "opt-link", onClick: () => window.open("http://" + this.props.ticket.link), 'data-tip': "Visit Link", 'data-for': 'tt' },
                     this.props.ticket.link
                 )
             ),
@@ -84,18 +84,21 @@ class Ticket extends React.Component {
                     e("div", null, null),
 
                     e("div",
-                        { className: "input-container half cpr" },
+                        { className: "input-container half cpr", 'data-tip': "Copied!", 'data-event': 'click', 'data-event-off' : 'mouseout', 'data-for': 'tt1' },
                         e(Copier,
                             { title: "X", content: this.props.ticket.x },
                             null)
                     ),
 
                     e("div",
-                        { className: "input-container half cpr" },
+                        { className: "input-container half cpr", 'data-tip': "Copied!", 'data-event': 'click', 'data-event-off' : 'mouseout', 'data-for': 'tt1' },
                         e(Copier,
                             { title: "Y", content: this.props.ticket.y },
                             null)
                     ),
+
+                    e(ReactTooltip, { id: 'tt1', effect: "solid" }, null),
+                    e(ReactTooltip, { id: 'tt' }, null),
 
                     e("div", null, null),
 
