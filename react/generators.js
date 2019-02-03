@@ -190,14 +190,15 @@ class Generators extends React.Component {
     //called by child to update itself (in order to facilitate browser storage)
     removeChild(name, password, type, nty) {
 
-        console.log(name);
+        name = decodeURIComponent(name);
+        password = decodeURIComponent(password);
 
         if (nty != undefined)
             $("#modal").modal("hide");
 
         if (nty == undefined && type == 1) {
 
-            var btn = 'window.removeChild(\''+ name + '\',\'' + password + '\',' + type + ',1)';
+            var btn = 'window.removeChild(\''+ encodeURIComponent(name) + '\',\'' + encodeURIComponent(password) + '\',' + type + ',1)';
 
             $(".modal-body").html("Are you sure you want to delete this Crypticket Generator?\
              The associated verifier will also be deleted, you won't be able to verify\

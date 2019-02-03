@@ -169,7 +169,7 @@ class Verifier extends React.Component {
                 this.state.curr + "/" + this.props.max),
 
             e("h5",
-                null,
+            { className: ("" + (this.props.name.length > 11 ? "s" + (this.props.name.length > 15 ? "s" + (this.props.name.length > 19 ? "s" : "") : "") : "")) },
                 this.props.name),
 
             e(LabelledInput,

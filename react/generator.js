@@ -173,7 +173,7 @@ class Generator extends React.Component {
             ),
 
             e("h2",
-                null,
+            { className: ("" + (this.props.name.length > 11 ? "s" + (this.props.name.length > 15 ? "s" + (this.props.name.length > 19 ? "s" : "") : "") : "")) },
                 this.props.name),
 
             e("div",

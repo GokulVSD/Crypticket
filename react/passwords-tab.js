@@ -88,7 +88,7 @@ class PasswordsTab extends React.Component {
         { key: password.name + password.password, className: "ticket" },
 
         e('h1',
-          null,
+        { className: ("" + (password.name.length > 11 ? "s" + (password.name.length > 15 ? "s" + (password.name.length > 19 ? "s" : "") : "") : "")) },
           password.name),
 
         (password.appNames.length == 0 &&

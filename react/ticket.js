@@ -38,7 +38,7 @@ class Ticket extends React.Component {
             ),
 
             e("h1",
-                null,
+                { className: ("" + (this.props.ticket.name.length > 11 ? "s" + (this.props.ticket.name.length > 15 ? "s" + (this.props.ticket.name.length > 19 ? "s" : "") : "") : "")) },
                 this.props.ticket.name),
 
             e(SecretCopier,

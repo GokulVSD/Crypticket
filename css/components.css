@@ -170,6 +170,7 @@
      box-shadow: 0 0 2px #1E88E5;
      margin: 10px auto;
      width: fit-content;
+     width: -moz-fit-content;
      border-radius: 20px;
      color: white;
      font-size: 14px;
@@ -251,6 +252,7 @@
     color: #555;
     position: relative;
     width: fit-content;
+    width: -moz-fit-content;
     margin: 0 auto;
     z-index: 0;
  }
@@ -273,3 +275,87 @@
  h5::after, #passwords-tb-container div h1::after{
     background: linear-gradient(to right, #32a8a5, #814C7B);
  }
+
+ @media(max-width: 620px){
+     /* 20 - 24 chars */
+     h1.sss, h2.sss, h5.sss{
+		font-size: 32px;
+	}
+ }
+
+ @media (max-width: 576px){
+    .ticket-del-btn.gen{
+        margin-top: -37px;
+    }
+     /* 16 - 19 chars */
+	h1.ss, h2.ss, h5.ss{
+		font-size: 33px;
+	}
+ 	/* 20 - 24 chars */
+     h1.sss, h2.sss, h5.sss{
+		font-size: 28px;
+    }
+    h1.sss::after, h2.sss::after, h5.sss::after{
+        top: 29px;
+    }
+}
+
+@media (max-width: 500px){
+    .ticket-del-btn.gen{
+        margin-top: -35px;
+    }
+    /* 12 - 15 chars */
+	h1.s, h2.s, h5.s{
+		font-size: 31px;
+	}
+	/* 16 - 19 chars */
+	h1.ss, h2.ss, h5.ss{
+		font-size: 24px;
+	}
+	/* 20 - 24 chars */
+	h1.sss, h2.sss, h5.sss{
+		font-size: 21px;
+    }
+    h1.ss::after, h2.ss::after, h5.ss::after{
+        top: 24px;
+    }
+    h1.sss::after, h2.sss::after, h5.sss::after{
+        top: 23px;
+    }
+}
+
+@media (max-width: 410px){
+    .ticket-del-btn.gen{
+        margin-top: -27px;
+    }
+    h1, h2, h5{
+        font-size: 27px;
+    }
+	/* 12 - 15 chars */
+	h1.s, h2.s, h5.s{
+		font-size: 20px;
+	}
+	/* 16 - 19 chars */
+	h1.ss, h2.ss, h5.ss{
+		font-size: 15px;
+	}
+	/* 20 - 24 chars */
+	h1.sss, h2.sss, h5.sss{
+		font-size: 13px;
+    }
+    h1::after, h2::after, h5::after{
+        top: 28px;
+    }
+    h1.s::after, h2.s::after, h5.s::after{
+        top: 22px;
+        height: 4px;
+    }
+    h1.ss::after, h2.ss::after, h5.ss::after{
+        top: 18px;
+        height: 3px;
+    }
+    h1.sss::after, h2.sss::after, h5.sss::after{
+        top: 15px;
+        height: 3px;
+    }
+}
