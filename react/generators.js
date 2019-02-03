@@ -197,7 +197,7 @@ class Generators extends React.Component {
 
         if (nty == undefined && type == 1) {
 
-            var btn = 'window.removeChild(\''+ encodeURIComponent(name) + '\',\'1\'' + type + ',1)';
+            var btn = 'window.removeChild(\''+ encodeURIComponent(name) + '\',1,' + type + ',1)';
 
             $(".modal-body").html("Are you sure you want to delete this Crypticket Generator?\
              The associated verifier will also be deleted, you won't be able to verify\
@@ -211,7 +211,7 @@ class Generators extends React.Component {
 
         if (nty == undefined && type == 2) {
 
-            var btn = 'window.removeChild(\''+ encodeURIComponent(name) + '\',\'1\'' + type + ',1)';
+            var btn = 'window.removeChild(\''+ encodeURIComponent(name) + '\',1,' + type + ',1)';
 
             $(".modal-body").html("Are you sure you want to delete this Password Generator?\
              The associated passwords in the View tab will also be deleted, \
