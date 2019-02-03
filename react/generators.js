@@ -191,14 +191,13 @@ class Generators extends React.Component {
     removeChild(name, password, type, nty) {
 
         name = decodeURIComponent(name);
-        password = decodeURIComponent(password);
 
         if (nty != undefined)
             $("#modal").modal("hide");
 
         if (nty == undefined && type == 1) {
 
-            var btn = 'window.removeChild(\''+ encodeURIComponent(name) + '\',\'' + encodeURIComponent(password) + '\',' + type + ',1)';
+            var btn = 'window.removeChild(\''+ encodeURIComponent(name) + '\',\' \'' + type + ',1)';
 
             $(".modal-body").html("Are you sure you want to delete this Crypticket Generator?\
              The associated verifier will also be deleted, you won't be able to verify\
@@ -212,7 +211,7 @@ class Generators extends React.Component {
 
         if (nty == undefined && type == 2) {
 
-            var btn = 'window.removeChild(\''+ name + '\',\'' + password + '\',' + type + ',1)';
+            var btn = 'window.removeChild(\''+ encodeURIComponent(name) + '\',\' \'' + type + ',1)';
 
             $(".modal-body").html("Are you sure you want to delete this Password Generator?\
              The associated passwords in the View tab will also be deleted, \
@@ -224,13 +223,13 @@ class Generators extends React.Component {
             return;
         }
 
-        $(ReactDOM.findDOMNode(this.refs[name + type + password])).addClass("hiding");
+        $(ReactDOM.findDOMNode(this.refs[name + type])).addClass("hiding");
 
         setTimeout(function () {
             var generators = this.state.generators;
 
             var newgenerators = generators.filter(g => {
-                if (g.name == name && g.password == password && g.type == type) {
+                if (g.name == name && g.type == type) {
                     return false;
                 } else {
                     return true;
@@ -281,8 +280,8 @@ class Generators extends React.Component {
             this.state.generators.map(generator => {
                 return e(Generator,
                     {
-                        key: generator.name + generator.type + generator.password,
-                        ref: generator.name + generator.type + generator.password,
+                        key: generator.name + generator.type,
+                        ref: generator.name + generator.type,
                         name: generator.name,
                         type: generator.type,
                         password: generator.password,
