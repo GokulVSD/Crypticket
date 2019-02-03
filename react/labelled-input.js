@@ -8,7 +8,8 @@ class LabelledInput extends React.Component {
     render() {
         return e(React.Fragment, null,
 
-            e("div", { className: "input-container wide" },
+            e("div", {
+                className: "input-container wide" },
                 e("span",
                     { className: "labels" },
                     this.props.inlabel, " " + this.props.label),

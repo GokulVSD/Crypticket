@@ -4,6 +4,12 @@ $('#sidebarCollapse').click(function () {
     $(this).toggleClass("active");
 });
 
+$('.container.fragment-container').click(function () {
+
+    $("#wrapper").removeClass("toggled");
+    $('#sidebarCollapse').addClass("active");
+});
+
 function viewTicketsPg() {
 
     if ($("#create-pg").is(":visible")) {

@@ -8,6 +8,8 @@ class Copier extends React.Component {
     copyContent(){
         // clipboard API
         navigator.clipboard.writeText(this.props.content);
+
+        setTimeout(() => ReactTooltip.hide(), 1000);
     }
 
     render() {

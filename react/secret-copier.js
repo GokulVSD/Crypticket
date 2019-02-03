@@ -12,6 +12,8 @@ class SecretCopier extends React.Component {
         // clipboard API
         navigator.clipboard.writeText(text);
 
+        setTimeout(() => ReactTooltip.hide(), 1000);
+
         // If called within a generator
         if (this.props.incAndUpdate !== undefined) {
 
@@ -34,10 +36,11 @@ class SecretCopier extends React.Component {
     render() {
         return e("div",
             { className: "input-container wide secret", onClick: () => this.copyContent(), 
-            'data-tip': "Copied!", 'data-event': 'click', 'data-event-off' : 'mouseout', 'data-for': 'tt1' },
+            'data-tip': "Copied!", 'data-event': 'click', 'data-event-off' : 'nothing', 'data-for': (this.props.incAndUpdate !== undefined ?'tt3':'tt1'), 'data-iscapture':true },
             e("div", null,
                 this.props.curr, e("img", { src: "assets/logo-ticket.png" }, null), this.props.sign
             ),
+            
         );
     }
 }

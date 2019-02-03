@@ -84,21 +84,21 @@ class Ticket extends React.Component {
                     e("div", null, null),
 
                     e("div",
-                        { className: "input-container half cpr", 'data-tip': "Copied!", 'data-event': 'click', 'data-event-off' : 'mouseout', 'data-for': 'tt1' },
+                        { className: "input-container half cpr", 'data-tip': "Copied!", 'data-event': 'click', 'data-event-off' : 'nothing', 'data-for': 'tt1', 'data-iscapture':true },
                         e(Copier,
                             { title: "X", content: this.props.ticket.x },
                             null)
                     ),
 
                     e("div",
-                        { className: "input-container half cpr", 'data-tip': "Copied!", 'data-event': 'click', 'data-event-off' : 'mouseout', 'data-for': 'tt1' },
+                        { className: "input-container half cpr", 'data-tip': "Copied!", 'data-event': 'click', 'data-event-off' : 'nothing', 'data-for': 'tt1', 'data-iscapture':true },
                         e(Copier,
                             { title: "Y", content: this.props.ticket.y },
                             null)
                     ),
 
-                    e(ReactTooltip, { id: 'tt1', effect: "solid" }, null),
-                    e(ReactTooltip, { id: 'tt' }, null),
+                    e(ReactTooltip, { className: "cust-tt", id: 'tt1', effect: "solid" }, null),
+                    e(ReactTooltip, { className: "cust-tt", id: 'tt' }, null),
 
                     e("div", null, null),
 

@@ -109,7 +109,7 @@ class Generator extends React.Component {
 
                 $(".modal-body").html("Looks like you've already created a password for this website/app. If you really need another one, change the name a bit");
                 $("#modal").modal("show");
-                
+
                 return;
             }
 
@@ -119,6 +119,9 @@ class Generator extends React.Component {
             this.doSuccessAnimation();
 
             //Inform the user "copied to clipboard, you can find the password in the passwords tab in view".
+            ReactTooltip.show(ReactDOM.findDOMNode(this.refs[this.props.name + this.props.password + this.props.type]));
+
+            setTimeout(() => ReactTooltip.hide(ReactDOM.findDOMNode(this.refs[this.props.name + this.props.password + this.props.type])), 2000 );
 
             this.setState({
                 key: this.state.key,
@@ -173,7 +176,7 @@ class Generator extends React.Component {
             ),
 
             e("h2",
-            { className: ("" + (this.props.name.length > 11 ? "s" + (this.props.name.length > 15 ? "s" + (this.props.name.length > 19 ? "s" : "") : "") : "")) },
+                { className: ("" + (this.props.name.length > 11 ? "s" + (this.props.name.length > 15 ? "s" + (this.props.name.length > 19 ? "s" : "") : "") : "")) },
                 this.props.name),
 
             e("div",
@@ -194,16 +197,25 @@ class Generator extends React.Component {
                     null)
             ),
 
+            e(ReactTooltip, { className: "cust-tt", id: 'tt3', effect: "solid" }, null),
+
             (this.props.type == 2 &&
-                e(LabelledInput,
+                e('div',
                     {
-                        placeholder: "Name of a Website or App, eg: Reddit", classes: "app-inputs", label: "App",
-                        inlabel: e("i", { className: "fas fa-plus-circle" }, null),
-                        maxlen: "20",
-                        newInput: this.newInput.bind(this),
-                        keyboardBuffer: this.keyboardBuffer.bind(this)
+                        ref: this.props.name + this.props.password + this.props.type, 'data-tip': "<div>Copied! You can also find it in</div><div>View > Passwords tab</div>",
+                        'data-event': 'do-nothing', 'data-html': true, 'data-for': 'tt3', 'data-iscapture': true
                     },
-                    null)
+                    e(LabelledInput,
+                        {
+                            placeholder: "Name of a Website or App, eg: Reddit", classes: "app-inputs", label: "App",
+                            inlabel: e("i", { className: "fas fa-plus-circle" }, null),
+                            maxlen: "20",
+                            useref: this.props.name + this.props.type + this.props.password,
+                            newInput: this.newInput.bind(this),
+                            keyboardBuffer: this.keyboardBuffer.bind(this)
+                        },
+                        null)
+                )
             )
 
         );
