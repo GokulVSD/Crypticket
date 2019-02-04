@@ -100,12 +100,12 @@ class PasswordsTab extends React.Component {
         password.appNames.map(appName => {
           return e(React.Fragment, { key: appName + password.password },
 
-            e("div", { className: "input-container wide cpr pswdinp", 'data-tip': "Copied!", 'data-event': 'click', 'data-event-off' : 'nothing', 'data-for': 'tt2' },
+            e("div", { className: "input-container wide cpr pswdinp", 'data-tip': "Copied!", 'data-event': 'click', 'data-event-off' : 'nothing', 'data-for': 'tt9', 'data-iscapture':true },
               e(Copier,
                 { title: appName, content: hexToBase64(getECDSAKey(password.password).sign(appName.toUpperCase()).toHex()).slice(0, 12).replace(/\//g, "x") + "+0Pw" },
-                null),
-                e(ReactTooltip, { id: 'tt2', effect: "solid" }, null)
-            )
+                null)
+            ),
+            e(ReactTooltip, { className: "cust-tt", id: 'tt9', effect: "solid" }, null),
           );
         })
       );
