@@ -36,12 +36,12 @@ class Verifiers extends React.Component {
         });
     }
 
-    deleteVerifier(name, password) {
+    deleteVerifier(name) {
 
         var verifiers = this.state.verifiers;
 
         var newverifiers = verifiers.filter(v => {
-            if (v.name == name && v.password == password) {
+            if (v.name == name) {
                 return false;
             } else {
                 return true;

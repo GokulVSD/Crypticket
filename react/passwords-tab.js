@@ -36,12 +36,12 @@ class PasswordsTab extends React.Component {
     });
   }
 
-  deleteUsername(name, password) {
+  deleteUsername(name) {
 
     var passwords = this.state.passwords;
 
     var newpasswords = passwords.filter(p => {
-      if (p.name == name && p.password == password) {
+      if (p.name == name) {
         return false;
       } else {
         return true;

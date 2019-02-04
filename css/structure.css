@@ -9,6 +9,7 @@
 
 html{
   background: rgb(247, 247, 247);
+  scrollbar-width: none;
 }
 
 body{
@@ -41,6 +42,7 @@ a{
   background: white;
   transition: all 0.4s ease;
   box-shadow: 0 10px 30px rgba(17, 17, 17, 0.07), 0 6px 12px rgba(17, 17, 17, 0.07);
+  scrollbar-width: none;
 }
 
 #wrapper.toggled #sidebar-wrapper{

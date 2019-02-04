@@ -73,6 +73,7 @@
 	padding-top: 15px;
 	transition: all 0.2s ease;
 	white-space: nowrap;
+	scrollbar-width: none;
 }
 
 .hiding{

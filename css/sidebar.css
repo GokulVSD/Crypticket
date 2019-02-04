@@ -6,6 +6,7 @@
   padding: 0;
   list-style: none;
   cursor: pointer;
+  scrollbar-width: none;
 }
 
 .sidebar-nav li{

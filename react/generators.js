@@ -239,9 +239,9 @@ class Generators extends React.Component {
             storeObject("generators", newgenerators);
 
             if (type === 1)
-                deleteVerifier(name, password);
+                deleteVerifier(name);
             else
-                deleteUsername(name, password);
+                deleteUsername(name);
 
             this.setState({
                 generators: newgenerators
