@@ -14,16 +14,23 @@
 
 ##
 
-<p align="center">placeholder </p>
-<p align="center">some more placeholder</p>
+<p align="center">placeholder for what it does</p>
 
 ##
 
-placeholder for gifs
+placeholder for gifs (1st level, showing use in both desktop, 2nd level showing use in mobile and UI in desktop)
 
 ##
 
-<p align="center">placeholder for additional information</p>
+<p align="center">placeholder for how it does it</p>
+
+##
+
+placeholder for gif showing responsivity and state transfer
+
+##
+
+<p align="center">placeholder for the incentive</p>
 
 ##
 
