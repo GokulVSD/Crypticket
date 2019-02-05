@@ -14,3 +14,67 @@
 
 ##
 
+<p align="center">placeholder </p>
+<p align="center">some more placeholder</p>
+
+##
+
+placeholder for gifs
+
+##
+
+<p align="center">placeholder for additional information</p>
+
+##
+
+placeholder for images
+
+## Frameworks
+ <p> <strong>Reactjs</strong> stateful UI rendering and interaction via hierarchy of components</p>
+ <p> <strong>Bootstrap</strong> css framework for modals and dropdowns</p>
+ <p> <strong>jQuery</strong> DOM interaction and BootstrapJS animations</p>
+ <p> <strong>elliptic</strong> fast elliptic curve cryptography in plain javascript</p>
+ <p> <strong>Nodejs</strong> for a few npm modules</p>
+ <p> <strong>FontAwesome</strong> open-source svg icons (manually minimised)</p>
+ 
+ <br />
+ 
+ ## APIs
+<p><strong>localStorage API</strong> maintaining and transfering state across sessions</p>
+<p><strong>cacheStorage API</strong> offline webcaching of files using service workers</p>
+<p><strong>Clipboard API</strong> copying strings to clipboard via javascript</p>
+
+ <br />
+ 
+ ## External React Components
+<p><strong><a href="https://github.com/wwayne/react-tooltip">ReactTooltip</a></strong> provides customisable tooltips for React components</p>
+
+<br />
+
+## Tools Utilised
+ <p> <strong>Browserify</strong> converting Node modules into browser friendly javascript</p>
+ <p> <strong>Assets</strong> Photoshop and Premiere</p>
+ <p> <strong>Code</strong> VS Code and Sublime 3</p>
+ <p> <strong>Debugging</strong> Chromium debug console</p>
+ 
+<br />
+
+## Security
+```
+placeholder
+```
+<br />
+
+## Cool facts
+placeholder
+
+<br />
+
+## Creators
+<p><strong>Gokul Vasudeva</strong>   <a href="https://github.com/gokulvsd">github.com/gokulvsd</a></p>
+<p><strong>Anusha A</strong>   <a href="https://github.com/anushab05">github.com/anushab05</a></p>
+
+<br />
+
+##
+*The creators give permission to reuse parts of code and components, but publishing a web app with the same or mostly similar source code is prohibited, not to mention, that's a pretty douchy thing to do.*
