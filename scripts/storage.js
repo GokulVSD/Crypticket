@@ -76,6 +76,7 @@ function restoreStateFromString(str) {
         storage.setItem("passwords", decodeURIComponent(escape(atob(items[1]))));
         storage.setItem("generators", decodeURIComponent(escape(atob(items[2]))));
         storage.setItem("verifiers", decodeURIComponent(escape(atob(items[3]))));
+        storage.setItem("demo", "1");
 
     } catch (e) {
 
@@ -106,6 +107,7 @@ function resetState() {
 function confirmedReset() {
 
     window.localStorage.clear();
+    window.localStorage.setItem("demo", "1");
     location.reload();
 }
 
@@ -151,4 +153,19 @@ function longStringGenerator() {
     navigator.clipboard.writeText(text);
     $('#modal').modal("hide");
 }
+
+//code for demo
+if (window.localStorage.getItem("demo") == null) {
+
+    try {
+        window.localStorage.setItem("tickets", "[{\"name\":\"Demo Ticket\",\"secret\":\"1|Y|UsgUJmBSTT5z;RGVtbyBUaWNrZXQ=:NXRoIE5vdiwgMjA0Mg==:NDoyMCBQTSBVVEM=:;d3d3LnJlZGRpdC5jb20=;MTIuOTQ4ODUyMg==:NzcuNTgyOTgxOA==:;\",\"date\":\"5th Nov, 2042\",\"time\":\"4:20 PM UTC\",\"link\":\"www.reddit.com\",\"x\":\"12.9488522\",\"y\":\"77.5829818\"},{\"name\":\"Factory Reset\",\"secret\":\"2|Y|e5Wys99Ku9s0;RmFjdG9yeSBSZXNldA==:RnJvbSBUaGU=:MyBEb3Q=:;;::;\",\"date\":\"From The\",\"time\":\"3 Dot\",\"link\":\"\"},{\"name\":\"Menu At The\",\"secret\":\"12|Y|cGKeJGen3nA3;TWVudSBBdCBUaGU=:VG9wIEJlZm9yZQ==:VXNpbmch:;;MjkuOTc3MzAwOA==:MzEuMTMwMzA2OA==:;\",\"date\":\"Top Before\",\"time\":\"Using!\",\"link\":\"\",\"x\":\"29.9773008\",\"y\":\"31.1303068\"}]");
+        window.localStorage.setItem("passwords", "[{\"name\":\"Demo Username\",\"password\":\"123\",\"appNames\":[\"Amazon\",\"Reddit\",\"Make\",\"Sure\",\"To Factory\"]},{\"name\":\"Reset Before Using!\",\"password\":\"123\",\"appNames\":[]}]");
+        window.localStorage.setItem("generators", "[{\"type\":1,\"name\":\"Menu At The\",\"password\":\"123\",\"ticketAppend\":\";TWVudSBBdCBUaGU=:VG9wIEJlZm9yZQ==:VXNpbmch:;;MjkuOTc3MzAwOA==:MzEuMTMwMzA2OA==:;\",\"curr\":18,\"max\":337},{\"type\":2,\"name\":\"Demo Username\",\"password\":\"123\"},{\"type\":1,\"name\":\"Factory Reset\",\"password\":\"123\",\"ticketAppend\":\";RmFjdG9yeSBSZXNldA==:RnJvbSBUaGU=:MyBEb3Q=:;;::;\",\"curr\":3,\"max\":1257},{\"type\":2,\"name\":\"Reset Before Using!\",\"password\":\"123\"},{\"type\":1,\"name\":\"Demo Ticket\",\"password\":\"123\",\"ticketAppend\":\";RGVtbyBUaWNrZXQ=:NXRoIE5vdiwgMjA0Mg==:NDoyMCBQTSBVVEM=:;d3d3LnJlZGRpdC5jb20=;MTIuOTQ4ODUyMg==:NzcuNTgyOTgxOA==:;\",\"curr\":3,\"max\":46}]");
+        window.localStorage.setItem("verifiers", "[{\"name\":\"Menu At The\",\"password\":\"123\",\"curr\":3,\"max\":337,\"verified\":[\"12\",\"16\",\"17\"]},{\"name\":\"Factory Reset\",\"password\":\"123\",\"curr\":0,\"max\":1257,\"verified\":[]},{\"name\":\"Demo Ticket\",\"password\":\"123\",\"curr\":1,\"max\":46,\"verified\":[\"2\"]}]");
+        window.localStorage.setItem("demo", "1");
+    } catch(e){
+        storageFull();
+    }
+}
+
 

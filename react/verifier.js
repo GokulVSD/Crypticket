@@ -174,7 +174,7 @@ class Verifier extends React.Component {
 
             e(LabelledInput,
                 {
-                    placeholder: "Paste or Enter Here", classes: "verifier-inputs", label: "Crypticket",
+                    placeholder: "Paste or Type Here", classes: "verifier-inputs", label: "Crypticket",
                     inlabel: e("img", { src: "assets/logo-ticket.png", style: { width: "25px", filter: "brightness(0) invert(1)", marginBottom: "3px" } }, null),
                     newInput: this.newInput.bind(this),
                     keyboardBuffer: this.keyboardBuffer.bind(this)
