@@ -10,6 +10,11 @@ $('.container.fragment-container').click(function () {
     $('#sidebarCollapse').addClass("active");
 });
 
+$('.sidebar-nav li').click(function(){
+    $("#wrapper").removeClass("toggled");
+    $('#sidebarCollapse').addClass("active");
+});
+
 function viewTicketsPg() {
 
     if ($("#create-pg").is(":visible")) {
