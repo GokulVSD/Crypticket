@@ -2,8 +2,7 @@
     z-index: 1;
     box-shadow: 0 0 2px rgba(0,0,0,0.16);
 	background: white;
-    height: 70px;
-    position: -webkit-sticky;
+	height: 70px;
 	position: sticky;
 	top: 0;
 	margin: 0 auto;
@@ -101,7 +100,7 @@
     transform: none;
     opacity: 1;
     margin: 7px auto;
-    transition: all 0.5s;
+    transition: all 0.5s, transform 0.5s;
 }
 
 .dropdown-toggle::after{
