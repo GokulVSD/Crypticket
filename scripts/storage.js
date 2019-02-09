@@ -2,7 +2,7 @@ function storageFull() {
 
     $(".modal-body").html("Looks like your browser has either run out of storage or doesn't support local storage.\
      You can try deleting some Generators to make space,\
-      or switch to a Chromium based browser such as Chrome, Firefox or Opera.\
+      or switch to a Chromium or Webkit supported browser such as Chrome, Safari, Firefox, Opera, etc.\
        You can transfer data to another browser or factory reset using the 3-dot menu");
 
     $("#modal").modal("show");
@@ -54,7 +54,7 @@ function getBackupString() {
         console.log(e);
 
         $(".modal-body").html("Looks like something went terribly wrong when trying to generate the restore key.\
-         It's likely that there's a character outside the UTF-8 range somewhere. It's recommended to factory reset, or delete the culprit if you know where it is");
+         It's likely that there's a character outside the UCS-2 range somewhere. It's recommended to factory reset, or delete the culprit if you know where it is");
 
         $("#modal").modal("show");
     }
@@ -135,20 +135,23 @@ $('#modal').on('hide.bs.modal', function (e) {
 $('#modal').modal("show");
 $('#modal').modal("hide");
 
+var possible = "";
+
 function longStringGenerator() {
     // generates an extremely long and random string
 
-    var possible = "";
+    if (possible == "") {
 
-    for (var i = 0; i < 65000; i++)
-        possible += String.fromCharCode(i);
+        for (var i = 0; i < 65000; i++)
+            possible += String.fromCharCode(i);
+    }
 
     var text = "";
 
-    var len = Math.floor(Math.random() * 10000 + 10000);
+    var len = Math.floor(Math.random() * 5000 + 3000);
 
     for (var i = 0; i < len; i++)
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
+        text += possible.charAt(Math.floor(Math.random() * 65000));
 
     navigator.clipboard.writeText(text);
     $('#modal').modal("hide");
@@ -163,7 +166,7 @@ if (window.localStorage.getItem("demo") == null) {
         window.localStorage.setItem("generators", "[{\"type\":1,\"name\":\"Menu At The\",\"password\":\"123\",\"ticketAppend\":\";TWVudSBBdCBUaGU=:VG9wIEJlZm9yZQ==:VXNpbmch:;;MjkuOTc3MzAwOA==:MzEuMTMwMzA2OA==:;\",\"curr\":18,\"max\":337},{\"type\":2,\"name\":\"Demo Username\",\"password\":\"123\"},{\"type\":1,\"name\":\"Factory Reset\",\"password\":\"123\",\"ticketAppend\":\";RmFjdG9yeSBSZXNldA==:RnJvbSBUaGU=:MyBEb3Q=:;;::;\",\"curr\":3,\"max\":1257},{\"type\":2,\"name\":\"Reset Before Using!\",\"password\":\"123\"},{\"type\":1,\"name\":\"Demo Ticket\",\"password\":\"123\",\"ticketAppend\":\";RGVtbyBUaWNrZXQ=:NXRoIE5vdiwgMjA0Mg==:NDoyMCBQTSBVVEM=:;d3d3LnJlZGRpdC5jb20=;MTIuOTQ4ODUyMg==:NzcuNTgyOTgxOA==:;\",\"curr\":3,\"max\":46}]");
         window.localStorage.setItem("verifiers", "[{\"name\":\"Menu At The\",\"password\":\"123\",\"curr\":3,\"max\":337,\"verified\":[\"12\",\"16\",\"17\"]},{\"name\":\"Factory Reset\",\"password\":\"123\",\"curr\":0,\"max\":1257,\"verified\":[]},{\"name\":\"Demo Ticket\",\"password\":\"123\",\"curr\":1,\"max\":46,\"verified\":[\"2\"]}]");
         window.localStorage.setItem("demo", "1");
-    } catch(e){
+    } catch (e) {
         storageFull();
     }
 }
