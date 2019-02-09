@@ -8,13 +8,22 @@
     padding-bottom: 30px;
 }
 .tabs span {
-    transition: color 0.6s;
+    transition: all 0.6s;
     cursor: pointer;
     text-align: center;
     font-size: 20px;
     font-family: productbold;
     color: #34656e;
     margin: 0 auto;
+    background-position: center;
+}
+.tabs span:hover{
+    background: #fff radial-gradient(circle, transparent 1%, #fff 1%) center/15000%;
+}
+.tabs span:active{
+    background-color: #dfdfdf;
+ 	background-size: 100%;
+  	transition: background 0s;
 }
 .tabs span:last-child {
     color: #999;

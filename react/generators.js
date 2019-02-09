@@ -68,7 +68,7 @@ class Generators extends React.Component {
             $(".modal-body").html("It's recommended, although not required, to use a very long and unique secret with special and alphanumeric characters.\
               You can regenerate the same Cryptickets by using the same secret. \
              If you're going to use this Generator to create Cryptickets for commercial purposes,\
-               you should use EXTREMELY long secrets (10s of thousands of characters).\
+               you should use extremely long secrets (thousands of characters long).\
                Click the button below to generate a secure secret that can be used commercially. Make sure to store it somewhere safe,\
                 some websites mess with UCS-2 encoding (such as Google Docs and MS Word). Make sure to try creating another Generator with\
                 the secret copied from wherever you're storing it, and see if it generates the same Crypticket for the same number\
@@ -145,7 +145,7 @@ class Generators extends React.Component {
         if (password.length < 9999 && nty == undefined) {
 
             $(".modal-body").html("It's recommended, although not required, to use an extremely long and unique global password\
-             (10s of thousands of characters long with special and alphanumerics).\
+             (thousands of characters long with special and alphanumeric characters).\
              You can regenerate passwords for apps/websites by using the same global password\
             and using the same app/website name as you did when initially generating passwords for that app/website.\
             Click the button below to generate a secure global password. For recovery purposes, make sure to store it somewhere safe, \
