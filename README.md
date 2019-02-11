@@ -12,9 +12,14 @@
 
 <h4 align="center"><a href="https://gokulvsd.github.io/Crypticket">gokulvsd.github.io/Crypticket</a></h4>
 
-##
+## Incentive
+<p align="center">In an age where privacy and trusting entities with sensitive data is of utmost concern, the importance of safely storing, transmitting and using sensitive information gets elevated. What better way is there to handling such a task than keeping the system completely disconnected from any network, and storing all sensitive data encrypted and local, guaranteeing the ownership of the data to the user. Such feats can now be accomplished using modern advancements in cryptography and recent additions to web browser frameworks.</p>
 
-<p align="center">placeholder for what it does</p>
+<p align="center">Crypticket was meant to be a proof of concept implementation of the above, which just so happened to be suitable and ready for commercial use.</p>
+
+<p align="center">The problem, which seems trivial at first glance, is a way of securely storing and creating keys, which can be used for a variety of purposes, like verifying tickets or passes for events, transportation, services, ownership verification, or any other use case where the identity of an individual needs to be verified to be unique and non malicious by an owner.</p>
+
+<p align="center">In the process of solving this problem, we found an elegant way to create and store unique and secure passwords (which can be used for literally anything), and so we incorporated the password generator alongside the the core utility as an additional feature.</p>
 
 ##
 
