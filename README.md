@@ -88,6 +88,8 @@ This allows us to do some cool things, which solve (or partially solve) the diff
 
 placeholder for images
 
+<br />
+
 ## Frameworks
  <p> <strong>Reactjs</strong> stateful UI rendering and interaction via hierarchy of components</p>
  <p> <strong>Bootstrap</strong> css framework for modals and dropdowns</p>
@@ -120,7 +122,18 @@ placeholder for images
 
 ## Security
 ```
-placeholder
+As much as we can guarantee an extremely high degree of security, we frankly do not know if there is some 
+ingenious way to break it. We'd say that you'll be alright using it commercially, because if someone 
+found a way to break it, there would be bigger problems at hand, like the security of the entire internet 
+being compromised, which is built off of elliptic curve cryptography.
+
+Although, we'd like to add that we recommend extremely long secrets (of the order of 10s of thousands of 
+characters) be used when creating generators. We've built in a secure secret generator that generates very 
+long secrets that can be used commercially, you will be prompted to use it before creating a generator.
+
+We've also truncated the signature size to 12 characters. This was done to improve user experience. It 
+may decrease the security, but we believe the trade off was justifiable, as it should still be very secure. 
+You may fork this repository and increase the size if you please.
 ```
 <br />
 
