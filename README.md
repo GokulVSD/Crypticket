@@ -25,6 +25,8 @@ In the process of solving this problem, we found an elegant way to create and st
 
 placeholder for gifs (1st level, showing use in both desktop, 2nd level showing use in mobile and UI in desktop)
 
+<br />
+
 ## Thought Process
 Let's start off with the example of a ticket management system for an event, such as a convention. We consider an owner (event organiser) and the attendees.
 
@@ -40,9 +42,12 @@ Now for the good stuff, a single owner and a plethora of attendees. The owner ge
 5. How do we make this whole process user friendly and elegant? It's not realistic to expect the attendees to stand in a long line to verify their tickets, you can't give them a huge secret that each one of them needs to remember/echo back to the organiser, it needs to be short, and it needs to be verified incredibly fast.
 
 The processes used by Crypticket to overcomes all these difficulties are discussed in the next section.
+
 ##
 
 placeholder for gif showing responsivity and state transfer
+
+<br />
 
 ## How Crypticket Works
 In a few words: elliptic curve cryptography.
@@ -64,7 +69,20 @@ This allows us to do some cool things, which solve (or partially solve) the diff
 
 5. The signatures are truncated to only 12 characters, the attendee simply needs to provide the message (a number) and the 12 characters to verify their identity. This greatly simplifies the verification process. In addition, Cryptickets are appended with hidden meta information such as the name, date and time, associated website and location details for the event that it belongs to, which improves user experience.
 
+<br />
 
+## Cool Facts
+* This PWA works completely offline. The only dependant server is the web server that serves the HTML, JS, CSS files and other assets, and the web server serves each device only once. Your device will cache all the assets and files locally, only checking with the web server (if you're connected to the internet) to see if all the files that are stored locally are up to date. You just need to visit Crypticket once, all successive visits do not access the internet.
+
+* All information related to state is stored in browser local storage. This means that If you ever clear browser cache, you essentially lose all your data, and you need to fetch the files and assets once again from the web server. This also means that you're restricted to 10 megabytes worth of generators and passwords (as of writing this). 10 megabytes is plenty for normal scenarios.
+
+* To combat the first problem, we've incorporated functionality to maintain state, allowing users to backup and restore, as well as factory reset their instance of Crypticket. We recommend you backup your state and store it somewhere safe every now and then. Remember, you ONLY lose data when you manually clear browser cache. As long as you don't do that, everything is safe, even if you restart your browser or your device.
+
+* In addition, this PWA is a rare instance of partially utilising React. The entire website does not use React, the main structure of the website, which doesn't really need to be stateful, is built using plain HTML and JS. This was actually a bigger pain to do than initially expected, but we managed to do it successfully.
+
+* As showcased in one of the GIFs, the PWA is fully responsive, and resizes to look correct on almost any modern display size, be it a smartphone or a workstation.
+
+* Crypticket happens to be the first website we've ever created, and it's built completely from the ground up by us.
 
 ##
 
@@ -104,11 +122,6 @@ placeholder for images
 ```
 placeholder
 ```
-<br />
-
-## Cool facts
-placeholder
-
 <br />
 
 ## Creators
