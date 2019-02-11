@@ -25,8 +25,6 @@ In the process of solving this problem, we found an elegant way to create and st
 
 placeholder for gifs (1st level, showing use in both desktop, 2nd level showing use in mobile and UI in desktop)
 
-##
-
 ## Thought Process
 Let's start off with the example of a ticket management system for an event, such as a convention. We consider an owner (event organiser) and the attendees.
 
@@ -46,9 +44,27 @@ The processes used by Crypticket to overcomes all these difficulties are discuss
 
 placeholder for gif showing responsivity and state transfer
 
-##
+## How Crypticket Works
+In a few words: elliptic curve cryptography.
+In a few more words:
+We won't bog you down with the ins and outs of elliptic curve cryptography, the features, and the mathematics. These details can we found on the internet. The specific curve we're using is <a href="https://en.wikipedia.org/wiki/Edwards_curve">Edward's curve</a>, and the procedure we're using is EdDSA (RFC 8032), more specifically Ed25519 (additional information can be found <a href="https://en.wikipedia.org/wiki/EdDSA">here</a> and <a href="https://ed25519.cr.yp.to/index.html">here</a>).
 
-<p align="center">placeholder for the incentive</p>
+In a nutshell, EdDSA is a public key digital signature creation and verification algorithm. A secret is used to find a generator point G on an elliptic curve. This point can essentially be used to sign any message and create a pseudo-unique signature. Based on the message, elliptic curve arithmetic (<a href="https://en.wikipedia.org/wiki/Trapdoor_function">trapdoor function</a>) is applied a certain number of times on the point G to jump all around the curve under the constraint of a modulo function, eventually stopping at a new point; this point serves as the signature. It turns out that without knowing G, it's incredibly hard to know what message was signed to create a certain signature, or to know what signature a given message, when signed, will produce. This gives power to the individual who knows the secret, to be able to sign any message that they please, have it be unique for that particular message, and be sure that no one else will be able get the same signature for the same message without using the same generator point G.
+
+To verify that a signature was actually produced by signing a particular message using the point G is as simple as backtracking. Using inverse elliptic curve arithmetic on the point given by the signature S a certain number of times based on the message, If we end up landing on the point G, we can rest easy knowing that G was the generator used to generate the signature S.
+
+This allows us to do some cool things, which solve (or partially solve) the difficulties laid out in the previous section:
+1. We can sign an infinite number of messages, producing hashed signatures which fill a 256 bit bucket. This gives us the ability to generate an infinite number of message-signature pairs, which are the Cryptickets given to the attendees.
+
+2. The generator point is also created by hashing a secret (a single password for the event) into a 256 bit bucket. It's next to impossible with current hardware to figure out the generator based on signed messages, so we can conclude with extremely high certainty that the only individual with the ability to sign new messages is the event organiser.
+
+3. There is no need to store these message-signature pairs anywhere, we can generate them and give them to the attendee, and forget about it. We can always generate the signature knowing the message at anytime later, and verify the signature knowing the message using the particular generator point used by the event.
+
+4. Preventing duplicate verification is simple and takes very little space. All we need to store are the messages that have already been verified, not the entire message-signature pair, this is for the same reason as the above. The messages are tiny and in the worst case, are a few bytes long. 
+
+5. The signatures are truncated to only 12 characters, the attendee simply needs to provide the message (a number) and the 12 characters to verify their identity. This greatly simplifies the verification process. In addition, Cryptickets are appended with hidden meta information such as the name, date and time, associated website and location details for the event that it belongs to, which improves user experience.
+
+
 
 ##
 
