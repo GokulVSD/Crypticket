@@ -25,8 +25,6 @@ In the process of solving this problem, we found an elegant way to create and st
 
 <img src="/assets/1.gif?raw=true"/>
 
-placeholder for gifs (1st level, showing use in both desktop, 2nd level showing use in mobile and UI in desktop)
-
 <br />
 
 ## Thought Process
@@ -47,7 +45,7 @@ The processes used by Crypticket to overcomes all these difficulties are discuss
 
 ##
 
-placeholder for gif showing responsivity and state transfer
+<img src="/art/2.gif?raw=true" width="60%" />
 
 <br />
 
