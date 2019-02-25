@@ -45,7 +45,7 @@ The processes used by Crypticket to overcomes all these difficulties are discuss
 
 ##
 
-<img src="/art/2.gif?raw=true" width="60%" />
+<img src="/assets/2.gif?raw=true" width="60%" />
 
 <br />
 
