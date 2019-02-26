@@ -69,6 +69,10 @@ This allows us to do some **cool** things, which solve (or partially solve) the 
 
 5. The signatures are truncated to only **12 characters**, the attendee simply needs to provide the message (a number) and the 12 characters to verify their identity. This greatly simplifies the verification process. In addition, Cryptickets are appended with hidden **meta information** such as the name, date and time, associated website and location details for the event that it belongs to, which improves **user experience**.
 
+##
+
+<img src="/assets/4.gif?raw=true"/>
+
 <br />
 
 ## Cool Facts
