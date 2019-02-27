@@ -90,7 +90,7 @@ This allows us to do some **cool** things, which solve (or partially solve) the 
 
 ##
 
-placeholder for images
+<a href="https://imgur.com/a62k0dJ"><img src="https://i.imgur.com/a62k0dJ.png" title="source: imgur.com" /></a>
 
 <br />
 
