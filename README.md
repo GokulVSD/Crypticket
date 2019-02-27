@@ -90,7 +90,7 @@ This allows us to do some **cool** things, which solve (or partially solve) the 
 
 ##
 
-<a href="https://imgur.com/a62k0dJ"><img src="https://i.imgur.com/a62k0dJ.png" title="source: imgur.com" /></a>
+<a href="https://imgur.com/si03P98"><img src="https://i.imgur.com/si03P98.png" title="source: imgur.com" /></a>
 
 <br />
 
