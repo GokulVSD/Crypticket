@@ -3,7 +3,7 @@
 <p align="center">
   
  <h3 align="center"> <br>
-  Secure, Trustless, Elegant
+  Secure and Trustless, with a dash of Elegance
   <br> </h3>
  
 <h5 align="center">A database-free fully offline-capable cryptographic ticket and password generation and management platform, built as a responsive progressive web app (PWA) using React, utilising EdDSA elliptic curve public key digital signature verification.</h5>
